@@ -1,0 +1,2 @@
+# beginner_learning_stuff
+Programs that I do in free time and from schools
