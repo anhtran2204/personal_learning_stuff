@@ -1,0 +1,3 @@
+D:\JetBrains\Toolbox\apps\CLion\ch-0\213.5744.254\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\PracticeArea.dir/objects.a
+C:\msys64\mingw64\bin\ar.exe qc CMakeFiles\PracticeArea.dir/objects.a @CMakeFiles\PracticeArea.dir\objects1.rsp
+C:\msys64\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\PracticeArea.dir/objects.a -Wl,--no-whole-archive -o PracticeArea.exe -Wl,--out-implib,libPracticeArea.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\PracticeArea.dir\linklibs.rsp
