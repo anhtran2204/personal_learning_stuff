@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b2a0d6e8-a7b7-4f7c-87c3-0b98a72dbe8f" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1egTswdjBJsC0Y0Nk3ot1OWnNdb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Main.java" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b2a0d6e8-a7b7-4f7c-87c3-0b98a72dbe8f" name="Default Changelist" comment="" />
+      <created>1594742446979</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594742446979</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="828" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594742458747">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="828" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594742458747" />
+    <state x="1256" y="274" key="FileChooserDialogImpl" timestamp="1594742603641">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1256" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594742603641" />
+  </component>
+</project>

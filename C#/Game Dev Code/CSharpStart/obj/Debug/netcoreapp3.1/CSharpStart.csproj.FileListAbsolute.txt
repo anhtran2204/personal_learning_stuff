@@ -1,0 +1,13 @@
+D:\Game Dev\CSharpStart\bin\Debug\netcoreapp3.1\CSharpStart.exe
+D:\Game Dev\CSharpStart\bin\Debug\netcoreapp3.1\CSharpStart.deps.json
+D:\Game Dev\CSharpStart\bin\Debug\netcoreapp3.1\CSharpStart.runtimeconfig.json
+D:\Game Dev\CSharpStart\bin\Debug\netcoreapp3.1\CSharpStart.runtimeconfig.dev.json
+D:\Game Dev\CSharpStart\bin\Debug\netcoreapp3.1\CSharpStart.dll
+D:\Game Dev\CSharpStart\bin\Debug\netcoreapp3.1\CSharpStart.pdb
+D:\Game Dev\CSharpStart\obj\Debug\netcoreapp3.1\CSharpStart.csprojAssemblyReference.cache
+D:\Game Dev\CSharpStart\obj\Debug\netcoreapp3.1\CSharpStart.AssemblyInfoInputs.cache
+D:\Game Dev\CSharpStart\obj\Debug\netcoreapp3.1\CSharpStart.AssemblyInfo.cs
+D:\Game Dev\CSharpStart\obj\Debug\netcoreapp3.1\CSharpStart.csproj.CoreCompileInputs.cache
+D:\Game Dev\CSharpStart\obj\Debug\netcoreapp3.1\CSharpStart.dll
+D:\Game Dev\CSharpStart\obj\Debug\netcoreapp3.1\CSharpStart.pdb
+D:\Game Dev\CSharpStart\obj\Debug\netcoreapp3.1\CSharpStart.genruntimeconfig.cache

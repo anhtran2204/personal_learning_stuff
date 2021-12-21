@@ -1,0 +1,49 @@
+name = input("Hello dear customer!\nWelcome to the Bank!\nMay I ask what your name is?\n")
+print("Welcome to the Bank, " + name + "!")
+
+passTry = 0
+while passTry <= 3:
+    print()
+    accID = input("Please enter your account ID:\n")
+    print()
+    password = input("Please enter the password:\n")
+
+    if accID == "anhtran2204" and password == "anhphantran2002":
+        print("Access Granted!")
+        print()
+        replay = 1
+        balance = 0
+        while replay == 1:
+            print("What would you like to do?\n1 - Deposit.\n2 - Withdraw.\n3 - Exit application.\n")
+            if balance == 0:
+                print("Your bank account is currently empty!\nPlease deposit money!\n")
+
+            choice = int(input())
+            if choice == 1:
+                print("Enter the deposit amount:")
+                deposit = float(input())
+                balance += deposit
+                print("\nYou deposited " + str(deposit))
+                print("Current balance: " + str(balance) + "\n")
+            elif choice == 2:
+                print("Enter the withdrawal amount:")
+                withdraw = float(input())
+                balance -= withdraw
+                if balance < 0:
+                    print("Insufficient Balance!")
+                print("\nYou withdrew " + str(withdraw))
+                print("Current balance: " + str(balance) + "\n")
+            elif choice == 3:
+                replay = 2
+                print("Thanks for using our service!")
+            else:
+                print("Invalid Input!\nPlease enter again!\n")
+
+    else:
+        print()
+        print("Access Denied!")
+        print("Wrong account ID or password!")
+        print("Please try again!")
+        passTry += 1
+
+print("\nToo many login attempts!\nAccount is temporarily closed!")

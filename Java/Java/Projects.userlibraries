@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="Python 3.8 (Python3.8) interpreter library">
+    <archive path="C:/Users/anhph/AppData/Local/Programs/Python/Python38/DLLs" />
+    <archive path="C:/Users/anhph/AppData/Local/Programs/Python/Python38/Lib" />
+    <archive path="C:/Users/anhph/AppData/Local/Programs/Python/Python38" />
+    <archive path="C:/Users/anhph/venv/Python3.8" />
+    <archive path="C:/Users/anhph/venv/Python3.8/Lib/site-packages" />
+    <archive path="C:/Users/anhph/AppData/Local/Programs/Python/Python38/Lib/site-packages" />
+    <archive path="C:/Users/anhph/AppData/Local/JetBrains/IdeaIC2020.2/python_stubs/-1003747566" />
+    <archive path="C:/Users/anhph/AppData/Roaming/JetBrains/IdeaIC2020.2/plugins/python-ce/helpers/python-skeletons" />
+    <archive path="C:/Users/anhph/AppData/Roaming/JetBrains/IdeaIC2020.2/plugins/python-ce/helpers/typeshed/stdlib/3.7" />
+    <archive path="C:/Users/anhph/AppData/Roaming/JetBrains/IdeaIC2020.2/plugins/python-ce/helpers/typeshed/stdlib/3" />
+    <archive path="C:/Users/anhph/AppData/Roaming/JetBrains/IdeaIC2020.2/plugins/python-ce/helpers/typeshed/stdlib/2and3" />
+    <archive path="C:/Users/anhph/AppData/Roaming/JetBrains/IdeaIC2020.2/plugins/python-ce/helpers/typeshed/third_party/3" />
+    <archive path="C:/Users/anhph/AppData/Roaming/JetBrains/IdeaIC2020.2/plugins/python-ce/helpers/typeshed/third_party/2and3" />
+  </library>
+  <library name="Python 3.8 interpreter library" />
+  <library name="Python 3.9 interpreter library" />
+</eclipse-userlibraries>
+

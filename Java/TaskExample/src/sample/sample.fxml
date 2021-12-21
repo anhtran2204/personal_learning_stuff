@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="20" vgap="20" xmlns:fx="http://javafx.com/fxml/1"
+          xmlns="http://javafx.com/javafx/11.0.1" fx:controller="sample.Controller">
+    <padding>
+        <Insets bottom="30" top="30"/>
+    </padding>
+    <VBox alignment="CENTER">
+        <Button alignment="CENTER" onAction="#buttonPressed" text="Get Employee Names" GridPane.columnIndex="0"
+                GridPane.rowIndex="0"/>
+        <ListView fx:id="listView" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <VBox.margin>
+                <Insets top="5.0"/>
+            </VBox.margin>
+        </ListView>
+        <ProgressBar fx:id="progressBar" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <VBox.margin>
+                <Insets top="5.0"/>
+            </VBox.margin>
+        </ProgressBar>
+        <Label fx:id="progressLabel" GridPane.rowIndex="3" GridPane.columnIndex="0">
+            <VBox.margin>
+                <Insets top="5.0"/>
+            </VBox.margin>
+        </Label>
+    </VBox>
+    <columnConstraints>
+        <ColumnConstraints/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints/>
+    </rowConstraints>
+</GridPane>

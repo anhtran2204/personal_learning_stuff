@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1"
+          fx:controller="sample.Addition.AdditionControllerSecondNum" hgap="10" vgap="10" alignment="CENTER">
+    <Label text="Please enter the second number" alignment="CENTER">
+        <font>
+            <Font name="System Bold" size="13.0"/>
+        </font>
+    </Label>
+    <TextField fx:id="additionTextField2" GridPane.rowIndex="1" onAction="#onOKEnter"/>
+    <HBox GridPane.rowIndex="2" spacing="5.0" alignment="CENTER">
+        <Button fx:id="OKButton" text="OK" GridPane.columnIndex="0" prefWidth="80" defaultButton="true" onAction="#onOKClick" onKeyPressed="#onOKEnter"/>
+        <Button fx:id="cancelButton" text="Cancel" GridPane.columnIndex="1" prefWidth="80" onAction="#onCancelClick" onKeyPressed="#onCancelEnter"/>
+    </HBox>
+</GridPane>
