@@ -3,6 +3,10 @@
 using namespace std;
 
 int main() {
+    cout << "/* Program is used to print the " << endl
+         << " * ASCII characters within a specific ranges" << endl
+         << " * given by the user input." << endl
+         << " */" << endl;
     unsigned int lowerValue;
     unsigned int upperValue;
 
