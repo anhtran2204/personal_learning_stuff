@@ -3,8 +3,8 @@
 using namespace std;
 
 int main() {
-    cout << "/* Program is used to print the " << endl
-         << " * ASCII characters within a specific ranges" << endl
+    cout << "/* Program is used to print all of the " << endl
+         << " * ASCII characters within a specific range" << endl
          << " * given by the user input." << endl
          << " */" << endl;
     unsigned int lowerValue;
@@ -13,7 +13,7 @@ int main() {
     unsigned char outputChar;
 
     while (true) {
-        cout << "Enter lower and upper values\n";
+        cout << "\nEnter lower and upper values\n";
 
         cin >> lowerValue;
         cin >> upperValue;
