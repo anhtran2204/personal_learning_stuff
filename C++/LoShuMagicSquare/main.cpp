@@ -43,7 +43,7 @@ int main() {
 
 int readSquare(int square[MAX_SIZE][MAX_SIZE], string inputFileName) {
     ifstream ifile;
-    ifile.open("../LoShuMagicSquare/inputFiles/" + inputFileName);
+    ifile.open("./inputFiles/" + inputFileName);
     // ifile.open(inputFileName);
 
     /*

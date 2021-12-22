@@ -46,7 +46,7 @@ int main() {
 
 int readFile(double values[][MAX_COLUMNS], int maxRows, string inputFileName) {
     ifstream ifile;
-    ifile.open("../inputFiles/" + inputFileName);
+    ifile.open("./inputFiles/" + inputFileName);
 //    ifile.open(inputFileName);
 
     int actualRows = 0;

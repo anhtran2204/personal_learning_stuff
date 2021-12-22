@@ -37,7 +37,7 @@ void read(string& file, vector<string>& foods,
           string& category, string& name,
           string& description, string& availability) {
     ifstream ifile;
-    ifile.open("../FoodData/inputFiles/" + file);
+    ifile.open("./inputFiles/" + file);
 
     if (!ifile) {
         cout << "File \"" << file << "\" could not be opened" << endl;

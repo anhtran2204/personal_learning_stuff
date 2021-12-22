@@ -25,8 +25,8 @@ int main() {
     double interestRate;
     int months;
 
-//    ifile.open("../inputFiles/" + fileName);
-    ifile.open(fileName);
+   ifile.open("./inputFiles/" + fileName);
+    // ifile.open(fileName);
     ofile.open("output.xls");
 
     if (!ifile) {

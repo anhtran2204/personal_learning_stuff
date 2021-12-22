@@ -20,8 +20,8 @@ int main() {
     cin >> studentAnswersFileName;
 
 
-//    studentAnswersFile.open("../inputFiles/" + studentAnswersFileName);
-    studentAnswersFile.open(studentAnswersFileName);
+   studentAnswersFile.open("./inputFiles/" + studentAnswersFileName);
+    // studentAnswersFile.open(studentAnswersFileName);
     if (!studentAnswersFile) {
         cout << "File \"" << studentAnswersFileName << "\" could not be opened" << endl;
         studentAnswersFile.close();

@@ -42,7 +42,7 @@ int main() {
     cout << "Enter input file name" << endl;
     cin >> fileName;
 
-    ifile.open("../inputFiles/" + fileName);
+    ifile.open("./inputFiles/" + fileName);
     if (!ifile) {
         cout << "File \"" << fileName << "\" could not be opened" << endl;
         ifile.close();

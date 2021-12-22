@@ -15,7 +15,7 @@ int main() {
 
     cout << "Enter input file name" << endl;
     cin >> inputFileName;
-    inputFile.open("../part1inputFiles/" + inputFileName);
+    inputFile.open("./inputFiles/" + inputFileName);
     outputFile.open("saleschart.txt");
 
     bool first = true;

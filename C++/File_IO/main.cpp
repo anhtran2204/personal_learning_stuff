@@ -23,7 +23,7 @@ int main() {
 
     cout << "Enter input file name" << endl;
     cin >> inputFileName;
-    inputFile.open("../part2InputFiles/" + inputFileName);
+    inputFile.open("./inputFiles/" + inputFileName);
 //    inputFile.open(inputFileName);
 
     if (!inputFile) {
