@@ -50,9 +50,7 @@ function fibonacci(n) {
 
 var num = window.prompt("Enter a number: ");
 
-num = Number(num);
-
-switch(num) {
+switch(+num) {
     case 1:
         var user_name = window.prompt("What's your name? ");
         console.log("Your name is", user_name);
