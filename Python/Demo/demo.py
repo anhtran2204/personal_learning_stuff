@@ -1,7 +1,8 @@
-import sys
-sys.path.append("C:/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/Python/Sandwiches")
-
 from sandwiches import make_sandwich
+import sys
+sys.path.append(
+    "C:/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/Python/Sandwiches")
+
 
 print('Hello World!')
 
@@ -16,23 +17,23 @@ else:
 
 # Lists
 toppings = [
-  "pepperoni",
-  "pineapple",
-  "cheese",
-  "sausage",
-  "olives",
-  "anchovies",
-  "mushrooms"
-  ]
+    "pepperoni",
+    "pineapple",
+    "cheese",
+    "sausage",
+    "olives",
+    "anchovies",
+    "mushrooms"
+]
 
 prices = [
-  2,
-  6,
-  1,
-  3,
-  2,
-  7,
-  2
+    2,
+    6,
+    1,
+    3,
+    2,
+    7,
+    2
 ]
 
 combined_list = toppings + prices
@@ -48,7 +49,7 @@ print("We sell", num_pizzas, "different kinds of pizza!")
 pizza_and_prices = list(zip(prices, toppings))
 print(pizza_and_prices)
 
-pizza_and_prices.sort() # or sorted_pizza_and_prices = sorted(pizza_and_prices)
+pizza_and_prices.sort()  # or sorted_pizza_and_prices = sorted(pizza_and_prices)
 print(pizza_and_prices)
 
 cheapest_pizza = pizza_and_prices[0]
@@ -72,14 +73,14 @@ single_digits = range(10)
 squares = []
 
 for digit in single_digits:
-  squares.append(digit ** 2)
-  print(digit)
+    squares.append(digit ** 2)
+    print(digit)
 
 count = 0
 length = len(single_digits)
 while count < length:
-  print("Hello")
-  count += 1
+    print("Hello")
+    count += 1
 
 print(squares)
 
@@ -88,7 +89,8 @@ print(cubes)
 
 # Loops cont.
 
-hairstyles = ["bouffant", "pixie", "dreadlocks", "crew", "bowl", "bob", "mohawk", "flattop"]
+hairstyles = ["bouffant", "pixie", "dreadlocks",
+              "crew", "bowl", "bob", "mohawk", "flattop"]
 
 prices = [30, 25, 40, 20, 20, 35, 50, 35]
 
@@ -96,8 +98,8 @@ last_week = [2, 3, 5, 8, 4, 4, 6, 2]
 
 total_price = 0
 
-for price in prices: 
-  total_price += price
+for price in prices:
+    total_price += price
 
 average_price = total_price / len(prices)
 print("Average Haircut Price:", average_price)
@@ -108,13 +110,14 @@ print(new_prices)
 total_revenue = 0
 
 for i in range(len(hairstyles)):
-  total_revenue += prices[i] * last_week[i]
+    total_revenue += prices[i] * last_week[i]
 
 print("Total Revenue:", total_revenue)
 
 average_daily_revenue = total_revenue / 7
 
-cuts_under_30 = [hairstyles[i] for i in range(len(new_prices) - 1) if new_prices[i] < 30]
+cuts_under_30 = [hairstyles[i]
+                 for i in range(len(new_prices) - 1) if new_prices[i] < 30]
 print(cuts_under_30)
 
 # Advanced Loops w/ Functions
@@ -228,21 +231,24 @@ highlighted_poems_stripped = [poem.strip() for poem in highlighted_poems_list]
 print(highlighted_poems_stripped)
 print("------------------------------------------")
 
-highlighted_poems_details = [[detail for detail in details.split(":")] for details in highlighted_poems_stripped]
+highlighted_poems_details = [[detail for detail in details.split(
+    ":")] for details in highlighted_poems_stripped]
 print(highlighted_poems_details)
 print("------------------------------------------")
 
-titles, poets, dates = [details[0] for details in highlighted_poems_details], [details[1] for details in highlighted_poems_details], [details[2] for details in highlighted_poems_details]
+titles, poets, dates = [details[0] for details in highlighted_poems_details], [
+    details[1] for details in highlighted_poems_details], [details[2] for details in highlighted_poems_details]
 
-print("Titles:\n", titles, "\n\nPoets:\n", poets, "\n\nDates:\n",dates)
+print("Titles:\n", titles, "\n\nPoets:\n", poets, "\n\nDates:\n", dates)
 print("------------------------------------------")
 
 for i in range(len(titles)):
-  print("The poem {title} was published by {poet} in {date}".format(title=titles[i], poet=poets[i], date=dates[i]))
+    print("The poem {title} was published by {poet} in {date}".format(
+        title=titles[i], poet=poets[i], date=dates[i]))
 
 # Strings and String methods cont.
 daily_sales = \
-"""Edith Mcbride   ;,;$1.21   ;,;   white ;,; 
+    """Edith Mcbride   ;,;$1.21   ;,;   white ;,; 
 09/15/17   ,Herbert Tran   ;,;   $7.29;,; 
 white&blue;,;   09/15/17 ,Paul Clarke ;,;$12.52 
 ;,;   white&blue ;,; 09/15/17 ,Lucille Caldwell   
@@ -348,35 +354,64 @@ green&white;,;09/15/17,   Gail Phelps   ;,;$30.52
 ;,; green&white&blue   ;,; 09/15/17 , Myrtle Morris 
 ;,;   $22.66   ;,; green&white&blue;,;09/15/17"""
 
-#------------------------------------------------
+# ------------------------------------------------
 # Start coding below!
 daily_sales_replaced = daily_sales.replace(";,;", ":")
 
 daily_transactions = daily_sales_replaced.split(",")
 
-daily_transactions_clean = [[detail.strip() for detail in details.split(":")] for details in daily_transactions]
-print("==================== Daily Transactions ==================\n", daily_transactions_clean)
+daily_transactions_clean = [[detail.strip() for detail in details.split(
+    ":")] for details in daily_transactions]
+print("==================== Daily Transactions ==================\n",
+      daily_transactions_clean)
 
-customers, sales, thread_sold = [details[0] for details in daily_transactions_clean], [details[1] for details in daily_transactions_clean], [details[2] for details in daily_transactions_clean]
+customers, sales, thread_sold = [details[0] for details in daily_transactions_clean], [
+    details[1] for details in daily_transactions_clean], [details[2] for details in daily_transactions_clean]
 print("\n==================== Transactions Infos ===================\n")
-print("# Customers:\n", customers, "\n\n# Sales:\n", sales, "\n\n# Threads Sold:\n", thread_sold)
+print("# Customers:\n", customers, "\n\n# Sales:\n",
+      sales, "\n\n# Threads Sold:\n", thread_sold)
 
 total_sales = round(sum([float(sale[1:]) for sale in sales]), 2)
 print("\n======================= Total Sales =======================\n")
 print("Total: $" + str(total_sales))
 
-thread_sold_split = [color for sale in thread_sold for color in sale.split("&")]
+thread_sold_split = [
+    color for sale in thread_sold for color in sale.split("&")]
 print(thread_sold_split)
 
+
 def color_count(color):
-  return thread_sold_split.count(color)
+    return thread_sold_split.count(color)
+
 
 print(color_count("white"))
 
 colors = ["red", "yellow", "green", "white", "black", "blue", "purple"]
 
 for i in range(len(colors)):
-  print("Thread Shed sold {sales} threads of \"{color}\" threads today.".format(color=colors[i], sales=color_count(colors[i])))
+    print("Thread Shed sold {sales} threads of \"{color}\" threads today.".format(
+        color=colors[i], sales=color_count(colors[i])))
 
 # Imports and using imported files
 print(make_sandwich())
+
+# Dictionaries and its methods
+
+tarot = {
+    1:	"The Magician", 2:	"The High Priestess", 3:	"The Empress",
+    4:	"The Emperor", 5:	"The Hierophant", 6:	"The Lovers",
+    7:	"The Chariot", 8:	"Strength", 9:	"The Hermit",
+    10:	"Wheel of Fortune", 11:	"Justice", 12:	"The Hanged Man",
+    13:	"Death", 14:	"Temperance", 15:	"The Devil",
+    16:	"The Tower", 17:	"The Star", 18:	"The Moon",
+    19:	"The Sun", 20:	"Judgement", 21:	"The World", 22: "The Fool"
+}
+
+spread = {}
+
+spread["past"] = tarot.pop(13)
+spread["present"] = tarot.pop(22)
+spread["future"] = tarot.pop(10)
+
+for timeline, card in spread.items():
+    print("Your {timeline} is the {card} card.".format(timeline=timeline, card=card))
