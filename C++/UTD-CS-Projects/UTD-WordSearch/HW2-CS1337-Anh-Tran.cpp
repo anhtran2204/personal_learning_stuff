@@ -15,6 +15,8 @@
 
 using namespace std;
 
+vector<vector<char>> puzzle;
+
 void readFile(fstream& file, string& name) {
     cout << "Enter file name: ";
     cin >> name;
