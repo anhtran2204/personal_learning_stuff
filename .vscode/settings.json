@@ -1,16 +1,14 @@
 {
-    "files.associations": {
-        "ostream": "cpp",
-        "iostream": "cpp",
-        "iosfwd": "cpp",
-        "iterator": "cpp",
-        "xlocmon": "cpp",
-        "xlocnum": "cpp",
-        "xloctime": "cpp"
-    },
-    "python.formatting.provider": "autopep8",
-    "python.analysis.extraPaths": [
-        "./Python/Sandwiches"
-    ],
-    "C_Cpp.errorSquiggles": "Disabled"
+  "files.associations": {
+    "ostream": "cpp",
+    "iostream": "cpp",
+    "iosfwd": "cpp",
+    "iterator": "cpp",
+    "xlocmon": "cpp",
+    "xlocnum": "cpp",
+    "xloctime": "cpp"
+  },
+  "python.formatting.provider": "autopep8",
+  "python.analysis.extraPaths": ["./Python/Sandwiches"],
+  "C_Cpp.errorSquiggles": "Disabled"
 }
