@@ -29,6 +29,7 @@
                     differentiating what types of data we are reading in
                 -   added in hasSpace(), a function that detects whether an string input line
                     has a whitespace character in it
+                -   added in toUpper(), a function that turns string into uppercase version
                 -   added in patternDirection(), a function that takes in the 
                     row and column offset when traversing the 2D vectors and detect
                     what the direction is
