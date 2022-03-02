@@ -11,7 +11,7 @@
         -   a display function that outputs all the patterns found
 
     Changelog:
-        -   02/15/22 - v1: 
+        -   02/13/22 - v1: 
                 -   added global variables for setting up the board,
                     setting up the search direction, and for reading
                     in the input file.
@@ -19,11 +19,12 @@
                         -   tell the user when a file can't be open
                             and type in a new file name
                         -   or be able to quit 
+        -   02/15/22 - v2:
                 -   added in the search2D() and patternSearch() functions that does
                     the logic for traversing and finding the pattern based on 
                     finding a starting char and look in 8 directions to find the next char
                     in the pattern
-        -   02/16/22 - v2:
+        -   02/16/22 - v3:
                 -   added in skipComments(), a function that allow skipping comments 
                     when reading in data from file, as well as 
                     differentiating what types of data we are reading in
@@ -104,7 +105,7 @@ bool input(ifstream &file, string &name) {
             return wasItOpened;
         }
         else {
-            cout << "Quitting at user's request." << endl;
+            cout << ".....Quitting at user's request." << endl;
             file.close();
             return false;
         }
@@ -112,7 +113,7 @@ bool input(ifstream &file, string &name) {
 } // input
 
 bool skipComments(ifstream &file, char &ch) {
-    ch = file.peek();   // Peek at the next char in line
+    ch = file.peek();               // Peek at the next char in line
     if (ch == '#' || ch == '\n') {  // If it's a comment symbol or new line then skip
         return true;
     }
@@ -274,8 +275,8 @@ bool patternSearch(vector<vector<char>> &grid, vector<string> &missedWords, stri
 } // patternSearch
 
 void display(vector<vector<char>> grid, int& row = rowLimit, int& col = colLimit) {
-    cout << "Nbr Rows: " << row 
-         << "Nbr Cols: " << col << endl;
+    cout << "\nNbr Rows: " << row 
+         << "; Nbr Cols: " << col << endl << endl;
 
     for (int i = 0; i < row; i++) {
         for (int j = 0; j < col; j++) {
@@ -297,8 +298,9 @@ void display(vector<vector<char>> grid, int& row = rowLimit, int& col = colLimit
 
 /* main */
 int main() {
-    input(file, fileName);
-    setup(file, puzzle, comedyMovies, rowLimit, colLimit);
-    display(puzzle);
+    if (input(file, fileName)) {
+        setup(file, puzzle, comedyMovies, rowLimit, colLimit);
+        display(puzzle);
+    }
     return 0;
 } // main 

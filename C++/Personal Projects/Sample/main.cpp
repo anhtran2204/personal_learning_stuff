@@ -2,12 +2,12 @@
 
 using namespace std;
 
-void function(int data);
+void demoFunction(int);
 
 int main() {
     int value = 10;
     bool test = true;
-    function(5);
+    demoFunction(5);
 
     if (test)
     {
@@ -23,7 +23,7 @@ int main() {
     cout << "The value is " << value << endl;
 }
 
-void function(int someData)
+void demoFunction(int someData)
 {
     int value = 0;
     value += someData;
