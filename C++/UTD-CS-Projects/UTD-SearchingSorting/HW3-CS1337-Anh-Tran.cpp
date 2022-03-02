@@ -21,21 +21,9 @@
 using namespace std;
 
 vector<int> randomNums;
-int totalNums;
-int valueLimit;
+vector<int> sortedNums;
 
-void input() {
-	cout << "Welcome to the random number generator!"
-		 << "How many numbers would you like to generate?" << endl;
-	cin >> totalNums;
-
-	cout << "What number range should the numbers be in? (1 - 20)" << endl;
-	cin >> valueLimit;
-
-	randomGenerator(randomNums, totalNums, valueLimit);
-}
-
-void randomGenerator(vector<int> nums, int size, int limit) {
+void randomGenerator(vector<int>& nums, int size, int limit) {
 	srand(time(0));
 
 	for (int i = 0; i < size; i++) {
@@ -43,15 +31,30 @@ void randomGenerator(vector<int> nums, int size, int limit) {
 	}
 }
 
+void input() {
+    int totalNums;
+    int valueLimit;
+
+	cout << "Welcome to the random number generator!" << endl
+		 << "How many numbers would you like to generate?" << endl;
+	cin >> totalNums;
+
+	cout << "What number range should the numbers be in? (1 - 20)" << endl;
+	cin >> valueLimit;
+
+
+	randomGenerator(randomNums, totalNums, valueLimit);
+}
+
 void showVectors(vector<int> nums, string vectorName) {
-	cout << vectorName << ":\n"
-		 << "Size: " << nums.size()
-		 << "Capacity: " << nums.max_size()
+	cout << endl << vectorName << ":\n"
+		 << "Size: " << nums.size() << endl
+		 << "Capacity: " << nums.capacity() << endl
 		 << "************************************************************" << endl;
 	for (int i = 0; i < nums.size(); i++) {
 		cout << nums[i] << " ";
 	}
-	cout << "************************************************************" << endl;
+	cout << endl << "************************************************************" << endl;
 }
 
 void sortVector(vector<int> nums) {
@@ -82,12 +85,19 @@ int binarySearch(vector<int> nums, int searchNum) {
             last = middle;
             middle = (first + last) / 2;
         } else {
-            first = middle;
+            first = middle + 1;
             middle = (first + last) / 2;
         }
     }
+    return -1;
+}
+
+void deleteDuplicates() {
+
 }
 
 int main() {
-
+    input();
+    showVectors(randomNums, "Unsorted Vector");
+    cout << "Search num: " << binarySearch(randomNums, 3);
 }
