@@ -53,7 +53,7 @@ void input(vector<int> &randomNums, int &totalNums, int &valueLimit)
     randomGenerator(randomNums, totalNums, valueLimit);
 }
 
-void showVectors(vector<int> nums, string vectorName)
+void showVectors(vector<int> &nums, string vectorName)
 {
     cout << endl
          << vectorName << ":\n"
@@ -81,7 +81,9 @@ void bubbleSort(vector<int> &nums)
         {
             if (nums[j] > nums[j + 1])
             {
-                swap(nums[j], nums[j + 1]);
+                int temp = nums[j];
+                nums[j] = nums[j + 1];
+                nums[j + 1] = temp;
             }
         }
     }
@@ -233,11 +235,11 @@ int main()
     int totalNums;
     int valueLimit;
 
-    input(randomNums, totalNums, valueLimit);
+    // input(randomNums, totalNums, valueLimit);
 
-    showVectors(randomNums, "Random Unsorted Vector");
-    sortVector(randomNums);
-    showVectors(randomNums, "Random Sorted Vector");
+    // showVectors(randomNums, "Random Unsorted Vector");
+    // sortVector(randomNums);
+    // showVectors(randomNums, "Random Sorted Vector");
 
     // vector<int> copyNums;
     // copyNums = randomNums;
@@ -248,6 +250,6 @@ int main()
 
     // searchNum(randomNums);
 
-    deleteDuplicates(randomNums);
-    showVectors(randomNums, "Duplicate Deleted Vector");
+    // deleteDuplicates(randomNums);
+    // showVectors(randomNums, "Duplicate Deleted Vector");
 }
