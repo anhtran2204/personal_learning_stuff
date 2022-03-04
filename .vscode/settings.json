@@ -9,7 +9,8 @@
     "xloctime": "cpp",
     "vector": "cpp",
     "xstring": "cpp",
-    "*.tcc": "cpp"
+    "*.tcc": "cpp",
+    "type_traits": "cpp"
   },
   "python.formatting.provider": "autopep8",
   "python.analysis.extraPaths": ["./Python/Sandwiches"],
