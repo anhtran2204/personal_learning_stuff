@@ -7,9 +7,15 @@
     Program name: WordSearch
     Date Created: 02/09//22
     Notes:
-
+        -   be able to generate fully random numbers in a vector
+        -   be able to sort a vector both by using the built-in function
+            and the bubble sort algorithm
+        -   be able to implement binary search algorithm to find a number
+            within a vector as well as be able to count duplicates of that number
+        -   also be able to delete the duplicates of that number
     Changelog:
-
+        -   02/28/22 - v1:
+                -
 */
 
 #include <iostream>
@@ -99,13 +105,12 @@ int searchNumInput()
     return num;
 }
 
-void searchNum(vector<int> nums)
+int searchNum(vector<int> nums, int searchNum)
 {
     int first = 0;
     int last = nums.size() - 1;
 
-    int searchNum = searchNumInput();
-    int location = 0;
+    int location = -1;
     while (first <= last)
     {
         int middle = (first + last) / 2;
@@ -113,8 +118,9 @@ void searchNum(vector<int> nums)
         if (searchNum == nums[middle])
         {
             location = middle;
+            break;
         }
-        
+
         if (searchNum < nums[middle])
         {
             last = middle - 1;
@@ -124,8 +130,18 @@ void searchNum(vector<int> nums)
             first = middle + 1;
         }
     }
-    cout << "The number \"" << searchNum << "\""
-         << " is found at index " << location << endl;
+
+    if (location == -1)
+    {
+        cout << "The number \"" << searchNum << "\""
+             << " couldn't be found in the vector" << endl;
+    }
+    else
+    {
+        cout << "The number \"" << searchNum << "\""
+             << " is found at index " << location << endl;
+    }
+    return location;
 }
 
 int searchFirstOccurence(vector<int> nums, int searchNum)
@@ -133,17 +149,20 @@ int searchFirstOccurence(vector<int> nums, int searchNum)
     int first = 0;
     int last = nums.size() - 1;
 
-    int location = 0;
-    int count = 0;
     while (first <= last)
     {
         int middle = (first + last) / 2;
 
         if (searchNum == nums[middle])
         {
-            location = middle;
-            last = middle - 1;
-            count++;
+            if (nums[middle - 1] != searchNum)
+            {
+                return middle;
+            }
+            else
+            {
+                last = middle - 1;
+            }
         }
         else if (searchNum < nums[middle])
         {
@@ -154,9 +173,7 @@ int searchFirstOccurence(vector<int> nums, int searchNum)
             first = middle + 1;
         }
     }
-    cout << "The first occurence of number \"" << searchNum
-         << "\" is found at index " << location << endl;
-    return count;
+    return -1;
 }
 
 int searchLastOccurence(vector<int> nums, int searchNum)
@@ -164,17 +181,19 @@ int searchLastOccurence(vector<int> nums, int searchNum)
     int first = 0;
     int last = nums.size() - 1;
 
-    int location = 0;
-    int count = 0;
     while (first <= last)
     {
         int middle = (first + last) / 2;
 
         if (searchNum == nums[middle])
         {
-            location = middle;
-            first = middle + 1;
-            count++;
+            if (nums[middle + 1] != searchNum)
+            {
+                return middle;
+            }
+            else {
+                first = middle + 1;
+            }
         }
         else if (searchNum < nums[middle])
         {
@@ -185,17 +204,17 @@ int searchLastOccurence(vector<int> nums, int searchNum)
             first = middle + 1;
         }
     }
-    cout << "The first occurence of number \"" << searchNum
-         << "\" is found at index " << location << endl;
-    return count;
+    return -1;
 }
 
-void countDuplicates(vector<int> nums, int searchNum)
+void countDuplicates(vector<int> nums, int searchNum, int location)
 {
-    cout << "The number \"" << searchNum
+    if (location != -1){
+        cout << "The number \"" << searchNum
          << "\" could be found "
-         << searchFirstOccurence(nums, searchNum) + searchLastOccurence(nums, searchNum)
+         << searchLastOccurence(nums, searchNum) - searchFirstOccurence(nums, searchNum) + 1
          << " times throughout the vector" << endl;
+    }
 }
 
 void deleteDuplicates(vector<int> &nums)
@@ -222,7 +241,9 @@ void deleteDuplicates(vector<int> &nums)
             {
                 index++;
             }
-        } else {
+        }
+        else
+        {
             num++;
             count = 0;
         }
@@ -235,21 +256,26 @@ int main()
     int totalNums;
     int valueLimit;
 
-    // input(randomNums, totalNums, valueLimit);
+    input(randomNums, totalNums, valueLimit);
 
-    // showVectors(randomNums, "Random Unsorted Vector");
-    // sortVector(randomNums);
-    // showVectors(randomNums, "Random Sorted Vector");
+    showVectors(randomNums, "Random Unsorted Vector");
+    sortVector(randomNums);
+    showVectors(randomNums, "Random Sorted Vector");
 
-    // vector<int> copyNums;
-    // copyNums = randomNums;
+    vector<int> copyNums;
+    copyNums = randomNums;
 
-    // bubbleSort(copyNums);
-    // sortVector(copyNums);
-    // showVectors(copyNums, "Copied Bubble Sorted Vector");
+    bubbleSort(copyNums);
+    showVectors(copyNums, "Copied Bubble Sorted Vector");
 
-    // searchNum(randomNums);
+    for (int i = 0; i < 5; i++)
+    {
+        int num = searchNumInput();
+        int location = searchNum(randomNums, num);
+        countDuplicates(randomNums, num, location);
+        cout << endl;
+    }
 
-    // deleteDuplicates(randomNums);
-    // showVectors(randomNums, "Duplicate Deleted Vector");
+    deleteDuplicates(randomNums);
+    showVectors(randomNums, "Duplicate Deleted Vector");
 }
