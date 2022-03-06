@@ -55,11 +55,11 @@ void showFlow(string location)
 void randomGenerator(vector<int> &nums, int size, int limit)
 {
     showFlow("randomGenerator");
-    srand(time(0));
+    srand(time(0)); // initializing seed as current time 
 
     for (int i = 0; i < size; i++)
     {
-        nums.push_back(rand() % limit + 1);
+        nums.push_back(rand() % limit + 1); 
     }
     showFlow("LEAVING randomGenerator");
 } // randomGenerator
@@ -83,7 +83,7 @@ void showVectors(vector<int> &nums, string vectorName)
     showFlow("showVectors");
     cout << endl
          << vectorName << ":\n"
-         << "Size: " << nums.size() << endl
+         << "Size: " << nums.size() << endl 
          << "Capacity: " << nums.capacity() << endl
          << "************************************************************" << endl;
     for (int i = 0; i < nums.size(); i++)
@@ -106,10 +106,14 @@ void sortVector(vector<int> &nums)
 void bubbleSort(vector<int> &nums)
 {
     showFlow("bubbleSort");
+    // Outer loop runs num.size() times 
     for (int i = 0; i < nums.size(); i++)
     {
+        // Inner loop runs one time less
         for (int j = 0; j < nums.size() - 1; j++)
         {
+            // If the current value is bigger then
+            // next value swap the position of both
             if (nums[j] > nums[j + 1])
             {
                 int temp = nums[j];
@@ -142,14 +146,23 @@ int searchNum(vector<int> nums, int searchNum)
     int location = -1;
     while (first <= last)
     {
+        // Initialize middle value of vector
         int middle = (first + last) / 2;
 
+        // If current middle value equals
+        // number we're searching then 
+        // store location and break out of loop
         if (searchNum == nums[middle])
         {
             location = middle;
             break;
         }
 
+        // If not then compare if
+        // the searching value is smaller
+        // then middle value, if yes then
+        // search left half. If not then
+        // search right half
         if (searchNum < nums[middle])
         {
             last = middle - 1;
@@ -160,6 +173,10 @@ int searchNum(vector<int> nums, int searchNum)
         }
     }
 
+    // After breaking out of loop
+    // if location is -1, then 
+    // number doesn't exist in vector
+    // else return location
     if (location == -1)
     {
         cout << "+ The number \"" << searchNum << "\""
@@ -182,10 +199,18 @@ int searchFirstOccurence(vector<int> nums, int searchNum)
 
     while (first <= last)
     {
+        // Initialize middle value of vector
         int middle = (first + last) / 2;
 
+        // If current middle value equals
+        // number we're searching then compare 
+        // left value of middle value 
         if (searchNum == nums[middle])
         {
+            // If the left value of the middle value
+            // is not equal to the searching value
+            // then return middle location
+            // else keep moving left
             if (nums[middle - 1] != searchNum)
             {
                 return middle;
@@ -195,6 +220,11 @@ int searchFirstOccurence(vector<int> nums, int searchNum)
                 last = middle - 1;
             }
         }
+        // If not then compare if
+        // the searching value is smaller
+        // then middle value, if yes then
+        // search left half. If not then
+        // search right half
         else if (searchNum < nums[middle])
         {
             last = middle - 1;
@@ -216,10 +246,18 @@ int searchLastOccurence(vector<int> nums, int searchNum)
 
     while (first <= last)
     {
+        // Initialize middle value of vector
         int middle = (first + last) / 2;
 
+        // If current middle value equals
+        // number we're searching then compare 
+        // left value of middle value
         if (searchNum == nums[middle])
         {
+            // If the right value of the middle value
+            // is not equal to the searching value
+            // then return middle location
+            // else keep moving right
             if (nums[middle + 1] != searchNum)
             {
                 return middle;
@@ -228,6 +266,11 @@ int searchLastOccurence(vector<int> nums, int searchNum)
                 first = middle + 1;
             }
         }
+        // If not then compare if
+        // the searching value is smaller
+        // then middle value, if yes then
+        // search left half. If not then
+        // search right half
         else if (searchNum < nums[middle])
         {
             last = middle - 1;
@@ -261,11 +304,20 @@ void deleteDuplicates(vector<int> &nums)
     int num = 1;
     int index = 0;
 
+    // While current number value is 
+    // less than value limit
     while (num <= valueLimit)
     {
+        // Compare the current element to the 
+        // to the current number value
         if (nums[index] == num)
         {
-            count++;
+            count++;    // If equal, increment count
+            // If count is more than one
+            // and equal to the size of vector
+            // break out of loop
+            // else erase that duplicate element
+            // and increase current index of vector
             if (count > 1)
             {
                 if (index == nums.size())
@@ -279,6 +331,8 @@ void deleteDuplicates(vector<int> &nums)
                 index++;
             }
         }
+        // If not equal then increase number value 
+        // and set count to zero
         else
         {
             num++;
