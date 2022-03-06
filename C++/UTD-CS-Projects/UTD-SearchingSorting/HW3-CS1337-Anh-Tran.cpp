@@ -15,7 +15,22 @@
         -   also be able to delete the duplicates of that number
     Changelog:
         -   02/28/22 - v1:
-                -
+                -   added in input() for inputting the total numbers in a vector
+                    and the limit value of the numbers in the vector
+                -   added debugging function showFlow()
+                -   added randomGenerator() to randomly add value to the vector 
+                    based on the limit value and the srand(time(0)) to make it truly 
+                    random by using the current time each time.
+        -   03/01/22 - v2:
+                -   added sortVector() to sort a vector with the built-in sorting 
+                    function in the <algorithm> library and a bubbleSort() function
+                    utilizing the bubble sort algorithm
+                -   a searchNumInput() and searchNum() to take input from user and 
+                    find a number with the binary search algorithm
+        -   03/03/22 - v3:
+                -   also a searchFirstOccurence() and searchLastOccurence(), as well
+                    as countDuplicates() and deleteDuplicates() that utilize the binary
+                    search algorithm to find duplicates of each number value in a vector
 */
 
 #include <iostream>
@@ -39,28 +54,33 @@ void showFlow(string location)
 
 void randomGenerator(vector<int> &nums, int size, int limit)
 {
+    showFlow("randomGenerator");
     srand(time(0));
 
     for (int i = 0; i < size; i++)
     {
         nums.push_back(rand() % limit + 1);
     }
-}
+    showFlow("LEAVING randomGenerator");
+} // randomGenerator
 
 void input(vector<int> &randomNums, int &totalNums, int &valueLimit)
 {
+    showFlow("input");
     cout << "Welcome to the random number generator!" << endl
-         << "How many numbers would you like to generate?" << endl;
+         << "How many numbers would you like to generate? ";
     cin >> totalNums;
 
-    cout << "What number range should the numbers be in? (1 - 20)" << endl;
+    cout << "What number range should the numbers be in? (1 - 20): " ;
     cin >> valueLimit;
 
     randomGenerator(randomNums, totalNums, valueLimit);
+    showFlow("LEAVING input");
 }
 
 void showVectors(vector<int> &nums, string vectorName)
 {
+    showFlow("showVectors");
     cout << endl
          << vectorName << ":\n"
          << "Size: " << nums.size() << endl
@@ -72,15 +92,20 @@ void showVectors(vector<int> &nums, string vectorName)
     }
     cout << endl
          << "************************************************************" << endl;
+
+    showFlow("LEAVING showVectors");
 }
 
 void sortVector(vector<int> &nums)
 {
+    showFlow("sortVector");
     sort(nums.begin(), nums.end());
+    showFlow("LEAVING sortVector");
 }
 
 void bubbleSort(vector<int> &nums)
 {
+    showFlow("bubbleSort");
     for (int i = 0; i < nums.size(); i++)
     {
         for (int j = 0; j < nums.size() - 1; j++)
@@ -93,20 +118,24 @@ void bubbleSort(vector<int> &nums)
             }
         }
     }
+    showFlow("LEAVING bubbleSort");
 }
 
 int searchNumInput()
 {
-    cout << "What number would you like to search for? ";
+    showFlow("searchNumInput");
+    cout << "\nWhat number would you like to search for? ";
 
     int num;
     cin >> num;
 
+    showFlow("LEAVING searchNumInput");
     return num;
 }
 
 int searchNum(vector<int> nums, int searchNum)
 {
+    showFlow("searchNum");
     int first = 0;
     int last = nums.size() - 1;
 
@@ -133,19 +162,21 @@ int searchNum(vector<int> nums, int searchNum)
 
     if (location == -1)
     {
-        cout << "The number \"" << searchNum << "\""
+        cout << "+ The number \"" << searchNum << "\""
              << " couldn't be found in the vector" << endl;
     }
     else
     {
-        cout << "The number \"" << searchNum << "\""
+        cout << "+ The number \"" << searchNum << "\""
              << " is found at index " << location << endl;
     }
+    showFlow("LEAVING searchNum");
     return location;
 }
 
 int searchFirstOccurence(vector<int> nums, int searchNum)
 {
+    showFlow("searchFirstOccurence");
     int first = 0;
     int last = nums.size() - 1;
 
@@ -173,11 +204,13 @@ int searchFirstOccurence(vector<int> nums, int searchNum)
             first = middle + 1;
         }
     }
+    showFlow("LEAVING searchFirstOccurence");
     return -1;
 }
 
 int searchLastOccurence(vector<int> nums, int searchNum)
 {
+    showFlow("searchLastOccurence");
     int first = 0;
     int last = nums.size() - 1;
 
@@ -204,21 +237,25 @@ int searchLastOccurence(vector<int> nums, int searchNum)
             first = middle + 1;
         }
     }
+    showFlow("LEAVING searchLastOccurence");
     return -1;
 }
 
 void countDuplicates(vector<int> nums, int searchNum, int location)
 {
+    showFlow("countDuplicates");
     if (location != -1){
-        cout << "The number \"" << searchNum
+        cout << "+ The number \"" << searchNum
          << "\" could be found "
          << searchLastOccurence(nums, searchNum) - searchFirstOccurence(nums, searchNum) + 1
          << " times throughout the vector" << endl;
     }
+    showFlow("LEAVING countDuplicates");
 }
 
 void deleteDuplicates(vector<int> &nums)
 {
+    showFlow("deleteDuplicates");
     int valueLimit = nums.size() - 1;
     int count = 0;
     int num = 1;
@@ -248,10 +285,13 @@ void deleteDuplicates(vector<int> &nums)
             count = 0;
         }
     }
+    showFlow("LEAVING deleteDuplicates");
 }
 
 int main()
 {
+    showFlow("main");
+
     vector<int> randomNums;
     int totalNums;
     int valueLimit;
@@ -260,7 +300,7 @@ int main()
 
     showVectors(randomNums, "Random Unsorted Vector");
     sortVector(randomNums);
-    showVectors(randomNums, "Random Sorted Vector");
+    showVectors(randomNums, "Random Built-in Sorted Vector");
 
     vector<int> copyNums;
     copyNums = randomNums;
@@ -273,9 +313,10 @@ int main()
         int num = searchNumInput();
         int location = searchNum(randomNums, num);
         countDuplicates(randomNums, num, location);
-        cout << endl;
     }
 
     deleteDuplicates(randomNums);
     showVectors(randomNums, "Duplicate Deleted Vector");
+
+    showFlow("LEAVING main");
 }
