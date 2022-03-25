@@ -19,10 +19,7 @@ using namespace std;
 
 #define sp " "
 
-vector<string> sentences;
-vector<vector<string>> words;
-
-void input(fstream file, string fileName) {
+void input(fstream& file, string fileName, vector<string>& sentences, vector<vector<string>>& words) {
     cout << "Enter file name: ";
     cin >> fileName;
 
@@ -37,13 +34,36 @@ void input(fstream file, string fileName) {
         getline(file, sentence);
         sentences.push_back(sentence);
 
-        stringstream ss(sentence);
-        for (int i = 0; i < sentence.size(); i++) {
-            string word;
-            ss >> word;
-            words[row].push_back(word);
+        spliceSentence(words, row, sentence);
+    }
+}
+
+void spliceSentence(vector<vector<string>>& words, int line, string sentence) {
+    stringstream ss(sentence);
+    string word;
+
+    while (ss) {
+        if (ss.eof()) {
+            break;
         }
-        row++;
+        ss >> word;
+        words[line].push_back(word);
+    }
+}
+
+void display(vector<string> sentences) {
+    cout << "Sentences:" << endl;
+    for (string sentence : sentences) {
+        cout << "\t-" << sp << sentence << endl;
+    }
+}
+
+void display(vector<vector<string>> words) {
+    cout << "Words:" << endl;
+    for (vector<string> sentence : words) {
+        for (string word : sentence) {
+            cout << "\t-" << sp << word << endl;
+        }
     }
 }
 
@@ -51,11 +71,11 @@ int main() {
     fstream file;
     string fileName;
 
-    for (int i = 0; i < words.size(); i++) {
-        for (int j = 0; j < words[i].size(); j++) {
-            cout << "Line" << sp << i + 1 << ": " << words
-        }
-    }
+    vector<string> sentences;
+    vector<vector<string>> words;
+
+    input(file, fileName, sentences, words);
+
 
     return 0;
 }
