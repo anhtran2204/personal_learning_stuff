@@ -18,64 +18,76 @@
 using namespace std;
 
 #define sp " "
+#define br "---------"
 
-void input(fstream& file, string fileName, vector<string>& sentences, vector<vector<string>>& words) {
+void openFile(fstream& file, string fileName) {
     cout << "Enter file name: ";
     cin >> fileName;
 
-    file.open(fileName);
-
-    int row = 0;
-    while (file.good()) {
-        if (file.eof()) {
-            break;
-        }
-        string sentence;
-        getline(file, sentence);
-        sentences.push_back(sentence);
-
-        spliceSentence(words, row, sentence);
-    }
+    file.open("./inputFiles/" + fileName);
 }
 
-void spliceSentence(vector<vector<string>>& words, int line, string sentence) {
+void spliceSentence(vector<vector<string>>& words, string sentence) {
     stringstream ss(sentence);
     string word;
 
-    while (ss) {
-        if (ss.eof()) {
-            break;
+    cout << "Sentence to split:" << sp << sentence << endl;
+
+    int line = 0;
+    vector<string> lineWords;
+    while (ss >> word) {
+        lineWords.push_back(word);
+    }
+    words.push_back(lineWords);
+}
+
+void input(fstream& file, vector<string>& sentences, vector<vector<string>>& words) {
+    string fileName;
+    openFile(file, fileName);
+    if (!file) {
+        cout << "File doesn't exist!" << endl 
+             << "Please try another name." << endl << endl;
+        openFile(file, fileName);
+    } else {
+        cout << "Inputting data from file..." << endl;
+        while (file.good()) {
+            if (file.eof()) {
+                break;
+            }
+            string sentence;
+            getline(file, sentence);
+            sentences.push_back(sentence);
+            spliceSentence(words, sentence);
         }
-        ss >> word;
-        words[line].push_back(word);
     }
 }
 
 void display(vector<string> sentences) {
     cout << "Sentences:" << endl;
     for (string sentence : sentences) {
-        cout << "\t-" << sp << sentence << endl;
+        cout << "-" << sp << sentence << endl;
     }
 }
 
 void display(vector<vector<string>> words) {
     cout << "Words:" << endl;
     for (vector<string> sentence : words) {
+        cout << br << endl;
         for (string word : sentence) {
-            cout << "\t-" << sp << word << endl;
+            cout << "-" << sp << word << endl;
         }
     }
 }
 
 int main() {
     fstream file;
-    string fileName;
 
     vector<string> sentences;
     vector<vector<string>> words;
 
-    input(file, fileName, sentences, words);
+    input(file, sentences, words);
 
+    display(words);
 
     return 0;
 }
