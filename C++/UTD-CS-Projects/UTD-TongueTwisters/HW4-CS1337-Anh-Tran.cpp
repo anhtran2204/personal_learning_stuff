@@ -34,11 +34,14 @@ void spliceSentence(vector<vector<string>>& words, string sentence) {
     cout << "Sentence to split:" << sp << sentence << endl;
 
     int line = 0;
+    int numOfWords = 0;
     vector<string> lineWords;
     while (ss >> word) {
+        numOfWords++;
         lineWords.push_back(word);
     }
     words.push_back(lineWords);
+    cout << "Number of words in the sentence:" << sp << numOfWords << endl;
 }
 
 void input(fstream& file, vector<string>& sentences, vector<vector<string>>& words) {
@@ -58,8 +61,19 @@ void input(fstream& file, vector<string>& sentences, vector<vector<string>>& wor
             getline(file, sentence);
             sentences.push_back(sentence);
             spliceSentence(words, sentence);
+            numOfChar(sentence);
         }
     }
+}
+
+void numOfChar(string sentence) {
+    int numChar = 0;
+    for (auto ch : sentence) {
+        if (isalpha(ch)) {
+            numChar++;
+        }
+    }
+    cout << "Number of characters in the sentence:" << sp << numChar << endl;
 }
 
 void display(vector<string> sentences) {
@@ -86,8 +100,6 @@ int main() {
     vector<vector<string>> words;
 
     input(file, sentences, words);
-
-    display(words);
 
     return 0;
 }
