@@ -11,7 +11,8 @@
     "xstring": "cpp",
     "*.tcc": "cpp",
     "type_traits": "cpp",
-    "random": "cpp"
+    "random": "cpp",
+    "cctype": "cpp"
   },
   "python.formatting.provider": "autopep8",
   "python.analysis.extraPaths": ["./Python/Sandwiches"],
