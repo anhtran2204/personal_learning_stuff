@@ -103,7 +103,7 @@ void titleCase(string sentence) {
             convertedStr += ch;
         }
     }
-    cout << "Title Case:" << sp << "\'" + convertedStr + "\'"<< endl;
+    cout << "+ Title Case:" << sp << "\'" + convertedStr + "\'"<< endl << endl;
 }
 
 bool checkProperNouns(string wordToFind) {
@@ -144,7 +144,7 @@ void sentenceCase(string sentence) {
             convertedStr += sentence;
         }
     }
-    cout << "Sentence Case:" << sp << "\'" + convertedStr + "\'" << endl;
+    cout << "+ Sentence Case:" << sp << "\'" + convertedStr + "\'" << endl << endl;
 }
 
 void toggleCase(string sentence) {
@@ -159,7 +159,7 @@ void toggleCase(string sentence) {
             convertedStr += ch;
         }
     }
-    cout << "Toggle Case:" << sp << "\'" + convertedStr + "\'" << endl;
+    cout << "+ Toggle Case:" << sp << "\'" + convertedStr + "\'" << endl << endl;
 }
 
 void mockingCase(string sentence) {
@@ -175,7 +175,7 @@ void mockingCase(string sentence) {
             convertedStr += ch;
         }
     }
-    cout << "Mocking Case:" << sp << "\'" + convertedStr + "\'" << endl;
+    cout << "+ Mocking Case:" << sp << "\'" + convertedStr + "\'" << endl;
 }
 
 void display(string sentence, int numOfWords, string longestWord) {
