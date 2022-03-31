@@ -195,7 +195,6 @@ void spliceSentence(vector<vector<string>>& words, string sentence) {
     stringstream ss(sentence);
     string word;
 
-    int line = 0;
     int numOfWords = 0;
     int max = 0;
     string longestWord = "";
