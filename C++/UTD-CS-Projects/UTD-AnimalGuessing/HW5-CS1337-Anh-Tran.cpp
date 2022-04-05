@@ -84,6 +84,7 @@ void start() {
             animalNode* yesNode = initializeNode();
             animalNode* noNode = initializeNode();
 
+            animalNode* newQuestion = initializeNode();
             animalNode* temp = initializeNode();
 
             cout << "Bummer! What animal were you thinking of?" << endl;
@@ -103,9 +104,15 @@ void start() {
             cin.ignore();
 
             if (Q_and_A == "Y" || Q_and_A == "y") {
-                
+                head->question = temp->question;
+                yesNode->guess = temp->guess;
+                noNode->guess = head->guess;
+                head->guess = "";
             } else if (Q_and_A == "N" || Q_and_A == "n") {
-
+                head->question = temp->question;
+                yesNode->guess = head->guess;
+                noNode->guess = temp->guess;
+                head->guess = "";
             }
         }
     } else {
@@ -114,12 +121,19 @@ void start() {
 
         animalNode* currNode = head;
         
-        if (currNode->question != "") {
+        while (currNode->yesPtr != nullptr && currNode->noPtr != nullptr) {
             cout << currNode->question << endl;
             cin >> Q_and_A;
             cin.ignore();
 
-
+            if (Q_and_A == "Y" || Q_and_A == "y")
+            {
+                currNode = currNode->yesPtr;
+            }
+            else if (Q_and_A == "N" || Q_and_A == "n")
+            {
+                currNode = currNode->noPtr;
+            }
         }
     }
 }
