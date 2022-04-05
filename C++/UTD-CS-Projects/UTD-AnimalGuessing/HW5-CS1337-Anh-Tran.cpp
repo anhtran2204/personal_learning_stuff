@@ -59,6 +59,13 @@ void intro() {
          << "Think of an animal and hit return when you're ready." << endl;
 }
 
+void display(animalNode* node) {
+    cout << node->question << endl;
+    cout << node->guess << endl;
+    cout << node->yesPtr << endl;
+    cout << node->noPtr << endl;
+}
+
 void start() {
     intro();
 
@@ -69,91 +76,50 @@ void start() {
         cin >> Q_and_A;
 
         if (Q_and_A == "Y" || Q_and_A == "y") {
+            cout << "Good! I guessed your animal." << endl;
             if (restart()) {
                 start();
             }
         } else if (Q_and_A == "N" || Q_and_A == "n") {
+            animalNode* yesNode = initializeNode();
+            animalNode* noNode = initializeNode();
+
+            animalNode* temp = initializeNode();
+
             cout << "Bummer! What animal were you thinking of?" << endl;
             cin >> Q_and_A;
             cin.ignore();
 
-            animalNode* newQuestion = initializeNode();
-            animalNode* newGuess = initializeNode();
-            newGuess->guess = Q_and_A;
+            temp->guess = Q_and_A;
 
-            cout << "What is a yes/no question that I can use to tell a" 
-                 << sp << head->guess << sp << "from a" << sp << newGuess->guess << endl;
-            
+            cout << "What is a yes/no question that I can use to tell a " << head->guess
+                 << " from a " << temp->guess << endl;
             getline(cin, Q_and_A);
-            newQuestion->question = Q_and_A;
 
-            cout << "For a" << sp << newGuess->guess << ", is the answer yes or no?" << endl;
+            temp->question = Q_and_A;
+
+            cout << "For a " << temp->guess << ", is the answer yes or no?" << endl;
             cin >> Q_and_A;
             cin.ignore();
 
             if (Q_and_A == "Y" || Q_and_A == "y") {
-                newQuestion->yesPtr = newGuess;
-                newQuestion->noPtr = head;
+                
             } else if (Q_and_A == "N" || Q_and_A == "n") {
-                newQuestion->noPtr = newGuess;
-                newQuestion->yesPtr = head;
-            }
 
-            if (restart()) {
-                start();
             }
         }
     } else {
-        animalNode* curNode = head;
-        while (curNode->yesPtr != nullptr || curNode->noPtr != nullptr) {
-            cout << curNode->question << endl;
+        animalNode* yesNode = initializeNode();
+        animalNode* noNode = initializeNode();
+
+        animalNode* currNode = head;
+        
+        if (currNode->question != "") {
+            cout << currNode->question << endl;
             cin >> Q_and_A;
             cin.ignore();
 
-            if (Q_and_A == "Y" || Q_and_A == "y") {
-                curNode = curNode->yesPtr;
-            } else if (Q_and_A == "N" || Q_and_A == "n") {
-                curNode = curNode->noPtr;
-            }
-        }
-        cout << "Is it a(n)" << sp << curNode->guess << endl;
-        cin >> Q_and_A;
-        cin.ignore();
 
-        if (Q_and_A == "Y" || Q_and_A == "y") {
-            if (restart()) {
-                start();
-            }
-        } else if (Q_and_A == "N" || Q_and_A == "n") {
-            cout << "Bummer! What animal were you thinking of?" << endl;
-            cin >> Q_and_A;
-            cin.ignore();
-
-            animalNode* newQuestion = initializeNode();
-            animalNode* newGuess = initializeNode();
-            newGuess->guess = Q_and_A;
-
-            cout << "What is a yes/no question that I can use to tell a" 
-                 << sp << curNode->guess << sp << "from a" << sp << newGuess->guess << endl;
-            
-            getline(cin, Q_and_A);
-            newQuestion->question = Q_and_A;
-
-            cout << "For a" << sp << newGuess->guess << ", is the answer yes or no?" << endl;
-            cin >> Q_and_A;
-            cin.ignore();
-
-            if (Q_and_A == "Y" || Q_and_A == "y") {
-                newQuestion->yesPtr = newGuess;
-                newQuestion->noPtr = curNode;
-            } else if (Q_and_A == "N" || Q_and_A == "n") {
-                newQuestion->noPtr = newGuess;
-                newQuestion->yesPtr = curNode;
-            }
-
-            if (restart()) {
-                start();
-            }
         }
     }
 }
