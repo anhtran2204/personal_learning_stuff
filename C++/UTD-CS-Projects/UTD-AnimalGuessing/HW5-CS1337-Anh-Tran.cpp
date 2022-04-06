@@ -135,6 +135,7 @@ void start() {
                 currNode = currNode->noPtr;
             }
         }
+        cout << currNode->guess << endl;
     }
 }
 
