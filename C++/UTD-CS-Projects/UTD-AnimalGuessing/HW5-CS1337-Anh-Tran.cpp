@@ -31,11 +31,7 @@ animalNode* initializeNode() {
 }
 
 void insertNode(animalNode* node) {
-    if (!head) {
-        head = initializeRoot();
-    } else {
-        
-    }
+    
 }
 
 bool restart() {
@@ -84,7 +80,6 @@ void start() {
             animalNode* yesNode = initializeNode();
             animalNode* noNode = initializeNode();
 
-            animalNode* newQuestion = initializeNode();
             animalNode* temp = initializeNode();
 
             cout << "Bummer! What animal were you thinking of?" << endl;
@@ -113,6 +108,14 @@ void start() {
                 yesNode->guess = head->guess;
                 noNode->guess = temp->guess;
                 head->guess = "";
+            }
+
+            display(head);
+            display(yesNode);
+            display(noNode);
+
+            if (restart()) {
+                start();
             }
         }
     } else {
