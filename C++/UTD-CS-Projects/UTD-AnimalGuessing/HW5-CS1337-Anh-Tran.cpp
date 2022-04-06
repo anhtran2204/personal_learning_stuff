@@ -103,11 +103,15 @@ void start() {
                 yesNode->guess = temp->guess;
                 noNode->guess = head->guess;
                 head->guess = "";
+                head->yesPtr = yesNode;
+                head->noPtr = noNode;
             } else if (Q_and_A == "N" || Q_and_A == "n") {
                 head->question = temp->question;
                 yesNode->guess = head->guess;
                 noNode->guess = temp->guess;
                 head->guess = "";
+                head->yesPtr = yesNode;
+                head->noPtr = noNode;
             }
 
             display(head);
@@ -138,7 +142,48 @@ void start() {
                 currNode = currNode->noPtr;
             }
         }
-        cout << currNode->guess << endl;
+        cout << "Is it a(n)" << sp << currNode->guess << "?" << endl;
+        cin >> Q_and_A;
+        cin.ignore();
+
+        if (Q_and_A == "Y" || Q_and_A == "y")
+        {
+            cout << "Good! I guessed your animal." << endl;
+            if (restart())
+            {
+                start();
+            }
+        }
+        else if (Q_and_A == "N" || Q_and_A == "n")
+        {
+            animalNode *yesNode = initializeNode();
+            animalNode *noNode = initializeNode();
+
+            animalNode *temp = initializeNode();
+
+            cout << "Bummer! What animal were you thinking of?" << endl;
+            cin >> Q_and_A;
+            cin.ignore();
+
+            temp->guess = Q_and_A;
+
+            cout << "What is a yes/no question that I can use to tell a " << head->guess
+                 << " from a " << temp->guess << endl;
+            getline(cin, Q_and_A);
+
+            temp->question = Q_and_A;
+
+            cout << "For a " << temp->guess << ", is the answer yes or no?" << endl;
+            cin >> Q_and_A;
+            cin.ignore();
+
+            
+
+            if (restart())
+            {
+                start();
+            }
+        }
     }
 }
 
