@@ -12,7 +12,9 @@
     "*.tcc": "cpp",
     "type_traits": "cpp",
     "random": "cpp",
-    "cctype": "cpp"
+    "cctype": "cpp",
+    "bitset": "cpp",
+    "ranges": "cpp"
   },
   "python.formatting.provider": "autopep8",
   "python.analysis.extraPaths": ["./Python/Sandwiches"],
