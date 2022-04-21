@@ -30,6 +30,7 @@ void input(fstream& file) {
 
     file.open(fileName);
 
+    bool first = true;
     if (!file) {
         cout << "File don't exist!" << endl;
         cout << "Try again with another name." << endl;
@@ -44,14 +45,38 @@ void input(fstream& file) {
         string health;
         string sound; 
 
-        getline(file, animalType, ',');
-        getline(file, name, ',');
-        getline(file, age, ',');
-        getline(file, weight, ',');
-        getline(file, breed, ',');
-        getline(file, color, ',');
-        getline(file, health, ',');
-        getline(file, sound);
+        string line;
+        while (file >> line) {
+            if (first) {
+                continue;
+            }
+
+            if (file.eof()) {
+                break;
+            }
+
+            stringstream ss(line);
+
+            getline(ss, animalType, ',');
+            getline(ss, name, ',');
+            getline(ss, age, ',');
+            getline(ss, weight, ',');
+            getline(ss, breed, ',');
+            getline(ss, color, ',');
+            getline(ss, health, ',');
+            getline(ss, sound);
+
+            if  (animalType == "cat") {
+                Cat cat(animalType, name, stoi(age), stoi(weight), breed, color, health, sound);
+                cats.push_back(cat);
+            } else if(animalType == "dog") {
+                Dog dog(animalType, name, stoi(age), stoi(weight), breed, color, health, sound);
+                dogs.push_back(dog);
+            } else {
+                Animal animal(animalType, name, stoi(age), stoi(weight), breed, color, health, sound);
+                animals.push_back(animal);
+            }
+        }
     }
 }
 
@@ -61,38 +86,6 @@ void report() {
 
 int main() {
     fstream file;
-
-    string line = "cat,Mittens,1,1,Calico,brown and white,good,Meow";
-
-    string animalType;
-    string name;
-    string age;
-    string weight;
-    string breed;
-    string color;
-    string health;
-    string sound; 
-
-    stringstream ss(line);
-
-    getline(ss, animalType, ',');
-    getline(ss, name, ',');
-    getline(ss, age, ',');
-    getline(ss, weight, ',');
-    getline(ss, breed, ',');
-    getline(ss, color, ',');
-    getline(ss, health, ',');
-    getline(ss, sound);
-
-    cout << line << endl;
-    cout << animalType << sp
-    << name << sp
-    << age << sp
-    << weight << sp
-    << breed << sp
-    << color << sp
-    << health << sp
-    << sound;
 
     return 0;
 }
