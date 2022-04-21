@@ -19,9 +19,9 @@
 
 using namespace std;
 
-vector<Animal> animals;
-vector<Cat> cats;
-vector<Dog> dogs;
+vector<Animal*> animals;
+vector<Cat*> cats;
+vector<Dog*> dogs;
 
 void input(fstream& file) {
     string fileName;
@@ -67,13 +67,15 @@ void input(fstream& file) {
             getline(ss, sound);
 
             if  (animalType == "cat") {
-                Cat cat(animalType, name, stoi(age), stoi(weight), breed, color, health, sound);
+                Cat* cat = new Cat(animalType, name, stoi(age), stoi(weight), breed, color, health, sound);
                 cats.push_back(cat);
+                animals.push_back(cat);
             } else if(animalType == "dog") {
-                Dog dog(animalType, name, stoi(age), stoi(weight), breed, color, health, sound);
+                Dog* dog = new Dog(animalType, name, stoi(age), stoi(weight), breed, color, health, sound);
                 dogs.push_back(dog);
+                animals.push_back(dog);
             } else {
-                Animal animal(animalType, name, stoi(age), stoi(weight), breed, color, health, sound);
+                Animal* animal = new Animal(animalType, name, stoi(age), stoi(weight), breed, color, health, sound);
                 animals.push_back(animal);
             }
         }

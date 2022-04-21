@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class Dog : Animal {
+class Dog : public Animal {
     private:
         static int numOfDogs;
         int myDogNum;
