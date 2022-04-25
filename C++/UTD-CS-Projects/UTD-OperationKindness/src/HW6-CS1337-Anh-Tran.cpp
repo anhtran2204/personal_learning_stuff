@@ -1,5 +1,5 @@
 /*
-    Name: Anh Tran, Danny Lee, Jonathan Nguyen
+    Name: Anh Tran, Jonathan Nguyen
     Program name: TongueTwisters
     Date Created: 01/24/22
     Notes:
@@ -14,6 +14,9 @@
 #include "../headers/animal.h"
 #include "../headers/cat.h"
 #include "../headers/dog.h"
+#include "../src/animal.cpp"
+#include "../src/cat.cpp"
+#include "../src/dog.cpp"
 
 #define sp " "
 #define br "------------------------------"
@@ -81,6 +84,7 @@ void input(fstream& file) {
     getline(cin, fileName);
 
     file.open("../inputFile/" + fileName);
+    // file.open(fileName);
 
     if (!file) {
         cout << "File don't exist!" << endl;
