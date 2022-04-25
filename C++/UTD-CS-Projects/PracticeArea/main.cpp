@@ -20,22 +20,94 @@ public:
         description = "Just a normal man";
     }
 
-    Person(string name, int age, string description) {
-        name = name;
-        age = age;
-        description = description;
+    Person(string newName, int newAge, string newDescription) {
+        this->name = newName;
+        this->age = newAge;
+        this->description = newDescription;
     }
 
-    static void greetings() {
+    void setName(string newName) {
+        this->name = newName;
+    }
+
+    void setAge(int newAge) {
+        this->age = newAge;
+    }
+
+    void setDescription(string newDescription) {
+        this->description = newDescription;
+    }
+
+    const string getName() const {
+        return this->name;
+    }
+
+    const int getAge() const {
+        return this->age;
+    }
+
+    const string getDescription() const {
+        return this->description;
+    }
+
+    void greetings() {
         cout << "Hello World!" << endl;
     }
 
     void introduction() {
+        greetings();
         cout << "My name is " << name << "." << endl;
         cout << "I'm " << age << " years old." << endl;
         cout << description << endl;
     }
 };
+
+class Boy : Person {
+    private:
+        string occupation;
+        string hobby;
+
+    public:
+        Boy();
+
+        Boy(string name, int age, string description, string newOccupation, string newHobby)
+            : Person(name, age, description)
+        {
+            occupation = newOccupation;
+            hobby = newHobby;
+        }
+
+        void setOccupation(string newOccupation) {
+            this->occupation = newOccupation;
+        }
+
+        void setHobby(string newHobby) {
+            this->hobby = newHobby;
+        }
+
+        const string getOccupation() const {
+            return this->occupation;
+        }
+
+        const string getHobby() const {
+            return this->hobby;
+        }
+
+        void introduction();
+};
+
+inline Boy::Boy() : Person() {
+    occupation = "Office Worker";
+    hobby = "Golf";
+}
+
+inline void Boy::introduction() {
+    greetings();
+    cout << "My name is " << getName() << "." << endl;
+    cout << "I'm " << getAge() << " years old." << endl;
+    cout << "I'm a " << getOccupation() << " and I like " << getHobby() << endl;  
+    cout << getDescription() << endl;
+}
 
 /* ------------------------------------------------ */
 
@@ -135,58 +207,68 @@ public: void printCartDetails() {
 };
 
 int main() {
-    string itemName;
-    double itemPrice;
-    int itemQuantity;
-    ShoppingCart cart{"Anh's Cart"};
+    // {
+    //     string itemName;
+    //     double itemPrice;
+    //     int itemQuantity;
+    //     ShoppingCart cart{"Anh's Cart"};
 
-    int choice;
-    unsigned a = 23;
-    unsigned b = 22;
-    cout << (a || b) << endl;
-    cout << "What would you like to do?"
-            "\nEnter:"
-            "\n\t1 to add item"
-            "\n\t2 to remove item"
-            "\n\t0 to quit\n";
-    cin >> choice;
-    cin.ignore();
+    //     int choice;
+    //     unsigned a = 23;
+    //     unsigned b = 22;
+    //     cout << (a || b) << endl;
+    //     cout << "What would you like to do?"
+    //             "\nEnter:"
+    //             "\n\t1 to add item"
+    //             "\n\t2 to remove item"
+    //             "\n\t0 to quit\n";
+    //     cin >> choice;
+    //     cin.ignore();
 
-    while (true) {
-        switch (choice) {
-            case 1: {
-                cout << "Enter item's name: ";
-                getline(cin, itemName);
+    //     while (true) {
+    //         switch (choice) {
+    //             case 1: {
+    //                 cout << "Enter item's name: ";
+    //                 getline(cin, itemName);
 
-                cout << "Enter item's price: ";
-                cin >> itemPrice;
+    //                 cout << "Enter item's price: ";
+    //                 cin >> itemPrice;
 
-                cout << "Enter item's quantity: ";
-                cin >> itemQuantity;
+    //                 cout << "Enter item's quantity: ";
+    //                 cin >> itemQuantity;
 
-                Items item{itemName, itemPrice, itemQuantity};
+    //                 Items item{itemName, itemPrice, itemQuantity};
 
-                cart.addItemToCart(item);
-                cart.printCartDetails();
-            }
+    //                 cart.addItemToCart(item);
+    //                 cart.printCartDetails();
+    //             }
 
-            case 2: {
-                cout << "Enter item's name: ";
-                getline(cin, itemName);
+    //             case 2: {
+    //                 cout << "Enter item's name: ";
+    //                 getline(cin, itemName);
 
-                string id;
-                cout << "Enter item's ID: ";
-                cin >> id;
+    //                 string id;
+    //                 cout << "Enter item's ID: ";
+    //                 cin >> id;
 
-                cart.removeItemFromCart(itemName, id);
-                cart.printCartDetails();
-            }
+    //                 cart.removeItemFromCart(itemName, id);
+    //                 cart.printCartDetails();
+    //             }
 
-            default:
-                break;
-        }
-        break;
-    }
+    //             default:
+    //                 break;
+    //         }
+    //         break;
+    //     }
+    // }
+
+    Person person1 = Person("John", 15, "A normal student");
+
+    person1.introduction();
+
+    Boy boy1 = Boy("Drake", 17, "Just another student", "Student at SHS", "Playing football");
+
+    boy1.introduction();
 
     return 0;
 }

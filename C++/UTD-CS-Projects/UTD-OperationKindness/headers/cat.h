@@ -13,11 +13,11 @@ class Cat : public Animal {
 
     public:
         /* Constructor */
-        inline Cat() : Animal() {};
-        inline Cat(string animalType, string name, int age, int weight, 
-            string breed, string color, string health, string sound) : 
-            Animal(animalType, name, age, weight, breed, color, health, sound) {};
+        Cat();
+        Cat(string animalType, string name, int age, int weight, 
+            string breed, string color, string health, string sound);
+        ~Cat();
 
-        virtual void introduction() {};
+        void introduction();
 };
 #endif

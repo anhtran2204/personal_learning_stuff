@@ -1,19 +1,25 @@
+#include <iostream>
 #include "../headers/cat.h"
 
 using namespace std;
 
-Cat::Cat() {
+inline Cat::Cat() : Animal() {
     numOfCats++;
     myCatNum = numOfCats;
 }
 
-Cat::Cat(string animalType, string name, int age, int weight, 
-         string breed, string color, string health, string sound) {
+inline Cat::Cat(string animalType, string name, int age, int weight, 
+         string breed, string color, string health, string sound) :
+        Animal(animalType, name, age, weight, breed, color, health, sound) {
     numOfCats++;
     myCatNum = numOfCats;
 }
 
-void Cat::introduction() {
+inline Cat::~Cat() {
+    cout << "This cat is being sent away." << endl;
+}
+
+inline void Cat::introduction() {
     cout << getSound() << "!" << endl;
     cout << "I'm just a " << getAnimalType() << "." << endl;
     cout << "My name is " << getName() << endl;

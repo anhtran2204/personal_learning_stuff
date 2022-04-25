@@ -2,15 +2,20 @@
 
 using namespace std;
 
-Dog::Dog() {
+inline Dog::Dog() : Animal() {
     numOfDogs++;
     myDogNum = numOfDogs;
 }
 
-Dog::Dog(string animalType, string name, int age, int weight, 
-         string breed, string color, string health, string sound) {
+inline Dog::Dog(string animalType, string name, int age, int weight, 
+         string breed, string color, string health, string sound) :
+        Animal(animalType, name, age, weight, breed, color, health, sound) {
     numOfDogs++;
     myDogNum = numOfDogs;
+}
+
+inline Dog::~Dog() {
+    cout << "This dog is being sent away." << endl;
 }
 
 void Dog::introduction() {
