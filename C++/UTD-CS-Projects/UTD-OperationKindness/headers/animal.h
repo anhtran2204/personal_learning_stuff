@@ -21,9 +21,10 @@ class Animal {
 
     public:
         /* Constructor */
-        inline Animal() {};
-        inline Animal(string animalType, string name, int age, int weight, string breed, 
-                string color, string health, string sound) {};
+        Animal();
+        Animal(string animalType, string name, int age, int weight, string breed, 
+                string color, string health, string sound);
+        ~Animal();
 
         /* Mutator Methods */
         void setAnimalType(string newAnimalType) { this->animalType = newAnimalType; }
@@ -44,7 +45,8 @@ class Animal {
         const string getColor() const { return this->color; }
         const string getHealth() const { return this->health; }
         const string getSound() const { return this->sound; }
+        const int getAnimalNum() const { return this->myAnimalNum; }
 
-        virtual void introduction() {};
+        virtual void introduction();
 };
 #endif

@@ -1,2 +1,0 @@
-
-    fstream file;

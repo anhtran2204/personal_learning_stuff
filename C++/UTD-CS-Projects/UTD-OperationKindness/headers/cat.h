@@ -17,6 +17,8 @@ class Cat : public Animal {
         Cat(string animalType, string name, int age, int weight, 
             string breed, string color, string health, string sound);
         ~Cat();
+        
+        const int getCatNum() const { return this->myCatNum; }
 
         void introduction();
 };
