@@ -3,7 +3,14 @@
     Program name: OperationKindess
     Date Created: 04/19/22
     Notes:
+        -   be able to split the line input from the csv into 
+            multiple variables for different attributes
+        -   be able to find the specific cat or dog based on the name
+        -   create the animal based on the animal type
     Changelog:
+        -   added the splitString() to split input string line
+            into multiple attributes for the animal
+        -   
 */
 
 #include <iostream>
