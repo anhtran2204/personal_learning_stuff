@@ -1,8 +1,14 @@
 /*
     Name: Anh Tran, Jonathan Nguyen
-    Program name: OperationKindess
+    Program name: OperationKindness
     Date Created: 04/19/22
     Notes:
+        -   ******************** IMPORTANT **********************
+            -   IF NOT SUBMITTED IN THE WHOLE PROJECT FOLDER
+                AND SUBMITTED IN SEPARATE FILES THEN PLEASE
+                KEEP EVERYTHING IN ONE FOLDER AND UNCOMMENT
+                file.open(fileName) in input() method
+            *****************************************************
         -   be able to split the line input from the csv into 
             multiple variables for different attributes
         -   be able to find the specific cat or dog based on the name
@@ -10,7 +16,11 @@
     Changelog:
         -   added the splitString() to split input string line
             into multiple attributes for the animal
-        -   
+        -   added createAnimalType() to take in the animal type and 
+            create the object based on the animal type
+        -   added input() and read() to open and read the data input file
+        -   added findCat() and findDog() to find the cat/dog based on
+            the name of the animal while traversing the animal vector
 */
 
 #include <iostream>
@@ -36,6 +46,10 @@ vector<Dog*> dogs;
 vector<Animal*> others;
 vector<Animal*> adoptable;
 
+/*  Function to split the input line
+    into multiple variables for the 
+    different animal attributes
+*/
 void splitString(string& line, string& animalType, string& name, string& age, string& weight, 
                 string& breed, string& color, string& health, string& sound) {
     stringstream ss(line);
@@ -50,6 +64,10 @@ void splitString(string& line, string& animalType, string& name, string& age, st
     getline(ss, sound);
 }
 
+/*  Function to take in attributes and 
+    create the object based on the animal
+    type input
+*/
 void createAnimalType(string animalType, string name, int age, int weight, 
                 string breed, string color, string health, string sound) {
     if  (animalType == "cat") { 
@@ -103,7 +121,10 @@ void input(fstream& file) {
     getline(cin, fileName);
 
     file.open("../inputFile/" + fileName);
+
+    // *********** UNCOMMENT BELOW IF NOT IN PROJECT FOLDER ***********
     // file.open(fileName);
+    // ****************************************************************
 
     if (!file) {
         cout << "File doesn't exist!" << endl;
@@ -114,6 +135,9 @@ void input(fstream& file) {
     }
 }
 
+/*  Function to find cat based on name 
+    and return the pointer to that cat
+*/
 Cat* findCat(string name) {
     Cat* catToFind = new Cat;
     for (auto cat : cats) {
@@ -125,6 +149,9 @@ Cat* findCat(string name) {
     return catToFind;
 }
 
+/*  Function to find dog based on name
+    and return the pointer to that dog
+*/
 Dog* findDog(string name) {
     Dog* dogToFind = new Dog;
     for (auto dog : dogs) {
@@ -211,25 +238,6 @@ int main() {
     fstream file;
     input(file);
     report();
-
-    // Cat* cat = new Cat("Cat", "Bob", 1, 20, "Munchkin", "Grey", "Good", "Meow");
-
-    // cat->introduction();
-
-    // for (int i = 0; i < animals.size(); i++)
-    // {
-    //     cout << br << endl;
-    //     cout << "Animal #" << i+1 << ": " << endl;
-    //     cout << animals.at(i)->getAnimalNum() << endl;
-    //     cout << animals.at(i)->getAnimalType() << endl;
-    //     if (animals.at(i)->getAnimalType() == "cat") {
-    //         Cat* cat = findCat(animals.at(i)->getName());
-    //         cout << cat->getCatNum() << endl;
-    //     } else if (animals.at(i)->getAnimalType() == "dog") {
-    //         Dog* dog = findDog(animals.at(i)->getName());
-    //         cout << dog->getDogNum() << endl;
-    //     } 
-    // }
 
     return 0;
 }

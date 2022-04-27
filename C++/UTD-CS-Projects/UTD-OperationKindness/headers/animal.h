@@ -1,5 +1,10 @@
-#ifndef ANIMAL_H
-#define ANIMAL_H
+/*  Header file for the base Animal class
+    that will be inherited by the Cat
+    and Dog class
+*/
+
+#ifndef ANIMAL_H    // if the header file not define
+#define ANIMAL_H    // then define it
 
 #include <iostream>
 #include <string>
@@ -8,7 +13,8 @@ using namespace std;
 
 class Animal {
     private:
-        static int numOfAnimals;
+        /* Main attributes of each animal */
+        static int numOfAnimals;    // Total num of animals
         string animalType;
         string name;
         int age;
@@ -16,14 +22,15 @@ class Animal {
         string breed;
         string color;
         string health;
-        string sound;
-        int myAnimalNum;
+        string sound;   
+        int myAnimalNum;            // Unique number of each animal
 
     public:
         /* Constructor */
-        Animal();
+        Animal();                   // Default
         Animal(string animalType, string name, int age, int weight, string breed, 
-                string color, string health, string sound);
+                string color, string health, string sound);     // Overloaded
+        /* Destructor */
         ~Animal();
 
         /* Mutator Methods */
@@ -47,6 +54,7 @@ class Animal {
         const string getSound() const { return this->sound; }
         const int getAnimalNum() const { return this->myAnimalNum; }
 
+        /* Introduce the animal using the attributes */
         virtual void introduction();
 };
 #endif
