@@ -1,0 +1,55 @@
+<!--<StackPane fx:controller="sample.Controller"-->
+<!--           xmlns:fx="http://javafx.com/fxml">-->
+<!--    <Button text="Button One" style="-fx-background-color: red"/>-->
+<!--    <Label text="The Label Text" style="-fx-background-color: green"/>-->
+<!--    <Label text="Second label text" style="-fx-background-color: blue"/>-->
+<!--</StackPane>-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml">
+    <top>
+        <Label text="This label is in the top position" alignment="CENTER"
+               style="-fx-border-color: blue; -fx-border-width: 3; -fx-border-style: dashed"
+               BorderPane.alignment="CENTER"/>
+    </top>
+    <center>
+        <Label text="this label is in the center position" alignment="CENTER" BorderPane.alignment="CENTER"/>
+    </center>
+    <left>
+        <Label text="This label is in the left position" alignment="CENTER" BorderPane.alignment="CENTER"/>
+    </left>
+    <right>
+        <Label text="This label is in the right position" alignment="CENTER" BorderPane.alignment="CENTER"/>
+    </right>
+    <bottom>
+        <HBox alignment="BOTTOM_RIGHT" spacing="10">
+            <padding>
+                <Insets bottom="10" right="10"/>
+            </padding>
+
+            <Button text="Okay" prefWidth="90"/>
+            <Button text="Cancel" prefWidth="90"/>
+            <Button text="Help" prefWidth="90"/>
+
+        </HBox>
+    </bottom>
+</BorderPane>
+
+<!--<?import javafx.scene.layout.TilePane?>-->
+<!--<TilePane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml" orientation="HORIZONTAL">-->
+<!--    <padding>-->
+<!--        <Insets left="10" bottom="10"/>-->
+<!--    </padding>-->
+<!--    <Button text="Button One"/>-->
+<!--    <Button text="Button Two"/>-->
+<!--    <Button text="Button Three"/>-->
+<!--    <Button text="Button Four"/>-->
+<!--    <Button text="Button Five"/>-->
+<!--    <Button text="Button Six"/>-->
+<!--    <Button text="Button Seven"/>-->
+<!--    <Button text="Button Eight"/>-->
+<!--    <Button text="Button Nine"/>-->
+<!--    <Button text="Button Ten"/>-->
+<!--</TilePane>-->
