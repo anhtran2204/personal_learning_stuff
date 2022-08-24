@@ -1,3 +1,0 @@
-D:\JetBrains\Toolbox\apps\CLion\ch-0\212.5080.54\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\SoundTravelMedium.dir/objects.a
-C:\msys64\mingw64\bin\ar.exe cr CMakeFiles\SoundTravelMedium.dir/objects.a @CMakeFiles\SoundTravelMedium.dir\objects1.rsp
-C:\msys64\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\SoundTravelMedium.dir/objects.a -Wl,--no-whole-archive -o SoundTravelMedium.exe -Wl,--out-implib,libSoundTravelMedium.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\SoundTravelMedium.dir\linklibs.rsp

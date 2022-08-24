@@ -1,5 +1,0 @@
-SALES BAR CHART
-(Each X equals 1,000 dollars)
-Store  1: **
-Store  3: *******
-Store  5: *
