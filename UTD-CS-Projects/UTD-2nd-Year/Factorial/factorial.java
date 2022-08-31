@@ -9,10 +9,6 @@ public class factorial {
         if (num == 0) {
             return 1;
         }
-        return num * factorial(num - 1);
-    }
-
-    public static int () {
-        
+        return num * recursiveFactorial(num - 1);
     }
 }
