@@ -14,12 +14,24 @@ public class Knapsack {
     }
 
     static int bestTwo(int target) {
-        return 0;
+        int bestTotal = 0;
+
+        for (int i = 0; i < weights.length; i++) {
+            for (int j = 0; j < weights.length; j++) {
+                if (i != j) {
+                    if (weights[i] + weights[j] > bestTotal && weights[i] + weights[j] <= target) {
+                        bestTotal = weights[i] + weights[j];
+                    }
+                }
+            }
+        }
+
+        return bestTotal;
     }
 
     public static void main(String[] args) {
         for (int i = 0; i <= 100; i++) {
-            System.out.println("bestOne(" + i + "):" + bestOne(i));
+            System.out.println("bestTwo(" + i + "):" + bestTwo(i));
         } 
     }
 }
