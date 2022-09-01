@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Knapsack {
     static int[] weights = {40, 10, 46, 23, 22, 16, 27, 6};
 
@@ -25,13 +23,48 @@ public class Knapsack {
                 }
             }
         }
-
         return bestTotal;
     }
 
+    public static int knapsack(int index, int totalSoFar, int target) {
+        // Terminations cases
+        if (totalSoFar > target) { // reched invalid combinations
+            return 0;
+        }
+        if (totalSoFar == target) { // got perfect solution
+            return totalSoFar;
+        }
+        if (index == weights.length) { // reached last level, return what we have
+            return totalSoFar;
+        }
+        return Math.max(
+                knapsack(index+1, totalSoFar, target),
+                knapsack(index+1, totalSoFar + weights[index], target)
+        );
+    }
+
+    // allow using duplicates for calculations
+    public static int knapsack2(int index, int totalSoFar, int target) {
+        // Terminations cases
+        if (totalSoFar > target) { // reched invalid combinations
+            return 0;
+        }
+        if (totalSoFar == target) { // got perfect solution
+            return totalSoFar;
+        }
+        if (index == weights.length) { // reached last level, return what we have
+            return totalSoFar;
+        }
+        return Math.max(
+                knapsack(index+1, totalSoFar, target),
+                knapsack(index, totalSoFar + weights[index], target)
+        );
+    }
+
     public static void main(String[] args) {
-        for (int i = 0; i <= 100; i++) {
-            System.out.println("bestTwo(" + i + "):" + bestTwo(i));
-        } 
+        int selectedItems[] = new int[2];
+        for (int goal = 1; goal <= 100; goal++) {
+            System.out.println("knapsack(" + goal + "): " + knapsack(0, 0, goal));
+        }
     }
 }
