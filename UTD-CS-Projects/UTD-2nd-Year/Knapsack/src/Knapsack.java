@@ -1,4 +1,4 @@
-package Knapsack;
+package Knapsack.src;
 
 public class Knapsack {
     static int weights[] = { 40, 10, 46, 23, 22, 16, 27, 6 };
