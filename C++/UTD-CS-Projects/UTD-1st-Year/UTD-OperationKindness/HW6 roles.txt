@@ -1,7 +1,0 @@
-﻿HW6 CS1337.010 Roles:
-
-
-Anh Tran: Made the cpp files and worked on the main cpp
-
-
-Jonathan Nguyen: Made the header files, helped on the animal cpp, and worked on the main cpp as well
