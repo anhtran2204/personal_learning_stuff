@@ -1,0 +1,26 @@
+15
+N O L X Y H H J T R H H N F D 
+R X Q M F R W F M R G A D P J 
+X H B F V P A I A Q U L K H E 
+G S H V X H I L V U A M A W V 
+W O M A N W V T L N O N P S J 
+E L Y K F J Q E O I I O N A M 
+U F F L D G C D Z G H T Z V F 
+J P H Y A F V L O T F N O N E 
+A A S E W G Z T G C U I J K B 
+B U B Q R K D Q B G F L W O H 
+A C K N Y U F P I I W C Y M P 
+K S W Y B W P P V R O R B M Q 
+L Y O O H O H V S L C Q I O M 
+W N O F B E A S B Y Z O N S J 
+T E N I B A C N L R O C S F B
+9
+BOY
+CABINET
+CLINTON
+DONALD
+GIRL
+HILLARY
+MAN
+TRUMP
+WOMAN

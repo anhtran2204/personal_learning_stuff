@@ -1,0 +1,13 @@
+5
+M	G	E	D	N
+A	I	C	Y	Y
+M	R	Y	O	B
+A	L	X	G	A
+A	P	A	P	B
+5
+BABY
+BOY
+GIRL
+MAMA
+PAPA
+
