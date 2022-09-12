@@ -9,36 +9,34 @@ public class WordPuzzle {
     public static char matrix[][], output[][];
 
     // WRITE YOUR CODE HERE
-    enum directions {
-        LEFT_TO_RIGHT,
-        RIGHT_TO_LEFT,
-        TOP_TO_DOWN,
-        DOWN_TO_TOP,
-        RIGHT_DIAGONAL_DOWN,
-        RIGHT_DIAGONAL_UP,
-        LEFT_DIAGONAL_DOWN,
-        LEFT_DIAGONAL_UP;
+
+    public static void searchBoard(char[] word, int letterIndex, int row, int col) {
+        if (row < 0 || row >= matrix.length || col < 0 || col >= matrix[row].length) {
+            return;
+        }
+        if (letterIndex >= word.length) {
+            return;
+        }
+        if (matrix[row][col] == word[letterIndex]) {
+            output[row][col] = word[letterIndex];
+            return;
+        }
+        searchBoard(word, letterIndex+1, row, col+1);
+        searchBoard(word, letterIndex+1, row, col-1);
+        searchBoard(word, letterIndex+1, row+1, col);
+        searchBoard(word, letterIndex+1, row-1, col);
+        searchBoard(word, letterIndex+1, row+1, col+1);
+        searchBoard(word, letterIndex+1, row+1, col-1);
+        searchBoard(word, letterIndex+1, row+1, col-1);
+        searchBoard(word, letterIndex+1, row-1, col+1);
     }
-    public static int currDir = directions.LEFT_TO_RIGHT.ordinal();
-    public static int rowIndex = 0, colIndex = 0, letterIndex = 0;
-    public static int currRow = 0, currCol = 0;
-    public static boolean match = false;
 
     //search the word in all 8 directions from each position!
     public static void findWord(String word) {
 // WRITE YOUR CODE HERE
         char[] wordToFind = word.toCharArray();
-
-        if (wordToFind.length == 1 && wordToFind[letterIndex] == matrix[rowIndex][colIndex]) {
-            match = true;
-            return;
-        }
-
-        if (wordToFind[letterIndex] == matrix[rowIndex][colIndex]) {
-            currCol++;
-        } else {
-            currDir++;
-        }
+        int row = 0, col = 0, letterIndex = 0;
+        searchBoard(wordToFind, letterIndex, row, col);
     }
 
     public static void main(String[] args) throws IOException {
