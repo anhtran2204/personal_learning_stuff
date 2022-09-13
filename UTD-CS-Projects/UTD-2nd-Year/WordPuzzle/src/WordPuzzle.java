@@ -8,50 +8,46 @@ public class WordPuzzle {
     //whenever a word is found in matrix[][],
     //copy the word to output[][]
     public static char[][] matrix, output;
+    public static boolean[][] visited;
 
     // WRITE YOUR CODE HERE
-    final static int[][] dirOffsets = {
-            {0, 1},
-            {0, -1},
-            {1, 0},
-            {-1, 0},
-            {1, 1},
-            {-1, -1},
-            {-1, 1},
-            {1, -1}
-    };
-
-    public static void searchBoard(char[] word, int letterIndex, int row, int col) {
-        if (row < 0 || row > matrix.length - 1 || col < 0 || col > matrix.length - 1) {
-            return;
+    public static boolean searchBoard(char[] word, int letterIndex, int row, int col) {
+        if (letterIndex == word.length) {
+            return true;
+        }
+        if (row < 0 || row >= matrix.length || col < 0 || col >= matrix[0].length
+                || matrix[row][col] != word[letterIndex] || visited[row][col]) {
+            return false;
         }
 
-        if (letterIndex > word.length - 1) {
-            return;
+        visited[row][col] = true;
+        if (
+            searchBoard(word, letterIndex + 1, row, col + 1) ||
+            searchBoard(word, letterIndex + 1, row, col - 1) ||
+            searchBoard(word, letterIndex + 1, row + 1, col) ||
+            searchBoard(word, letterIndex + 1, row - 1, col) ||
+            searchBoard(word, letterIndex + 1, row + 1, col + 1) ||
+            searchBoard(word, letterIndex + 1, row - 1, col - 1) ||
+            searchBoard(word, letterIndex + 1, row - 1, col + 1) ||
+            searchBoard(word, letterIndex + 1, row + 1, col - 1)) {
+            output[row][col] = matrix[row][col];
+            return true;
         }
-
-        if (matrix[row][col] == word[letterIndex]) {
-            searchBoard(word, letterIndex + 1, row, col + 1);
-            searchBoard(word, letterIndex + 1, row, col - 1);
-            searchBoard(word, letterIndex + 1, row + 1, col);
-            searchBoard(word, letterIndex + 1, row - 1, col + 1);
-            searchBoard(word, letterIndex + 1, row + 1, col + 1);
-            searchBoard(word, letterIndex + 1, row - 1, col - 1);
-            searchBoard(word, letterIndex + 1, row - 1, col + 1);
-            searchBoard(word, letterIndex + 1, row + 1, col - 1);
-            output[row][col] = word[letterIndex];
-        }
+        visited[row][col] = false;
+        return false;
     }
 
     //search the word in all 8 directions from each position!
     public static void findWord(String word) {
 // WRITE YOUR CODE HERE
         char[] wordToFind = word.toCharArray();
-        int letterIndex = 0;
-        String temp = "";
+        visited = new boolean[matrix.length][matrix[0].length];
+
         for (int row = 0; row < matrix.length; row++) {
             for (int col = 0; col < matrix[row].length; col++) {
-                searchBoard(wordToFind, letterIndex, row, col);
+                if (matrix[row][col] == wordToFind[0]) {
+                    searchBoard(wordToFind, 0, row, col);
+                }
             }
         }
     }
@@ -61,11 +57,12 @@ public class WordPuzzle {
         //let us use command line argument for input filename.
         System.out.println();
         File inputFile = new File("WordPuzzle/src/inputs/puzzle.txt").getAbsoluteFile();
+//        File inputFile = new File(args[0]);
         Scanner finput = new Scanner(inputFile);
 
         int matrixSize = finput.nextInt();
-        matrix = new char [matrixSize][matrixSize];
-        output = new char [matrixSize][matrixSize];
+        matrix = new char[matrixSize][matrixSize];
+        output = new char[matrixSize][matrixSize];
         for (int i = 0; i < matrixSize; i++) {
             for (int j = 0; j < matrixSize; j++) {
                 matrix[i][j] = finput.next().charAt(0);
