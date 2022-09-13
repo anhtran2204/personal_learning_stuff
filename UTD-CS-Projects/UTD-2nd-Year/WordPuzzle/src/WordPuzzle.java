@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 import java.io.*;
 
@@ -6,37 +7,53 @@ public class WordPuzzle {
     //matrix[][] contains the input matrix
     //whenever a word is found in matrix[][],
     //copy the word to output[][]
-    public static char matrix[][], output[][];
+    public static char[][] matrix, output;
 
     // WRITE YOUR CODE HERE
+    final static int[][] dirOffsets = {
+            {0, 1},
+            {0, -1},
+            {1, 0},
+            {-1, 0},
+            {1, 1},
+            {-1, -1},
+            {-1, 1},
+            {1, -1}
+    };
 
     public static void searchBoard(char[] word, int letterIndex, int row, int col) {
-        if (row < 0 || row >= matrix.length || col < 0 || col >= matrix[row].length) {
+        if (row < 0 || row > matrix.length - 1 || col < 0 || col > matrix.length - 1) {
             return;
         }
-        if (letterIndex >= word.length) {
+
+        if (letterIndex > word.length - 1) {
             return;
         }
+
         if (matrix[row][col] == word[letterIndex]) {
+            searchBoard(word, letterIndex + 1, row, col + 1);
+            searchBoard(word, letterIndex + 1, row, col - 1);
+            searchBoard(word, letterIndex + 1, row + 1, col);
+            searchBoard(word, letterIndex + 1, row - 1, col + 1);
+            searchBoard(word, letterIndex + 1, row + 1, col + 1);
+            searchBoard(word, letterIndex + 1, row - 1, col - 1);
+            searchBoard(word, letterIndex + 1, row - 1, col + 1);
+            searchBoard(word, letterIndex + 1, row + 1, col - 1);
             output[row][col] = word[letterIndex];
-            return;
         }
-        searchBoard(word, letterIndex+1, row, col+1);
-        searchBoard(word, letterIndex+1, row, col-1);
-        searchBoard(word, letterIndex+1, row+1, col);
-        searchBoard(word, letterIndex+1, row-1, col);
-        searchBoard(word, letterIndex+1, row+1, col+1);
-        searchBoard(word, letterIndex+1, row+1, col-1);
-        searchBoard(word, letterIndex+1, row+1, col-1);
-        searchBoard(word, letterIndex+1, row-1, col+1);
     }
 
     //search the word in all 8 directions from each position!
     public static void findWord(String word) {
 // WRITE YOUR CODE HERE
         char[] wordToFind = word.toCharArray();
-        int row = 0, col = 0, letterIndex = 0;
-        searchBoard(wordToFind, letterIndex, row, col);
+        int letterIndex = 0;
+        String temp = "";
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[row].length; col++) {
+                searchBoard(wordToFind, letterIndex, row, col);
+            }
+        }
     }
 
     public static void main(String[] args) throws IOException {
