@@ -11,8 +11,8 @@ public class AltGasCostMin {
     public static int minGasCostIndex(int currIndex, int stopIndex) {
         double minCost = prices[currIndex];
         int minIndex = currIndex;
-        for (int i = currIndex; i < stopIndex; i++) {
-            if (minCost < prices[i]) {
+        for (int i = currIndex; i <= stopIndex; i++) {
+            if (minCost > prices[i]) {
                 minCost = prices[i];
                 minIndex = i;
             }
@@ -28,12 +28,16 @@ public class AltGasCostMin {
         return index;
     }
 
-    public static int gasStops(int currentIndex, int stopIndex) {
-        if (distances[stopIndex] - distances[currentIndex] <= range) {
+    public static int gasStops(int currentIndex, int lastIndex, double destDistance) {
+        double maximum_distance = distances[currentIndex] + range;
+        if (maximum_distance >= destDistance) {
             return 0;
         }
-        int cheapIndex = minGasCostIndex(currentIndex+1, stopIndex);
-        return gasStops(currentIndex+1, cheapIndex) + 1 + gasStops(cheapIndex+1, stopIndex);
+        int newIndex = minGasCostIndex(currentIndex+1, lastIndex);
+        if (distances[newIndex] - distances[currentIndex] >= range) {
+            return 1 + gasStops(currentIndex+1, lastIndex, destDistance);
+        }
+        return 1 + gasStops(newIndex, lastIndex, destDistance);
     }
 
     public static void main(String[] args) {
@@ -57,7 +61,7 @@ public class AltGasCostMin {
         range = input.nextDouble();
         double distToDestination = input.nextDouble();
 
-        int stopIndex = findStopIndex(distToDestination);
-        System.out.println(gasStops(0, stopIndex));
+        int lastIndex = findStopIndex(distToDestination);
+        System.out.println(gasStops(0, lastIndex, distToDestination));
     }
 }
