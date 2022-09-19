@@ -1,3 +1,5 @@
+package GasCostMinimization.src;
+
 import java.util.Scanner;
 import java.io.*;
 
@@ -8,14 +10,63 @@ public class GasCost {
     static double range; //range of the car, distance it can go with full tank of gas
 
     // WRITE YOUR CODE HERE
-    public static double minGasCost(int currentIndex) {
+    public static int minGasCostIndex(int currIndex, int lastStation) {
+        double minCost = prices[currIndex];
+        int minIndex = currIndex;
+        for (int i = currIndex; i < lastStation; i++) {
+            if (minCost < prices[i]) {
+                minCost = prices[i];
+                minIndex = i;
+            }
+        }
+        return minIndex;
+    }
 
-        return 0;
+    public static int getLastStation(double destDistance) {
+        int index = numStations;
+        while (distances[index] >= destDistance) {
+            index--;
+        }
+        return index;
+    }
+
+    public static int priceTrend() {
+        double diff = 0;
+        for (int i = 1; i < prices.length - 1; i++) {
+            if (prices[i+1] - prices[i] < 0) {
+                diff++;
+            }
+        }
+        if (diff % numStations == 0) {
+            return 0; // decreasing
+        }
+        return 1; // increasing or fluctuate
     }
 
     public static int gasStops(int currentIndex, double destDistance) {
-
-        return 0;
+        int stops;
+        int lastStation = getLastStation(destDistance);
+        if (priceTrend() == 1) {
+            stops = 0;
+            while (destDistance - distances[currentIndex] >= range) {
+                stops++;
+                int minIndex = minGasCostIndex(currentIndex + 1, lastStation);
+                if (distances[minIndex] - distances[currentIndex] > range) {
+                    currentIndex++;
+                }
+                else {
+                    currentIndex = minIndex;
+                }
+            }
+        }
+        else {
+            stops = 0;
+            while (destDistance - distances[currentIndex] >= range) {
+                currentIndex++;
+                stops++;
+            }
+        }
+        return stops;
     }
 
     public static void main(String[] args) {
