@@ -1,8 +1,7 @@
-import java.util.Scanner;
+package BankingOperations.src;
 
 public class CheckingAccount {
     private static int ID = 5000001;
-    private static Scanner input = new Scanner(System.in);
     private int accountID;
     private String customerName;
     private double balance;
@@ -22,11 +21,11 @@ public class CheckingAccount {
     }
 
     public double getBalance() {
-        return balance;
+        return this.balance;
     }
 
     public String getCustomerName() {
-        return customerName;
+        return this.customerName;
     }
 
     public void setCustomerName(String customerName) {
@@ -34,7 +33,14 @@ public class CheckingAccount {
     }
 
     public int getAccountID() {
-        return accountID;
+        return this.accountID;
+    }
+
+    public CheckingAccount getAccount(String ID) {
+        if (checkAccountID(ID)) {
+            return this;
+        }
+        return null;
     }
 
     public boolean checkAccountID(String accountID) {
