@@ -1,10 +1,20 @@
 package BankingOperations.src;
-
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BankOperations {
-    public static Customer customer;
-    public static CheckingAccount account;
+    public static ArrayList<Customer> customers = new ArrayList<>();
+    private static Customer customer;
+
+    public boolean checkCustomer(String name) {
+        for (Customer person : customers) {
+            if (name.equals(person.getCustomerName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         String input = kb.nextLine();
@@ -24,6 +34,7 @@ public class BankOperations {
             switch (infos[0]) {
                 case "new":
                     customer = new Customer(infos[1], name);
+                    customers.add(customer);
                     break;
 
                 case "add":
@@ -31,11 +42,11 @@ public class BankOperations {
                     break;
 
                 case "deposit":
-                    customer.getAccount(infos[1]).deposit(infos[1], Double.parseDouble(infos[2]));
+
                     break;
 
                 case "withdrawal":
-                    customer.getAccount(infos[1]).withdrawal(infos[1], Double.parseDouble(infos[2]));
+
                     break;
             }
             input = kb.nextLine();
