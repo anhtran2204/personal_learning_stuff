@@ -10,13 +10,11 @@ public class BankOperations {
     private static Customer customer;
 
     public static void main(String[] args) {
+        getInput();
 
-        String input = kb.nextLine();
-
-        String[] infos = input.split(" ");
-
-        while (!infos[0].equals("close")) {
-
+        int index = 0;
+        while (!inputs.get(index).equals("close")) {
+            String[] infos = inputs.get(index).split(" ");
             switch (infos[0]) {
                 case "new":
                     String name = getName(infos);
@@ -53,8 +51,7 @@ public class BankOperations {
                     }
                     break;
             }
-            input = kb.nextLine();
-            infos = input.split(" ");
+            index++;
         }
     }
 
@@ -72,7 +69,7 @@ public class BankOperations {
             String line = kb.nextLine();
             inputs.add(line);
 
-            if (line != null && line.equalsIgnoreCase("END")) {
+            if (line != null && line.equalsIgnoreCase("close")) {
                 break;
             }
         }
