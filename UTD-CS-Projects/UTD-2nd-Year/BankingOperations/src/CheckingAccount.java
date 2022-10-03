@@ -6,12 +6,6 @@ public class CheckingAccount {
     private String customerName;
     private double balance;
 
-    public CheckingAccount(String name) {
-        balance = 0;
-        accountID = ID;
-        ID++;
-    }
-
     public CheckingAccount(String name, double initialBalance) {
         this.customerName = name;
         this.balance = initialBalance;
@@ -36,32 +30,17 @@ public class CheckingAccount {
         return this.accountID;
     }
 
-    public CheckingAccount getAccount(String ID) {
-        if (checkAccountID(ID)) {
-            return this;
-        }
-        return null;
+    public void deposit(double amount) {
+        this.balance += amount;
+        System.out.printf("New balance: %.2f", this.balance);
     }
 
-    public boolean checkAccountID(String accountID) {
-        return getAccountID() == Integer.parseInt(accountID);
-    }
-
-    public void deposit(String accountID, double amount) {
-        if (checkAccountID(accountID)) {
-            this.balance += amount;
-            System.out.printf("New balance: %.2f", this.balance);
+    public void withdrawal(double amount) {
+        if (balance <= 0) {
+            System.out.println("Withdrawal rejected to avoid negative balance.");
+        } else {
+            this.balance -= amount;
         }
-    }
-
-    public void withdrawal(String accountID, double amount) {
-        if (checkAccountID(accountID)) {
-            if (balance <= 0) {
-                System.out.println("Withdrawal rejected to avoid negative balance.");
-            } else {
-                this.balance -= amount;
-            }
-            System.out.printf("New balance: %.2f", this.balance);
-        }
+        System.out.printf("New balance: %.2f", this.balance);
     }
 }
