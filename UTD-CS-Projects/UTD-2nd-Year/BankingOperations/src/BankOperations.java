@@ -9,15 +9,19 @@ public class BankOperations {
     public static ArrayList<Customer> customers = new ArrayList<>();
     private static Customer customer;
 
-    public static void main(String[] args) {
-        getInput();
+    public static void main(String[] args) throws Exception {
+//        getInput();
 
-        int index = 0;
-        while (!inputs.get(index).equals("close")) {
-            String[] infos = inputs.get(index).split(" ");
+//        int index = 0;
+
+        String input = kb.nextLine();
+        String[] infos = input.split(" ");
+        String name;
+        String ID;
+        while (!(infos[0].equals("close"))) {
             switch (infos[0]) {
                 case "new":
-                    String name = getName(infos);
+                    name = getName(infos);
                     if (!checkCustomer(name)) {
                         customer = new Customer(infos[1], name);
                         customers.add(customer);
@@ -26,54 +30,62 @@ public class BankOperations {
 
                 case "add":
                     name = getName(infos);
-                    if (!checkCustomer(name)) {
+                    if (checkCustomer(name)) {
                         customer.addNewAccount(name);
                     }
                     break;
 
                 case "deposit":
-                    name = getName(infos);
-                    if (checkCustomer(name)) {
-                        CheckingAccount account = customer.getCheckingAccount(name);
-                        if (account != null) {
-                            account.deposit(Double.parseDouble(infos[2]));
-                        }
+                    ID = infos[1];
+                    CheckingAccount account = customer.getCheckingAccount(ID);
+                    if (account != null) {
+                        account.deposit(Double.parseDouble(infos[2]));
                     }
                     break;
 
                 case "withdrawal":
-                    name = getName(infos);
-                    if (checkCustomer(name)) {
-                        CheckingAccount account = customer.getCheckingAccount(name);
-                        if (account != null) {
-                            account.withdrawal(Double.parseDouble(infos[2]));
-                        }
+                    ID = infos[1];
+                    account = getCheckingAccount(ID);
+                    if (account != null) {
+                        account.withdrawal(Double.parseDouble(infos[2]));
                     }
                     break;
             }
-            index++;
+            input = kb.nextLine();
+            infos = input.split(" ");
         }
     }
 
     public static boolean checkCustomer(String name) {
         for (Customer person : customers) {
-            if (name.equals(person.getCustomerName()) || name.equals(person.getCustomerID())) {
+            if (name.equals(person.getCustomerName()) || name.equals(Integer.toString(person.getCustomerID()))) {
                 return true;
             }
         }
         return false;
     }
 
-    public static void getInput() {
-        while (kb.hasNextLine()) {
-            String line = kb.nextLine();
-            inputs.add(line);
-
-            if (line != null && line.equalsIgnoreCase("close")) {
-                break;
+    public static CheckingAccount getCheckingAccount(String ID) {
+        CheckingAccount acc = null;
+        for (Customer customer : customers) {
+            acc = customer.getCheckingAccount(ID);
+            if (acc != null) {
+                return acc;
             }
         }
+        return null;
     }
+
+//    public static void getInput() {
+//        while (kb.hasNextLine()) {
+//            String line = kb.nextLine();
+//            inputs.add(line);
+//
+//            if (line != null && line.equalsIgnoreCase("close")) {
+//                break;
+//            }
+//        }
+//    }
 
     public static String getName(String[] infos) {
         String name = "";

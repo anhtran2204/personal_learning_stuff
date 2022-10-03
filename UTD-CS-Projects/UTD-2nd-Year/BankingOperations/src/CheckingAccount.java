@@ -32,15 +32,15 @@ public class CheckingAccount {
 
     public void deposit(double amount) {
         this.balance += amount;
-        System.out.printf("New balance: %.2f", this.balance);
+        System.out.printf("New balance: %.2f\n", this.balance);
     }
 
     public void withdrawal(double amount) {
-        if (balance <= 0) {
+        if (balance <= 0 || balance - amount <= 0) {
             System.out.println("Withdrawal rejected to avoid negative balance.");
         } else {
             this.balance -= amount;
+            System.out.printf("New balance: %.2f\n", this.balance);
         }
-        System.out.printf("New balance: %.2f", this.balance);
     }
 }
