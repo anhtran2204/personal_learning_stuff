@@ -4,16 +4,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BankOperations {
-    private static final Scanner kb = new Scanner(System.in);
-    public static ArrayList<String> inputs = new ArrayList<>();
+    private static Scanner kb = new Scanner(System.in);
     public static ArrayList<Customer> customers = new ArrayList<>();
     private static Customer customer;
 
-    public static void main(String[] args) throws Exception {
-//        getInput();
-
-//        int index = 0;
-
+    public static void main(String[] args) {
         String input = kb.nextLine();
         String[] infos = input.split(" ");
         String name;
@@ -23,27 +18,43 @@ public class BankOperations {
                 case "new":
                     name = getName(infos);
                     if (!checkCustomer(name)) {
-                        customer = new Customer(infos[1], name);
-                        customers.add(customer);
+                        int numAccounts = Integer.parseInt(infos[1]);
+                        if (numAccounts > 5) {
+                            System.out.println("MAX 5 accounts per customer!");
+                        } else {
+                            customer = new Customer(name);
+                            customers.add(customer);
+                            for (int i = 0; i < numAccounts; i++) {
+                                double initialBalance = kb.nextDouble();
+                                customer.addNewAccount(initialBalance);
+                            }
+                        }
                     }
+                    kb.nextLine();
                     break;
 
                 case "add":
                     name = getName(infos);
                     if (checkCustomer(name)) {
-                        customer.addNewAccount(name);
+                        if (customer.getNumAccounts() >= 5) {
+                            System.out.println("Error: Customer already has 5 accounts.");
+                        } else {
+                            double initialBalance = kb.nextDouble();
+                            customer.addNewAccount(initialBalance);
+                        }
                     }
+                    kb.nextLine();
                     break;
 
                 case "deposit":
                     ID = infos[1];
-                    CheckingAccount account = customer.getCheckingAccount(ID);
+                    CheckingAccount account = getCheckingAccount(ID);
                     if (account != null) {
                         account.deposit(Double.parseDouble(infos[2]));
                     }
                     break;
 
-                case "withdrawal":
+                case "withdraw":
                     ID = infos[1];
                     account = getCheckingAccount(ID);
                     if (account != null) {
@@ -66,7 +77,7 @@ public class BankOperations {
     }
 
     public static CheckingAccount getCheckingAccount(String ID) {
-        CheckingAccount acc = null;
+        CheckingAccount acc;
         for (Customer customer : customers) {
             acc = customer.getCheckingAccount(ID);
             if (acc != null) {
@@ -75,17 +86,6 @@ public class BankOperations {
         }
         return null;
     }
-
-//    public static void getInput() {
-//        while (kb.hasNextLine()) {
-//            String line = kb.nextLine();
-//            inputs.add(line);
-//
-//            if (line != null && line.equalsIgnoreCase("close")) {
-//                break;
-//            }
-//        }
-//    }
 
     public static String getName(String[] infos) {
         String name = "";
