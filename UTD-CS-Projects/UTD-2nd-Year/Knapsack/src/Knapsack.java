@@ -2,6 +2,8 @@ package Knapsack.src;
 
 public class Knapsack {
     static int weights[] = { 40, 10, 46, 23, 22, 16, 27, 6 };
+    static int maxPieces[] = {2, 3, 6, 2, 5, 3, 7, 4}; //2 pieces of first item is allowed, so on.
+    static int count[] = new int[weights.length];
 
     static int bestOne(int target) {
         // select the heaviest item <= target
@@ -99,6 +101,26 @@ public class Knapsack {
         //whichever path gives better solution, return it!
     }
 
+    static int knapsack3(int index, int totalSoFar, int target)
+    {
+        if (index == weights.length) {
+            return totalSoFar;
+        }
+        if (count[index] == maxPieces[index]) {
+            return totalSoFar;
+        }
+        if (totalSoFar > target) {
+            return 0;
+        }
+        if (totalSoFar == target) {
+            return target;
+        }
+
+        count[index]++;
+        return Math.max( knapsack3(index+1, totalSoFar, target),
+                knapsack3(index, totalSoFar+weights[index], target));
+    }
+
     public static void main(String[] args) {
         int selectedItems[] = new int[2];
         for (int i = 1; i <= 100; i++)
@@ -106,8 +128,9 @@ public class Knapsack {
             //System.out.print("bestOne(" + i + "): " + bestOne(i) + "   ");
             //System.out.print("bestTwo(" + i + "): " + bestTwo(i, selectedItems) + "   ");
             //System.out.println("(" + selectedItems[0] + ", " + selectedItems[1] + ")");
-            System.out.print("Knapsack(" + i + "): " + knapsack(0, 0, i) + "   ");
-            System.out.println("Knapsack2(" + i + "): " + knapsack2(0, 0, i));
+//            System.out.print("Knapsack(" + i + "): " + knapsack(0, 0, i) + "   ");
+//            System.out.println("Knapsack2(" + i + "): " + knapsack2(0, 0, i));
+            System.out.println("Knapsack3(" + i + "): " + knapsack3(0, 0, i));
         }
     }
 }
