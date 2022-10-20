@@ -1,5 +1,7 @@
 package RestaurantActivities.src;
 
+import java.io.File;
+
 public class Menu {
     private Menu[] items;
     private int numItems;
@@ -12,5 +14,9 @@ public class Menu {
     public Menu(int num) {
         this.numItems = num;
         items = new Menu[this.numItems];
+    }
+
+    public Menu[] getItems() {
+        return items;
     }
 }
