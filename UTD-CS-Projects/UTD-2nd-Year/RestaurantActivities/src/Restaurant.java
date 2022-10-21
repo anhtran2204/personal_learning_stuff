@@ -1,7 +1,6 @@
 package RestaurantActivities.src;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -12,7 +11,7 @@ public class Restaurant {
 
     }
 
-    public void importMenu() throws IOException {
+    public void input() throws IOException {
         File file = new File("config.txt");
         Scanner s = new Scanner(file);
 
