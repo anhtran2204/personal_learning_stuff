@@ -1,26 +1,23 @@
 package RestaurantActivities.src;
 
 public class MenuItem {
-    private static int ITEM_CODE;
-    private int itemCode;
+    private String itemCode;
     private String name;
     private double price;
 
     public MenuItem() {
-        this.itemCode = ITEM_CODE;
+        this.itemCode = "";
         this.name = "";
         this.price = 0;
-        ITEM_CODE++;
     }
 
-    public MenuItem(String newName, double newPrice) {
-        this.itemCode = ITEM_CODE;
+    public MenuItem(String code, String newName, double newPrice) {
+        this.itemCode = code;
         this.name = newName;
         this.price = newPrice;
-        ITEM_CODE++;
     }
 
-    public int getItemCode() {
+    public String getItemCode() {
         return itemCode;
     }
 
@@ -30,5 +27,10 @@ public class MenuItem {
 
     public double getPrice() {
         return price;
+    }
+
+    @Override
+    public String toString() {
+        return this.itemCode + " " + this.name + " " + this.price;
     }
 }

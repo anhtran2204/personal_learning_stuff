@@ -17,4 +17,18 @@ public class Menu {
     public MenuItem[] getItems() {
         return items;
     }
+
+    public void addItem(int index, MenuItem item) {
+        if (index < numItems) {
+            items[index] = item;
+        }
+    }
+
+    @Override
+    public String toString() {
+        for (int i = 0; i < this.numItems; i++) {
+            System.out.println(items[i]);
+        }
+        return "";
+    }
 }

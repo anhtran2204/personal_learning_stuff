@@ -8,11 +8,14 @@ public class Restaurant {
     private static Menu menu;
     private static Table[] tables;
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException {
+        config();
+//        MenuItem item = new MenuItem("A1", "Wagyu Beef", 5.0);
+//        System.out.println(item);
+        System.out.println(menu);
     }
 
-    public void config() throws IOException {
+    public static void config() throws IOException {
         Scanner s = new Scanner(new File("config.txt"));
 
         int numTables = Integer.parseInt(s.next());
@@ -24,9 +27,16 @@ public class Restaurant {
         }
 
         s.nextLine();
-        int numItems = Integer.parseInt(s.next());
-        for (int i = 0; i < numItems; i++) {
 
+        int numItems = Integer.parseInt(s.next());
+        s.nextLine();
+        menu = new Menu(numItems);
+        for (int i = 0; i < numItems; i++) {
+            String itemCode = s.next();
+            String itemName = s.next();
+            double itemPrice = Double.parseDouble(s.next());
+            MenuItem newItem = new MenuItem(itemCode, itemName, itemPrice);
+            menu.addItem(i, newItem);
         }
     }
 
