@@ -2,24 +2,28 @@ package RestaurantActivities.src;
 
 public class Order {
     private MenuItem[] orders;
+    private int numItems;
     private int tableNum;
 
-    public Order(String order, int tableNum) {
-        int numOrders = processOrder(order);
-        this.orders = new MenuItem[numOrders];
+    public Order(Menu menu, String[] order, int tableNum) {
+        this.numItems = processOrder(menu, order);
+        this.orders = new MenuItem[numItems];
         this.tableNum = tableNum;
     }
 
-    private int processOrder(String order) {
-        String[] numOrders = order.split(" ");
-        for (int i = 0; i < numOrders.length; i++) {
-
-        }
-        return 0;
+    public int getTableNum() {
+        return tableNum;
     }
 
-//    private boolean checkMenuItem(String item) {
-//
-//    }
-
+    private int processOrder(Menu menu, String[] order) {
+        int numItems = 0;
+        for (int i = 0; i < order.length; i++) {
+            for (int j = 0; j < menu.getItems().length; j++) {
+                if (order[j].equals(menu.getItems()[i])) {
+                    numItems++;
+                }
+            }
+        }
+        return numItems;
+    }
 }
