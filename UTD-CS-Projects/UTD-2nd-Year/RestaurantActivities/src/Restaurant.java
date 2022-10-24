@@ -12,6 +12,9 @@ public class Restaurant {
         config();
 //        MenuItem item = new MenuItem("A1", "Wagyu Beef", 5.0);
 //        System.out.println(item);
+        for (Table table : tables) {
+            System.out.println(table);
+        }
         System.out.println(menu);
     }
 
