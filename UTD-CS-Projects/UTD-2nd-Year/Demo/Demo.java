@@ -1,15 +1,10 @@
 package Demo;
 
 public class Demo {
-
-    public interface NumSet {
-
-    }
-
-    public class ArrayNumSet<Number> implements NumSet {
-
-    }
     public static void main(String[] args) {
-
+        String s = "P1";
+        if (s.matches("P\\d")) {
+            System.out.println("hello");
+        }
     }
 }

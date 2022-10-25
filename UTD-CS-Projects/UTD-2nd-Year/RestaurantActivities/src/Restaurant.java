@@ -13,14 +13,26 @@ public class Restaurant {
 
         Scanner s = new Scanner(System.in);
 
-        String tableNum = s.next();
+        int tableNum = s.nextInt();
         String option = s.next();
         String[] inputs = option.split(" ");
 
-        switch (inputs[0]) {
-            case "P":
-                Table table = getTable(Integer.parseInt(tableNum));
-                table.assignCustomer(Integer.parseInt(inputs[1]));
+        if (inputs[0].matches("P\\d")) {
+            String[] seats = inputs[0].split("");
+            Table table = getTable(tableNum);
+            table.assignCustomer(Integer.parseInt(seats[1]));
+        }
+
+        if (inputs[0].equals("O")) {
+            System.out.println("hello");
+        }
+
+        if (inputs[0].equals("S")) {
+            System.out.println("hello");
+        }
+
+        if (inputs[0].equals("C")) {
+            System.out.println("hello");
         }
     }
 
@@ -64,6 +76,7 @@ public class Restaurant {
         for (Table value : tables) {
             if (tableAvailable(tableNum)) {
                 table = value;
+                break;
             }
         }
         return table;
