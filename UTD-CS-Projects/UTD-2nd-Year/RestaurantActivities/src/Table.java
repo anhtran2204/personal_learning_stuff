@@ -13,9 +13,10 @@ public class Table {
         this.maxSeats = maxSeats;
     }
 
-    public void setSeatsOccupied(int seatsOccupied) {
+    public void assignCustomer(int seats) {
         if (seatsOccupied < maxSeats) {
-            this.seatsOccupied = seatsOccupied;
+            this.seatsOccupied = seats;
+            System.out.println("Party of " + this.seatsOccupied + " assigned to Table " + this.tableNum);
         } else {
             System.out.println("Sorry, max " + maxSeats + " seats in Table " + tableNum + " !");
         }
@@ -39,5 +40,10 @@ public class Table {
 
     public boolean isOrdered() {
         return ordered;
+    }
+
+    @Override
+    public String toString() {
+        return tableNum + " " + maxSeats;
     }
 }

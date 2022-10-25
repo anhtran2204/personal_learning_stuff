@@ -19,7 +19,7 @@ public class Order {
         int numItems = 0;
         for (int i = 0; i < order.length; i++) {
             for (int j = 0; j < menu.getItems().length; j++) {
-                if (order[j].equals(menu.getItems()[i])) {
+                if (order[j].equals(menu.getItems()[i].getItemCode())) {
                     numItems++;
                 }
             }

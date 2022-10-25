@@ -10,23 +10,30 @@ public class Restaurant {
 
     public static void main(String[] args) throws IOException {
         config();
-//        MenuItem item = new MenuItem("A1", "Wagyu Beef", 5.0);
-//        System.out.println(item);
-        for (Table table : tables) {
-            System.out.println(table);
+
+        Scanner s = new Scanner(System.in);
+
+        String tableNum = s.next();
+        String option = s.next();
+        String[] inputs = option.split(" ");
+
+        switch (inputs[0]) {
+            case "P":
+                Table table = getTable(Integer.parseInt(tableNum));
+                table.assignCustomer(Integer.parseInt(inputs[1]));
         }
-        System.out.println(menu);
     }
 
     public static void config() throws IOException {
         Scanner s = new Scanner(new File("config.txt"));
 
         int numTables = Integer.parseInt(s.next());
+        tables = new Table[numTables];
         s.nextLine();
         for (int i = 0; i < numTables; i++) {
             int tableNum = Integer.parseInt(s.next());
             int maxSeats = Integer.parseInt(s.next());
-            Table table = new Table(tableNum, maxSeats);
+            tables[i] = new Table(tableNum, maxSeats);
         }
 
         s.nextLine();
@@ -38,9 +45,27 @@ public class Restaurant {
             String itemCode = s.next();
             String itemName = s.next();
             double itemPrice = Double.parseDouble(s.next());
-            MenuItem newItem = new MenuItem(itemCode, itemName, itemPrice);
-            menu.addItem(i, newItem);
+            menu.addItem(i, new MenuItem(itemCode, itemName, itemPrice));
         }
     }
 
+    public static boolean tableAvailable(int tableNum) {
+        for (int i = 0; i < tables.length; i++) {
+            Table table = tables[i];
+            if (table.getTableNum() == tableNum && !table.isOccupied()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static Table getTable(int tableNum) {
+        Table table = null;
+        for (Table value : tables) {
+            if (tableAvailable(tableNum)) {
+                table = value;
+            }
+        }
+        return table;
+    }
 }
