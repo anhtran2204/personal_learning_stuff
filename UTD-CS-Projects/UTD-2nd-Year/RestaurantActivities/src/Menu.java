@@ -26,6 +26,7 @@ public class Menu {
 
     @Override
     public String toString() {
+        System.out.println("---* MENU *---");
         for (int i = 0; i < this.numItems; i++) {
             System.out.println(items[i]);
         }

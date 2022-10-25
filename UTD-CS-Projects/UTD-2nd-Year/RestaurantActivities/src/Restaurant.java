@@ -13,26 +13,28 @@ public class Restaurant {
 
         Scanner s = new Scanner(System.in);
 
-        int tableNum = s.nextInt();
-        String option = s.next();
-        String[] inputs = option.split(" ");
+        String tableNum = s.next();
+        if (!tableNum.equals("C")) {
+            System.out.println("Table num: " + tableNum);
+            String option = s.next();
+            if (option.matches("P*\\d")) {
+                String seats = option.substring(1);
+                System.out.println("Seats: " + seats);
+                Table table = getTable(Integer.parseInt(tableNum));
+                table.assignCustomer(Integer.parseInt(seats));
+            }
 
-        if (inputs[0].matches("P\\d")) {
-            String[] seats = inputs[0].split("");
-            Table table = getTable(tableNum);
-            table.assignCustomer(Integer.parseInt(seats[1]));
-        }
+            if (option.equals("O")) {
+                System.out.println("hello");
+            }
 
-        if (inputs[0].equals("O")) {
-            System.out.println("hello");
-        }
+            if (option.equals("S")) {
+                System.out.println("hello");
+            }
 
-        if (inputs[0].equals("S")) {
-            System.out.println("hello");
-        }
-
-        if (inputs[0].equals("C")) {
-            System.out.println("hello");
+            if (option.equals("C")) {
+                System.out.println("hello");
+            }
         }
     }
 
@@ -62,9 +64,8 @@ public class Restaurant {
     }
 
     public static boolean tableAvailable(int tableNum) {
-        for (int i = 0; i < tables.length; i++) {
-            Table table = tables[i];
-            if (table.getTableNum() == tableNum && !table.isOccupied()) {
+        for (Table table : tables) {
+            if (table.getTableNum() == tableNum && table.getTableStatus().equals("OPEN")) {
                 return true;
             }
         }
@@ -74,7 +75,7 @@ public class Restaurant {
     public static Table getTable(int tableNum) {
         Table table = null;
         for (Table value : tables) {
-            if (tableAvailable(tableNum)) {
+            if (value.getTableNum() == tableNum) {
                 table = value;
                 break;
             }

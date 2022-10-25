@@ -1,33 +1,34 @@
 package RestaurantActivities.src;
 
 public class Table {
+    private enum TableStatus {
+        OPEN,
+        SEATED,
+        ORDERED,
+        SERVED
+    }
     private int tableNum;
-    private boolean occupied = false;
     private int maxSeats;
     private int seatsOccupied;
-    private boolean ordered = false;
-    private Order order;
+    private TableStatus status;
 
     public Table(int num, int maxSeats) {
         this.tableNum = num;
         this.maxSeats = maxSeats;
+        status = TableStatus.OPEN;
     }
 
     public void assignCustomer(int seats) {
-        if (seatsOccupied < maxSeats) {
+        if (seats <= maxSeats) {
             this.seatsOccupied = seats;
             System.out.println("Party of " + this.seatsOccupied + " assigned to Table " + this.tableNum);
         } else {
-            System.out.println("Sorry, max " + maxSeats + " seats in Table " + tableNum + " !");
+            System.out.println("Sorry, max " + maxSeats + " seats in Table " + tableNum + "!");
         }
     }
 
     public int getTableNum() {
         return tableNum;
-    }
-
-    public boolean isOccupied() {
-        return occupied;
     }
 
     public int getMaxSeats() {
@@ -38,12 +39,28 @@ public class Table {
         return seatsOccupied;
     }
 
-    public boolean isOrdered() {
-        return ordered;
+    public String getTableStatus() {
+        return status.toString();
     }
 
-    @Override
-    public String toString() {
-        return tableNum + " " + maxSeats;
+    public void setTableStatus(int newStatus) {
+        if (newStatus < TableStatus.values().length) {
+            switch (newStatus) {
+                case 0:
+                    break;
+
+                case 1:
+                    status = TableStatus.SEATED;
+                    break;
+
+                case 2:
+                    status = TableStatus.ORDERED;
+                    break;
+
+                case 3:
+                    status = TableStatus.SERVED;
+                    break;
+            }
+        }
     }
 }
