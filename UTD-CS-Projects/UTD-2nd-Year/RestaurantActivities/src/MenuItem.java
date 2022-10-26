@@ -5,12 +5,6 @@ public class MenuItem {
     private String name;
     private double price;
 
-    public MenuItem() {
-        this.itemCode = "";
-        this.name = "";
-        this.price = 0;
-    }
-
     public MenuItem(String code, String newName, double newPrice) {
         this.itemCode = code;
         this.name = newName;

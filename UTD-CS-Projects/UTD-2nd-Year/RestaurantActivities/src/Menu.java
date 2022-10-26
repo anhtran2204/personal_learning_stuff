@@ -18,18 +18,36 @@ public class Menu {
         return items;
     }
 
+    public boolean contains(String order) {
+        for (MenuItem item : items) {
+            if (order.equals(item.getItemCode())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void addItem(int index, MenuItem item) {
         if (index < numItems) {
             items[index] = item;
         }
     }
 
+    public MenuItem getItem(String itemCode) {
+        for (MenuItem item : items) {
+            if (item.getItemCode().equals(itemCode)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
-        System.out.println("---* MENU *---");
+        String s = "---* MENU *---";
         for (int i = 0; i < this.numItems; i++) {
-            System.out.println(items[i]);
+            s += items[i] + "\n";
         }
-        return "";
+        return s;
     }
 }

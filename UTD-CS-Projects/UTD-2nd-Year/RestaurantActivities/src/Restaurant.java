@@ -2,6 +2,7 @@ package RestaurantActivities.src;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Restaurant {
@@ -14,27 +15,53 @@ public class Restaurant {
         Scanner s = new Scanner(System.in);
 
         String tableNum = s.next();
-        if (!tableNum.equals("C")) {
-            System.out.println("Table num: " + tableNum);
+        Table table;
+
+        while (!tableNum.equalsIgnoreCase("C")) {
             String option = s.next();
-            if (option.matches("P*\\d")) {
+            if (option.matches("P\\d+")) {
                 String seats = option.substring(1);
-                System.out.println("Seats: " + seats);
-                Table table = getTable(Integer.parseInt(tableNum));
-                table.assignCustomer(Integer.parseInt(seats));
+                if (tableAvailable(Integer.parseInt(tableNum))) {
+                    table = getTable(Integer.parseInt(tableNum));
+                    if (table.assignCustomer(Integer.parseInt(seats))) {
+                        table.setTableStatus(1);
+                    }
+                } else {
+                    System.out.printf("Table %s already occupied!%n", tableNum);
+                }
             }
 
-            if (option.equals("O")) {
-                System.out.println("hello");
+            if (option.equalsIgnoreCase("O")) {
+                String items = s.nextLine();
+                items = items.substring(1);
+                String[] order = items.split(" ");
+                table = getTable(Integer.parseInt(tableNum));
+                table.addOrder(menu, order, Integer.parseInt(tableNum));
+                table.setTableStatus(2);
             }
 
-            if (option.equals("S")) {
-                System.out.println("hello");
+            if (option.equalsIgnoreCase("S")) {
+                table = getTable(Integer.parseInt(tableNum));
+                if (table.getTableStatus().equals("ORDERED")) {
+                    System.out.printf("Food served in table %s%n", tableNum);
+                    table.setTableStatus(3);
+                } else {
+                    System.out.printf("Order not placed at Table %s yet!%n", tableNum);
+                }
             }
 
-            if (option.equals("C")) {
-                System.out.println("hello");
+            if (option.equalsIgnoreCase("C")) {
+                table = getTable(Integer.parseInt(tableNum));
+                if (table.getTableStatus().equals("SERVED")) {
+                    System.out.printf("Table %s is closed. Here is the bill.%n", tableNum);
+                    printReceipt(table);
+                    table.setSeatsOccupied(0);
+                    table.setTableStatus(0);
+                } else {
+                    System.out.printf("Food not served for Table %s yet!%n", tableNum);
+                }
             }
+            tableNum = s.next();
         }
     }
 
@@ -81,5 +108,18 @@ public class Restaurant {
             }
         }
         return table;
+    }
+
+    public static void printReceipt(Table table) {
+        System.out.printf("Receipt Table# %s Party %d%n", table.getTableNum(), table.getSeatsOccupied());
+        MenuItem[] order = table.getOrder().getOrders();
+        int padLength = table.getOrder().longestItemName();
+        double total = 0;
+        for (MenuItem menuItem : order) {
+            System.out.printf("%1s %" + padLength + "s   %3.2f%n", menuItem.getItemCode(), menuItem.getName(), menuItem.getPrice());
+            total += menuItem.getPrice();
+        }
+        padLength+=3;
+        System.out.printf("%" + padLength + "s  %4.2f%n", "Total", total);
     }
 }

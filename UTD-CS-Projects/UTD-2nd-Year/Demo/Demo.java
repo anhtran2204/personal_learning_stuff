@@ -13,12 +13,19 @@ public class Demo {
     private static TableStatus status = TableStatus.OPEN;
 
     public static void main(String[] args) {
-        String s = "P10";
-        if (s.matches("P*\\d")) {
-            System.out.println("True");
-        } else {
-            System.out.println("False");
-        }
+        Scanner s = new Scanner(System.in);
+        s.useDelimiter("\r?\n");
+        System.out.println(s.next());
+        System.out.println(s.nextLine());
+
+//        String s = "P10";
+//        if (s.matches("P\\d+")) {
+//            System.out.println("True");
+//        } else {
+//            System.out.println("False");
+//        }
+
+
 //        System.out.println(getTableStatus());
 //        Scanner s = new Scanner(System.in);
 //
