@@ -111,20 +111,18 @@ public class MyString {
     }
 
     boolean equalsIgnoreCase(MyString anotherString) {
-        int index = 0;
-        boolean flag = false;
+        if (this.chars.length != anotherString.chars.length) {
+            return false;
+        }
         for (int i = 0; i < this.chars.length; i++) {
-            if (index == anotherString.chars.length) {
-                flag = true;
-                break;
-            }
-            if (this.chars[i] == anotherString.chars[index]) {
-                index++;
-            } else {
-                index = 0;
+            boolean check = this.chars[i] == anotherString.chars[i] + 32 || this.chars[i] + 32 == anotherString.chars[i]
+                    || this.chars[i] == anotherString.chars[i] - 32 || this.chars[i] - 32 == anotherString.chars[i]
+                    || this.chars[i] == anotherString.chars[i];
+            if (!check) {
+                return false;
             }
         }
-        return flag;
+        return true;
     }
 
     int indexOf(int ch) {
@@ -163,24 +161,26 @@ public class MyString {
     }
 
     int indexOf(MyString str, int fromIndex) {
-        int index = -1;
         int count = 0;
+        int index = -1;
+        int j = 0;
         for (int i = 0; i < this.chars.length; i++) {
-            if (count == str.chars.length) {
-                index = i - count;
-                break;
-            }
-            if ((this.chars[i] == str.chars[count]) && (i >= fromIndex)) {
+            if ((this.chars[i] == str.chars[j]) && (i >= fromIndex)) {
                 count++;
+                if (count == 1) {
+                    index = i;
+                }
+                j++;
             } else {
                 count = 0;
+                j = 0;
             }
         }
         return index;
     }
 
     int lastIndexOf(int ch) {
-        int index = 0;
+        int index = -1;
         for (int i = 0; i < this.chars.length; i++) {
             if (this.chars[i] == ch) {
                 index = i;
@@ -192,7 +192,7 @@ public class MyString {
     int lastIndexOf(int ch, int fromIndex) {
         int index = 0;
         for (int i = 0; i < this.chars.length; i++) {
-            if ((this.chars[i] == ch) && (i >= fromIndex)) {
+            if ((this.chars[i] == ch) && (i <= fromIndex)) {
                 index = i;
             }
         }
@@ -224,7 +224,7 @@ public class MyString {
                 index = i - count;
                 count = 0;
             }
-            if ((this.chars[i] == str.chars[count]) && (i >= fromIndex)) {
+            if ((this.chars[i] == str.chars[count]) && (i <= fromIndex)) {
                 count++;
             } else {
                 count = 0;
@@ -252,10 +252,6 @@ public class MyString {
 
     //bit different from String - we will keep it simple with one char as seperator
     MyString[] split(char ch) {
-        int start = 0;
-        int end = 0;
-        int curr = 0;
-
         int occurrence = 0;
         for (int i = 0; i < this.chars.length; i++) {
             if (this.chars[i] == ch) {
@@ -264,16 +260,21 @@ public class MyString {
         }
 
         MyString[] newStrings = new MyString[occurrence + 1];
+        int pos = 0;
         int index = 0;
-        while (start < this.chars.length) {
-            if (this.chars[curr] == ch) {
-                end = curr;
-                char[] newChars = new char[end + 1 - start];
-                System.arraycopy(chars, start, newChars, start, end - start);
+        for (int i = 0; i < this.chars.length; i++) {
+            if (this.chars[i] == ch) {
+                char[] newChars = new char[i - pos];
+                System.arraycopy(this.chars, pos, newChars, 0, i - pos);
+                newStrings[index] = new MyString(newChars);
+                pos = i + 1;
+                index++;
+            }
+            if (i == this.chars.length - 1) {
+                char[] newChars = new char[i - pos + 1];
+                System.arraycopy(this.chars, pos, newChars, 0, i - pos + 1);
                 newStrings[index] = new MyString(newChars);
             }
-            curr++;
-            start = end;
         }
         return newStrings;
     }
@@ -337,27 +338,23 @@ public class MyString {
 
     MyString trim() {
         int start = 0;
-        int end = 0;
-        boolean first = false;
-        for (int i = 0; i < this.chars.length; i++) {
-            if (!first && Character.isAlphabetic(this.chars[i])) {
-                first = true;
-                start = i;
-            }
-            if (this.chars[i] == ' ' && this.chars[i+1] == ' ') {
-                end = i - 1;
-            }
+        int end = this.chars.length - 1;
+
+        while (Character.isSpaceChar(this.chars[start]) && Character.isSpaceChar(this.chars[end])) {
+            start++;
+            end--;
         }
 
-        char[] newChars = new char[end + 1 - start];
-        for (int i = start; i <= end; i++) {
-            newChars[i] = this.chars[i];
+        char[] newChars = new char[end - start];
+        for (int i = 0; i < newChars.length; i++) {
+            newChars[i] = this.chars[start + 1 + i];
         }
+
         return new MyString(newChars);
     }
 
     public static void main(String[] args) {
-        String s = "Welcome to Java!";
+        String s = "      Welcome to Java!     ";
         String s2 = "Java welcomes you!";
         MyString ms = new MyString(s);
         MyString ms2 = new MyString("Welcome to Java!");
@@ -365,9 +362,9 @@ public class MyString {
 
         MyString ms5 = new MyString("Java ");
 
-        System.out.println(ms.equals(ms2));
-        System.out.println(ms3.equals(ms2));
-        System.out.println(ms3.equals(ms));
+        MyString ms8 = new MyString("welcome to java!");
+        MyString ms8p = new MyString("Welcome to Python!");
 
+        System.out.println(ms.trim());
     }
 }
