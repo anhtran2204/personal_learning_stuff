@@ -1,5 +1,8 @@
 package MyString.src;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class MyString {
     private char chars[];
 
@@ -25,7 +28,7 @@ public class MyString {
 
     //CODE ALL NEW METHODS HERE!
     MyString(char[] value, int offset, int count) {
-        chars = new char[count - offset];
+        chars = new char[count];
         System.arraycopy(value, offset, chars, chars[0], count);
     }
 
@@ -50,22 +53,19 @@ public class MyString {
     }
 
     int compareTo(MyString anotherString) {
-        int diff = 0;
         for (int i = 0; i < Math.min(this.chars.length, anotherString.length()); i++) {
             if (this.chars[i] - anotherString.charAt(i) != 0) {
-                diff = this.chars[i] - anotherString.charAt(i);
+                return this.chars[i] - anotherString.charAt(i);
             }
         }
-        if (diff == 0) {
-            return this.chars.length - anotherString.length();
-        }
-        return diff;
+        return this.chars.length - anotherString.length();
     }
 
     MyString concat(MyString str) {
-        char[] temp = new char[chars.length + str.length()];
-        System.arraycopy(this.chars, 0, temp, 0, this.chars.length);
-        System.arraycopy(str.chars, 0, temp, this.chars.length, str.chars.length);
+        char[] temp = this.chars.clone();
+        this.chars = new char[chars.length + str.length()];
+        System.arraycopy(temp, 0, this.chars, 0, temp.length);
+        System.arraycopy(str.chars, 0, this.chars, temp.length, str.chars.length);
         return new MyString(temp);
     }
 
@@ -87,7 +87,27 @@ public class MyString {
     }
 
     public boolean equals(Object anObject) {
-        return this == anObject;
+        if (this == anObject) {
+            return true;
+        }
+        if (anObject == null) {
+            return false;
+        }
+        if (getClass() != anObject.getClass()) {
+            return false;
+        }
+
+        MyString check = (MyString) anObject;
+        int length = Math.max(this.chars.length, check.chars.length);
+        for (int i = 0; i < length; i++) {
+            if (i >= this.chars.length) {
+                return false;
+            }
+            if (this.chars[i] != check.chars[i]) {
+                return false;
+            }
+        }
+        return true;
     }
 
     boolean equalsIgnoreCase(MyString anotherString) {
@@ -296,6 +316,8 @@ public class MyString {
         for (int i = 0; i < this.chars.length; i++) {
             if (this.chars[i] >= 65 && this.chars[i] <= 90) {
                 newChars[i] = (char) (this.chars[i] + 32);
+            } else {
+                newChars[i] = this.chars[i];
             }
         }
         return new MyString(newChars);
@@ -306,6 +328,8 @@ public class MyString {
         for (int i = 0; i < this.chars.length; i++) {
             if (this.chars[i] >= 97 && this.chars[i] <= 122) {
                 newChars[i] = (char) (this.chars[i] - 32);
+            } else {
+                newChars[i] = this.chars[i];
             }
         }
         return new MyString(newChars);
@@ -332,4 +356,18 @@ public class MyString {
         return new MyString(newChars);
     }
 
+    public static void main(String[] args) {
+        String s = "Welcome to Java!";
+        String s2 = "Java welcomes you!";
+        MyString ms = new MyString(s);
+        MyString ms2 = new MyString("Welcome to Java!");
+        MyString ms3 = new MyString("Java welcomes you!");
+
+        MyString ms5 = new MyString("Java ");
+
+        System.out.println(ms.equals(ms2));
+        System.out.println(ms3.equals(ms2));
+        System.out.println(ms3.equals(ms));
+
+    }
 }
