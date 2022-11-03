@@ -1,8 +1,5 @@
 package MyString.src;
 
-import java.util.Arrays;
-import java.util.Objects;
-
 public class MyString {
     private char chars[];
 
@@ -296,7 +293,7 @@ public class MyString {
     }
 
     MyString substring(int beginIndex) {
-        char[] newChars = new char[this.chars.length - beginIndex + 1];
+        char[] newChars = new char[this.chars.length - beginIndex];
         int index = 0;
         for (int i = beginIndex; i < this.chars.length; i++) {
             newChars[index] = this.chars[i];
@@ -310,6 +307,7 @@ public class MyString {
         int index = 0;
         for (int i = beginIndex; i < endIndex; i++) {
             newChars[index] = this.chars[i];
+            index++;
         }
         return new MyString(newChars);
     }
@@ -366,22 +364,5 @@ public class MyString {
 
         MyString ms8 = new MyString("welcome to java!");
         MyString ms8p = new MyString("Welcome to Python!");
-
-        for (int i = 0; i <= ms.length(); i++)
-            System.out.println(ms.substring(i));
-
-        for (int i = 0; i < ms.length(); i++)
-            for (int j = i + 1; j <= ms.length(); j++)
-                System.out.println(ms.substring(i, j));
-
-        System.out.println(ms.toLowerCase());
-        System.out.println(ms3.toLowerCase());
-
-        System.out.println(ms.toUpperCase());
-        System.out.println(ms3.toUpperCase());
-
-        System.out.println(ms.trim());
-        MyString ms25 = new MyString("    fun      ");
-        System.out.println(ms25.trim());
     }
 }
