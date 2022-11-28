@@ -23,7 +23,7 @@ public class TestEditor {
         // assert that row 0 col 0 is Joker
         assert(editor.getText(0).equals("JokerAnti Hero Actors ranked"));
         editor.delete(9);
-        assert (editor.getText(0).equals("Joker Actors ranked"));
+        assert(editor.getText(0).equals("Joker Actors ranked"));
 
         // find "Samuel"
         editor.find("Samuel");
