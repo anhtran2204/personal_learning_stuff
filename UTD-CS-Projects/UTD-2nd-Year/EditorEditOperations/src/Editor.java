@@ -10,7 +10,11 @@ public class Editor {
     private File file;
 
     public Editor(String fileName) {
-        file = Paths.get(Paths.get(".").normalize().toAbsolutePath() + "/src/" + fileName).toFile();
+        try {
+            file = Paths.get(new File(".").getCanonicalPath() + "\\" + fileName).toFile();
+        } catch (IOException ignored) {
+
+        }
     }
 
     public File getFile() {
@@ -27,27 +31,43 @@ public class Editor {
         }
     }
 
-    public void insert() {
+    public void insert(String name) {
 
     }
 
-//    public int delete() {
-//
-//    }
-//
-//    public int find() {
-//
-//    }
-//
-//    public int getCursor() {
-//
-//    }
-//
-//    public void moveCursor() {
-//
-//    }
-//
-//    public int replace() {
-//
-//    }
+    public void delete(int wordIndex) {
+
+    }
+
+    public int find(String name) {
+        return 0;
+    }
+
+    public String getText(int line) {
+        return "";
+    }
+
+    public String getText(int row, int col) {
+        return "";
+    }
+
+    public String getText(int row, int col, int length) {
+        return "";
+    }
+
+    public int[] getCursor() {
+        return new int[2];
+    }
+
+    public void moveCursor(int row, int col) {
+
+    }
+
+    public void replace(int length, String newWord) {
+
+    }
+
+    public void save() {
+
+    }
 }
