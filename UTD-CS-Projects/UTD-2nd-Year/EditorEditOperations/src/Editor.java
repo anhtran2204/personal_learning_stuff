@@ -1,19 +1,21 @@
 package EditorEditOperations.src;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Scanner;
 
 public class Editor {
     private File file;
 
     public Editor(String fileName) {
         try {
-            file = Paths.get(new File(".").getCanonicalPath() + "\\" + fileName).toFile();
-        } catch (IOException ignored) {
-
+            file = Paths.get(new File(".").getCanonicalPath() + "/" + fileName).toFile();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -22,13 +24,29 @@ public class Editor {
     }
 
     public void saveAs(String newName) {
-        Path oldPath = Paths.get(this.file.getAbsolutePath());
-
+        File rename = new File(newName);
         try {
-            Files.move(oldPath, oldPath.resolveSibling(newName));
-        } catch (IOException ignored) {
-
+            Scanner input = new Scanner(this.file);
+            FileWriter fileWriter = new FileWriter(rename);
+            String s = "";
+            while (input.hasNextLine()) {
+                s += input.nextLine() + "\n";
+            }
+            fileWriter.write(s);
+            fileWriter.flush();
+            fileWriter.close();
+            file = rename;
+            System.out.println(this.file.getAbsolutePath());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+//        Path oldPath = Paths.get(this.file.getAbsolutePath());
+//
+//        try {
+//            Files.move(oldPath, oldPath.resolveSibling(newName));
+//        } catch (IOException ignored) {
+//
+//        }
     }
 
     public void insert(String name) {
