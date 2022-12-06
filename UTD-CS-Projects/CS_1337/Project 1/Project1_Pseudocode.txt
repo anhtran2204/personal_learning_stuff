@@ -1,0 +1,143 @@
+Andrew Nguyen AXN210010
+Project 1 Pseudocode
+
+
+Test cases:
+	1.  Draw a horizontal line and count if it has drawn the right amount of characters
+	2.  Draw a vertical line to see if accommodating for '\n' is really needed (test to see if I should seek write position by 50 or 51)
+	3.  See how the program reacts when it moves out of bounds northward
+	4.  Draw over a bold character with a non-bold character to see if it will overwrite it
+	5.  Use invalid characters for direction, bold, and/or print and see how the program reacts
+	6.  Use a number other than 1 and 2 for the status in a command
+	7.  Enter a command with commas only
+	8.  Enter a command with more than 4 commas
+	9.  Enter a command with less than 2 commas
+	10. Enter a blank line as a command
+
+
+void read commands function (file name)
+	Open commands file
+	
+	Read each line until the end of the file is reached
+		
+		Create 5 variables for arguments for the draw function
+			Integer status, String direction, Integer distance, Boolean bold, Boolean print
+		Create a count variable to track how many arguments have been read
+			Integer count = 0	
+		Create a string variable to temporarily store an argument
+		
+		While the length of the line is greater than zero (If the line still contains content)			
+			Find index of the comma
+			Add 1 to the count
+			
+			If index of the comma has no position hen
+				Set argument to the remaining line
+				Set line to an empty string ("")
+			Else
+				Get the argument only as a string
+				Break off the rest of the line for the next argument to be read
+			end
+			
+			switch (count)
+				Case 1
+					Convert argument to integer
+					Set argument as status
+				Case 2
+					Convert direction to char
+					Set argument as direction
+				Case 3
+					Convert argument to integer
+					Set argument as distance
+				Case 4
+					If argument is "B"
+						Set bold to true
+				Case 5
+					If argument is "P"
+						Set print to true
+			end
+		end
+		
+		If the count/number of arguments is (greater than or equal to 3) and (less than or equal to 5) then
+			If the count less than 4 then
+				Set bold to false
+			If the count is less than 5 then
+				Set print to false
+			
+			Call the draw function with the 5 arguments
+		end
+		
+		Reset the count to zero
+	end
+end
+
+
+void draw function (status, direction, distance, bold, print)
+	Open "paint.txt" file
+	Append to the end of the file
+	
+	Create integer variables for current position
+	Calculate xCurrent and yCurrent by using the current write position
+	Create integer variables for target position
+	xTarget = xCurrent and yTarget = yCurrent
+	
+	switch (direction)
+		Case 'E'
+			Set xTarget equal to xCurrent + distance
+		Case 'W'
+			Set xTarget equal to xCurrent - distance
+		Case 'S'
+			Set yTarget equal to yCurrent + distance
+		Case 'N'
+			Set yTarget equal to yCurrent - distance
+	end
+	If xTarget is (less than or equal to zero) or (greater than 50) or
+		yTarget is (less than or equal to zero) or (greater than 50) then
+		
+		Command is out of bounds, terminate function
+	end
+	
+	Create boolean variable called penDown
+	If status is 1 then
+		Set penDown to false
+	Else if status is 2 then
+		Set penDown to true
+	end
+	
+	Create char variable called outputChar
+	If bold is true then
+		Set outputChar to '#'
+	Else if bold is false then
+		Set outputChar to '*'
+	end
+	
+	If xTarget is not equal to xCurrent then
+		If direction is West then make the distance negative
+		For i = 1 until distance
+			Seek write position by one
+			If penDown is true and character in that position is not '#' then
+				Put outputChar in that position
+			end
+		end
+	end
+	If yTarget is not equal to yCurrent then
+		If direction is North then make the distance negative
+		For i = 1 until distance
+			Seek write position by 51 to get to the next column (50+1 to accommodate for '\n')
+			If penDown is true and character in that position is not '#' then
+				Put outputChar in that position
+			end
+		end
+	end
+	
+	If print is true then
+		Print the current canvas
+	end
+end
+
+
+int main function
+	Print "Enter file name"
+	Get file name
+	
+	Call read commands function with the inputted file name
+end
