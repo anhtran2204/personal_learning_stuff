@@ -19,32 +19,32 @@ public class TestEditor {
         // Save as Jokers.txt.  current file should be Jokers.txt
         editor.saveAs("Jokers.txt");
         // insert row 0 col 0
-//        editor.insert("Joker");
-//        // assert that row 0 col 0 is Joker
-//        assert(editor.getText(0).equals("JokerAnti Hero Actors ranked"));
-//        editor.delete(9);
-//        assert (editor.getText(0).equals("Joker Actors ranked"));
-//
-//        // find "Samuel"
-//        editor.find("Samuel");
-//        int[] rowcol = editor.getCursor();
-//        assert(rowcol[0] == 1 && rowcol[1] == 3);
-//        // assert that row 1 col 3 is Samuel
-//        assert(editor.getText(rowcol[0], rowcol[1], 6).equals("Samuel"));
-//
-//        // replace AntiHeros[0] with Jokers[0]
-//        editor.moveCursor(1, 3);
-//        editor.replace(AntiHeros[0].length(), Jokers[0]);
-//        assert (editor.getText(1, 3).equals(Jokers[0]));
-//
-//        editor.moveCursor(2, 3);
-//        editor.replace(AntiHeros[1].length(), Jokers[1]);
-//        assert (editor.getText(2, 3).equals(Jokers[1]));
-//
-//        editor.moveCursor(3, 3);
-//        editor.replace(AntiHeros[2].length(), Jokers[2]);
-//        assert (editor.getText(3, 3).equals(Jokers[2]));
-//
-//        editor.save();
+        editor.insert("Joker");
+        // assert that row 0 col 0 is Joker
+        assert(editor.getText(0).equals("JokerAnti Hero Actors ranked"));
+        editor.delete(9);
+        assert (editor.getText(0).equals("Joker Actors ranked"));
+
+        // find "Samuel"
+        editor.find("Samuel");
+        int[] rowcol = editor.getCursor();
+        assert(rowcol[0] == 1 && rowcol[1] == 3);
+        // assert that row 1 col 3 is Samuel
+        assert(editor.getText(rowcol[0], rowcol[1], 6).equals("Samuel"));
+
+        // replace AntiHeros[0] with Jokers[0]
+        editor.moveCursor(1, 3);
+        editor.replace(AntiHeros[0].length(), Jokers[0]);
+        assert (editor.getText(1, 3).equals(Jokers[0]));
+
+        editor.moveCursor(2, 3);
+        editor.replace(AntiHeros[1].length(), Jokers[1]);
+        assert (editor.getText(2, 3).equals(Jokers[1]));
+
+        editor.moveCursor(3, 3);
+        editor.replace(AntiHeros[2].length(), Jokers[2]);
+        assert (editor.getText(3, 3).equals(Jokers[2]));
+
+        editor.save();
     }
 }
