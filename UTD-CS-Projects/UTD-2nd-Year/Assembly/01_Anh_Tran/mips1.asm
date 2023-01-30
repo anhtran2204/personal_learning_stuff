@@ -2,10 +2,10 @@
 .data	
 	input1: .asciiz "Enter the first number: "	
 	input2 : .asciiz "Enter the second number: "	
+	message: .asciiz "The difference of X and Y (X - Y) is "
 	X: .word 0
 	Y: .word 0
 	D: .word 0
-	message: .asciiz "The difference of X and Y (X - Y) is "
 	
 # Code segment	
 .text
