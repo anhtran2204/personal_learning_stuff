@@ -1,4 +1,0 @@
-D:/Programming/CLion Projects/CS1136_LabLesson4/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt1.dir
-D:/Programming/CLion Projects/CS1136_LabLesson4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-D:/Programming/CLion Projects/CS1136_LabLesson4/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt2.dir
-D:/Programming/CLion Projects/CS1136_LabLesson4/cmake-build-debug/CMakeFiles/edit_cache.dir

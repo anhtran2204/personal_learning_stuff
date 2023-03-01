@@ -1,4 +1,0 @@
-This is inputFile-01.txt
-# This is a comment line.
-This is a regular data line.
-So is this.

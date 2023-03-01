@@ -1,3 +1,0 @@
-D:\JetBrains\Toolbox\apps\CLion\ch-0\212.5080.54\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\CS1136_Lab4_Pt1.dir/objects.a
-C:\msys64\mingw64\bin\ar.exe cr CMakeFiles\CS1136_Lab4_Pt1.dir/objects.a @CMakeFiles\CS1136_Lab4_Pt1.dir\objects1.rsp
-C:\msys64\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\CS1136_Lab4_Pt1.dir/objects.a -Wl,--no-whole-archive -o CS1136_Lab4_Pt1.exe -Wl,--out-implib,libCS1136_Lab4_Pt1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\CS1136_Lab4_Pt1.dir\linklibs.rsp
