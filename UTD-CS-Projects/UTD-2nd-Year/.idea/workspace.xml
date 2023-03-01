@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c0a97da9-9f46-49e3-b5e3-0533318ddb63" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/.idea/UTD-1st-Year.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/ASCII_Patterns_Btwn_Ranges/main" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/ASCII_Patterns_Btwn_Ranges/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/ClassesAndObjects/ClassesAndObjects" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/ClassesAndObjects/ClassesAndObjects.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/CourseGradeReport/inputFiles/StudentInfo.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/CourseGradeReport/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/CourseGradeReport/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/CourseGradeReport/report.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/Current_FutureValueWithInterest/calcCurrentVal.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/Current_FutureValueWithInterest/calcFutureVal.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/Current_FutureValueWithInterest/inputFiles/input2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/Current_FutureValueWithInterest/inputFiles/input3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/File_IO/inputFiles/numbers.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/File_IO/inputFiles/numbers2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/File_IO/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/FoodData/inputFiles/food.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/FoodData/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/FoodData/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/GradeAverage/inputFiles/grades1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/GradeAverage/inputFiles/grades2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/GradeAverage/inputFiles/grades3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/GradeAverage/inputFiles/grades4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/GradeAverage/inputFiles/grades5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/GradeAverage/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/HelloWorld/HelloWorld.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/HelloWorld/HelloWorld.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/HelloWorld/hello_world.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/HelloWorld/inputFiles/hello-world.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/HelloWorld/inputFiles/hello_world.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/IncomeTaxForm/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/IncomeTaxForm/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/LoShuMagicSquare/inputFiles/square.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/LoShuMagicSquare/inputFiles/square2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/LoShuMagicSquare/inputFiles/square3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/LoShuMagicSquare/inputFiles/square5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/LoShuMagicSquare/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/LoShuMagicSquare/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/NumberReversal/NumberReversal.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/NumberReversal/NumberReversal.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PizzaParty/PizzaParty.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PizzaParty/PizzaParty.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetDistance/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/.idea/CS1136_LabLesson4.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/3.20.2/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/3.20.2/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/3.20.2/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdC/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdCXX/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt1.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt1.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt1.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt1.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt1.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt1.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt1.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt1.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt1.dir/objects.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt1.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt2.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt2.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt2.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt2.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt2.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt2.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt2.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt2.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt2.dir/objects.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/CS1136_Lab4_Pt2.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CS1136_Lab4_Pt1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CS1136_Lab4_Pt1.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CS1136_Lab4_Pt1.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/CS1136_Lab4_Pt2.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/lesson4part1.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PlanetGravitationalAccel/lesson4part2.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/Polymorphism/main" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/Polymorphism/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/Polymorphism/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/Polymorphism/person.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/Polymorphism/person.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/Polymorphism/student.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/Polymorphism/student.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/.idea/PracticeArea.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/.cmake/api/v1/query/cache-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/.cmake/api/v1/reply/cache-v2-312a4f4f5f18058ca039.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-3d6a4b430cbb144876de.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-afb97ba9aa073a1c0566.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/.cmake/api/v1/reply/index-2021-12-07T04-34-18-0816.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/.cmake/api/v1/reply/target-PracticeArea-Debug-e0edb89edd9bbe6f5ec7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-448b4d7509414ac76102.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/3.20.2/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/3.20.2/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/3.20.2/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdC/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdCXX/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/3.21.1/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/3.21.1/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/3.21.1/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/3.21.1/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdCXX/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/PracticeArea.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/PracticeArea.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/PracticeArea.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/PracticeArea.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/PracticeArea.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/PracticeArea.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/PracticeArea.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/PracticeArea.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/PracticeArea.dir/objects.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/PracticeArea.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/PracticeArea.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/PracticeArea.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/PracticeArea/tempCodeRunnerFile.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SalesReport/inputFiles/salesb.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SalesReport/inputFiles/salesb2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SalesReport/inputFiles/salesb2b.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SalesReport/inputFiles/salesb3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SalesReport/inputFiles/salesb4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SalesReport/inputFiles/salesb5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SalesReport/inputFiles/salesb6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SalesReport/main" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SalesReport/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SalesReport/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SalesReport/saleschart.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SecondConverter/SecondConverter.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SecondConverter/SecondConverter.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/Snake Game/HW1-Snake-AnhTran.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/.idea/SoundTravelMedium.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/3.20.2/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/3.20.2/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/3.20.2/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdC/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdCXX/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/SoundTravelMedium.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/SoundTravelMedium.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/SoundTravelMedium.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/SoundTravelMedium.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/SoundTravelMedium.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/SoundTravelMedium.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/SoundTravelMedium.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/SoundTravelMedium.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/lesson5part1.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SoundTravelMedium/lesson5part2.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/SpoolsOrdering/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/StructDemo/main" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/StructDemo/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/TemperatureConverter/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/TestAnswersCheck/inputFiles/answers.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/TestAnswersCheck/inputFiles/answers30.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/TestAnswersCheck/inputFiles/student.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/TestAnswersCheck/inputFiles/student5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/TestAnswersCheck/inputFiles/student6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/TestAnswersCheck/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/TestAnswersCheck/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-AnimalGuessing/HW5-CS1337-Anh-Tran" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-AnimalGuessing/HW5-CS1337-Anh-Tran.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-AnimalGuessing/HW5-CS1337-Anh-Tran.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-OperationKindness/CS HW6 Output.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-OperationKindness/HW6 roles.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-OperationKindness/headers/animal.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-OperationKindness/headers/cat.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-OperationKindness/headers/dog.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-OperationKindness/inputFIle/Animal Shelter Data-05.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-OperationKindness/src/HW6-CS1337-Anh-Tran.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-OperationKindness/src/animal.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-OperationKindness/src/cat.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-OperationKindness/src/dog.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-SearchingSorting/HW3-CS1337-Anh-Tran" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-SearchingSorting/HW3-CS1337-Anh-Tran.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-SearchingSorting/HW3-CS1337-Anh-Tran.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-Snake Game/HW0-Snake-AnhTran.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-Snake Game/HW0-Snake-AnhTran.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-Snake Game/HW0-Snake-AnhTran.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-Snake Game/HW1-Snake-AnhTran.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-TongueTwisters/HW4-CS1337-Anh-Tran" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-TongueTwisters/HW4-CS1337-Anh-Tran.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-TongueTwisters/HW4-CS1337-Anh-Tran.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-TongueTwisters/inputFiles/LeetChars-Small.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-TongueTwisters/inputFiles/TongueTwisters.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-TongueTwisters/tempCodeRunnerFile.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-WordSearch/.idea/UTD-WordSearch.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-WordSearch/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-WordSearch/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-WordSearch/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-WordSearch/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-WordSearch/CppProperties.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-WordSearch/DemoFiles/inputFile-01.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-WordSearch/DemoFiles/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-WordSearch/DemoFiles/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-WordSearch/DemoFiles/word-search-demo.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-WordSearch/DemoFiles/word-search-demo.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-WordSearch/HW2-CS1337-Anh-Tran" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-WordSearch/Main-HW/ComedyMovies.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-WordSearch/Main-HW/HW2-CS1337-Anh-Tran" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-WordSearch/Main-HW/HW2-CS1337-Anh-Tran.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-WordSearch/Main-HW/HW2-CS1337-Anh-Tran.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UTD-1st-Year/C++/UTD-WordSearch/Main-HW/HW2-Output-AnhTran.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly/01_Anh_Tran/Screenshot 2023-01-28 011058.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly/01_Anh_Tran/mips1.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly/01_Anh_Tran/questions.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly/MarsPlus.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/BankingOperations/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/BankingOperations/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/BankingOperations/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/BankingOperations/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/BankingOperations/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/BankingOperations/BankingOperations.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/BankingOperations/src/BankOperations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/BankingOperations/src/CheckingAccount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/BankingOperations/src/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/BankingOperations/src/Demo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/ChangeCombinations/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/ChangeCombinations/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/ChangeCombinations/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/ChangeCombinations/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/ChangeCombinations/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/ChangeCombinations/ChangeCombinations.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/ChangeCombinations/src/ChangeCombinations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/CodeGuessing/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/CodeGuessing/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/CodeGuessing/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/CodeGuessing/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/CodeGuessing/CodeGuessing.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/CodeGuessing/src/CodeGuessing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/CollectingBeepers/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/CollectingBeepers/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/CollectingBeepers/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/CollectingBeepers/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/CollectingBeepers/CodeGuessing.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/CollectingBeepers/src/CollectingBeepers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Company/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Company/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Company/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Company/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Company/Company.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Company/src/Company.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Compositions/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Compositions/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Compositions/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Compositions/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Compositions/Compositions.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Compositions/src/Compositions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Demo/Demo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/EditorEditOperations/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/EditorEditOperations/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/EditorEditOperations/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/EditorEditOperations/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/EditorEditOperations/EditorEditOperations.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/EditorEditOperations/src/AntiHeros.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/EditorEditOperations/src/Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/EditorEditOperations/src/Jokers.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/EditorEditOperations/src/TestEditor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Factorial/factorial.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Factorial/factorial.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/GasCostMinimization/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/GasCostMinimization/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/GasCostMinimization/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/GasCostMinimization/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/GasCostMinimization/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/GasCostMinimization/GasCostMinimization.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/GasCostMinimization/src/AltGasCostMin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/GasCostMinimization/src/GasCost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/HashTable/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/HashTable/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/HashTable/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/HashTable/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/HashTable/HashTable.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/HashTable/src/HashTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/HorseShoe/hshoe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/InfixExpressionSolver/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/InfixExpressionSolver/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/InfixExpressionSolver/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/InfixExpressionSolver/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/InfixExpressionSolver/InfixExpressionSolver.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/InfixExpressionSolver/src/Infix1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Knapsack/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Knapsack/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Knapsack/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Knapsack/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Knapsack/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Knapsack/Knapsack.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Knapsack/src/Knapsack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Modulo/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Modulo/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Modulo/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Modulo/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Modulo/Modulo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Modulo/src/Modulo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/MyArrayList/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/MyArrayList/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/MyArrayList/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/MyArrayList/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/MyArrayList/MyArrayList.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/MyArrayList/src/MyArrayList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/MyString/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/MyString/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/MyString/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/MyString/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/MyString/MyString.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/MyString/src/MyString.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/NQueens/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/NQueens/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/NQueens/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/NQueens/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/NQueens/N-Queens.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/NQueens/src/AltNQueens.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/NQueens/src/NQueens.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/NarrowArtGallery/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/NarrowArtGallery/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/NarrowArtGallery/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/NarrowArtGallery/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/NarrowArtGallery/NarrowArtGallery.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/NarrowArtGallery/src/NarrowArtGallery.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Polynomial/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Polynomial/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Polynomial/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Polynomial/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Polynomial/Polynomial.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Polynomial/src/Polynomial.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/PostfixExpressionSolver/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/PostfixExpressionSolver/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/PostfixExpressionSolver/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/PostfixExpressionSolver/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/PostfixExpressionSolver/PostfixExpressionSolver.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/PostfixExpressionSolver/src/PostFix.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/PrefixExpressionSolver/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/PrefixExpressionSolver/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/PrefixExpressionSolver/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/PrefixExpressionSolver/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/PrefixExpressionSolver/PrefixExpressionSolver.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/PrefixExpressionSolver/src/Prefix1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/RestaurantActivities/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/RestaurantActivities/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/RestaurantActivities/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/RestaurantActivities/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/RestaurantActivities/RestaurantActivities.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/RestaurantActivities/src/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/RestaurantActivities/src/MenuItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/RestaurantActivities/src/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/RestaurantActivities/src/Restaurant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/RestaurantActivities/src/Table.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/RestaurantActivities/src/config.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/RightTriangle/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/RightTriangle/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/RightTriangle/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/RightTriangle/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/RightTriangle/RightTriangle.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/RightTriangle/src/Egypt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/SwipingSuggestions/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/SwipingSuggestions/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/SwipingSuggestions/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/SwipingSuggestions/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/SwipingSuggestions/SwipingSuggestions.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/SwipingSuggestions/src/SwipingSuggestions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/SwipingSuggestions/src/newwords.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/SwipingSuggestions/src/options.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/SwipingSuggestions/src/words.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/UTD-2nd-Year.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/WordPuzzle/WordPuzzle.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/WordPuzzle/src/AltWordPuzzle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/WordPuzzle/src/WordPuzzle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/WordPuzzle/src/inputs/coding.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/WordPuzzle/src/inputs/people.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/WordPuzzle/src/inputs/places.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/WordPuzzle/src/inputs/puzzle.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2Lf17qeBb4ZT3WKJy1DztZlJQOv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-2nd-Year/Java/CS 3345",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c0a97da9-9f46-49e3-b5e3-0533318ddb63" name="Changes" comment="" />
+      <created>1676247172220</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1676247172220</updated>
+      <workItem from="1676247181666" duration="62000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
