@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="dd6a8aa6-1a1b-4279-b1ba-fe4bf4d7f0ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../CS 3345/AVLTree/src/AVLTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AVLTree/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AVLTree/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AVLTree/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AVLTree/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AVLTree/AVLTree.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AVLTree/src/AVLTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AVLTree/src/booklist.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Assembly - CS 2340/03_Anh_Tran.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Assembly - CS 2340/03_Anh_Tran.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Assembly - CS 2340/03_Anh_Tran/doubleSum.asm" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Assembly - CS 2340/03_Anh_Tran/doubleSum.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Assembly - CS 2340/demo.asm" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Assembly - CS 2340/demo.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BankingOperations/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Company/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../HashTable/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordPuzzle.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Modulo/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MyArrayList/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RestaurantActivities/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RightTriangle/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SwipingSuggestions/.idea/workspace.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2NLifRkOMCkCv8yyqgq0A5aDtGX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-2nd-Year/Java/CS 2336/WordPuzzle"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dd6a8aa6-1a1b-4279-b1ba-fe4bf4d7f0ec" name="Changes" comment="" />
+      <created>1679449865566</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679449865566</updated>
+      <workItem from="1679449866743" duration="31000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

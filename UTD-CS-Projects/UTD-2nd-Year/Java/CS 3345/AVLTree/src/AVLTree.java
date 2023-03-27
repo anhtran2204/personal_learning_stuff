@@ -1,26 +1,62 @@
 // AVL Binary search tree implementation in Java
 // Author: AlgorithmTutor
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+class Book {
+    private long ISBN;
+    private String name;
+    private String author;
+
+    public Book(long ISBN, String name, String author) {
+        this.ISBN = ISBN;
+        this.name = name;
+        this.author = author;
+    }
+
+    public long getISBN() {
+        return ISBN;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+}
+
 // data structure that represents a node in the tree
 class Node {
-    int data; // holds the key
+    Book book;
+    long data; // holds the key
     Node parent; // pointer to the parent
     Node left; // pointer to left child
     Node right; // pointer to right child
     int bf; // balance factor of the node
 
-    public Node(int data) {
-        this.data = data;
+    public Node(Book book) {
+//        this.data = book.getISBN();
+        this.book = book;
         this.parent = null;
         this.left = null;
         this.right = null;
         this.bf = 0;
     }
+
+    public Node replaceBook(Book newBook) {
+        this.book = newBook;
+        return this;
+    }
 }
 
 public class AVLTree {
+    static BufferedReader reader;
     private Node root;
-
+    private Node imbalance;
     public AVLTree() {
         root = null;
     }
@@ -30,36 +66,40 @@ public class AVLTree {
         if (currPtr != null) {
             System.out.print(indent);
             if (last) {
-                System.out.print("R----");
+                System.out.print("R ---- ");
                 indent += "     ";
             } else {
-                System.out.print("L----");
+                System.out.print("L ---- ");
                 indent += "|    ";
             }
 
-            System.out.println(currPtr.data + "(BF = " + currPtr.bf + ")");
+            System.out.println(currPtr.book.getISBN() + "; " +
+                    currPtr.book.getName() + "; " +
+                    currPtr.book.getAuthor() +
+                    " (BF = " + currPtr.bf + ")");
 
             printHelper(currPtr.left, indent, false);
             printHelper(currPtr.right, indent, true);
         }
     }
 
-    private Node searchTreeHelper(Node node, int key) {
-        if (node == null || key == node.data) {
+    private Node searchTreeHelper(Node node, long key) {
+        if (node == null || key == node.book.getISBN()) {
             return node;
         }
 
-        if (key < node.data) {
+        if (key < node.book.getISBN()) {
             return searchTreeHelper(node.left, key);
         }
         return searchTreeHelper(node.right, key);
     }
 
-    private Node deleteNodeHelper(Node node, int key) {
+    private Node deleteNodeHelper(Node node, long key) {
+        Node parent = null;
         // search the key
         if (node == null) return node;
-        else if (key < node.data) node.left = deleteNodeHelper(node.left, key);
-        else if (key > node.data) node.right = deleteNodeHelper(node.right, key);
+        else if (key < node.book.getISBN()) node.left = deleteNodeHelper(node.left, key);
+        else if (key > node.book.getISBN()) node.right = deleteNodeHelper(node.right, key);
         else {
             // the key has been found, now delete it
 
@@ -82,15 +122,15 @@ public class AVLTree {
             // case 3: has both children
             else {
                 Node temp = minimum(node.right);
-                node.data = temp.data;
-                node.right = deleteNodeHelper(node.right, temp.data);
+                node.replaceBook(temp.book);
+                parent = temp;
+                node.right = deleteNodeHelper(node.right, temp.book.getISBN());
             }
 
         }
 
         // Write the update balance logic here
         // YOUR CODE HERE
-
         return node;
     }
 
@@ -122,15 +162,19 @@ public class AVLTree {
             if (node.right.bf < 0) {
                 rightRotate(node.right);
                 leftRotate(node);
+                System.out.println("Imbalance condition occurred at inserting ISBN " + imbalance.book.getISBN() + "; fixed in LeftRight Rotation at ISBN " + node.book.getISBN());
             } else {
                 leftRotate(node);
+                System.out.println("Imbalance condition occurred at inserting ISBN " + imbalance.book.getISBN() + "; fixed in LeftLeft Rotation at ISBN " + node.book.getISBN());
             }
         } else if (node.bf < 0) {
             if (node.left.bf > 0) {
                 leftRotate(node.left);
                 rightRotate(node);
+                System.out.println("Imbalance condition occurred at inserting ISBN " + imbalance.book.getISBN() + "; fixed in RightLeft Rotation at ISBN " + node.book.getISBN());
             } else {
                 rightRotate(node);
+                System.out.println("Imbalance condition occurred at inserting ISBN " + imbalance.book.getISBN() + "; fixed in RightRight Rotation at ISBN " + node.book.getISBN());
             }
         }
     }
@@ -138,7 +182,7 @@ public class AVLTree {
 
     private void preOrderHelper(Node node) {
         if (node != null) {
-            System.out.print(node.data + " ");
+            System.out.print(node.book.getISBN() + " ");
             preOrderHelper(node.left);
             preOrderHelper(node.right);
         }
@@ -147,7 +191,7 @@ public class AVLTree {
     private void inOrderHelper(Node node) {
         if (node != null) {
             inOrderHelper(node.left);
-            System.out.print(node.data + " ");
+            System.out.print(node.book.getISBN() + " ");
             inOrderHelper(node.right);
         }
     }
@@ -156,7 +200,7 @@ public class AVLTree {
         if (node != null) {
             postOrderHelper(node.left);
             postOrderHelper(node.right);
-            System.out.print(node.data + " ");
+            System.out.print(node.book.getISBN() + " ");
         }
     }
 
@@ -180,7 +224,7 @@ public class AVLTree {
 
     // search the tree for the key k
     // and return the corresponding node
-    public Node searchTree(int k) {
+    public Node searchTree(long k) {
         return searchTreeHelper(this.root, k);
     }
 
@@ -285,15 +329,15 @@ public class AVLTree {
 
 
     // insert the key to the tree in its appropriate position
-    public void insert(int key) {
+    public void insert(Book book) {
         // PART 1: Ordinary BST insert
-        Node node = new Node(key);
+        Node node = new Node(book);
         Node y = null;
         Node x = this.root;
 
         while (x != null) {
             y = x;
-            if (node.data < x.data) {
+            if (node.book.getISBN() < x.book.getISBN()) {
                 x = x.left;
             } else {
                 x = x.right;
@@ -304,36 +348,51 @@ public class AVLTree {
         node.parent = y;
         if (y == null) {
             root = node;
-        } else if (node.data < y.data) {
+        } else if (node.book.getISBN() < y.book.getISBN()) {
             y.left = node;
         } else {
             y.right = node;
         }
 
         // PART 2: re-balance the node if necessary
+        imbalance = node;
         updateBalance(node);
     }
 
     // delete the node from the tree
-    Node deleteNode(int data) {
-        return deleteNodeHelper(this.root, data);
+    Node deleteNode(long key) {
+        return deleteNodeHelper(this.root, key);
     }
 
     // print the tree structure on the screen
     public void prettyPrint() {
+        System.out.println();
         printHelper(this.root, "", true);
+    }
+
+    public static void addBook(AVLTree bst) {
+        try {
+            reader = new BufferedReader(new FileReader("./src/booklist.txt"));
+            String data;
+            while ((data = reader.readLine()) != null) {
+                bst.insert(new Book(Long.parseLong(data), reader.readLine(), reader.readLine()));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String [] args) {
         AVLTree bst = new AVLTree();
-        bst.insert(1);
-        bst.insert(2);
-        bst.insert(3);
-        bst.insert(4);
-        bst.insert(5);
-        bst.insert(6);
-        bst.insert(7);
-        bst.insert(8);
+//        bst.insert(1);
+//        bst.insert(2);
+//        bst.insert(3);
+//        bst.insert(4);
+//        bst.insert(5);
+//        bst.insert(6);
+//        bst.insert(7);
+//        bst.insert(8);
+        addBook(bst);
         bst.prettyPrint();
     }
 }

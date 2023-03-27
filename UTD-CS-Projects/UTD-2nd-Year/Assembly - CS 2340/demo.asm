@@ -1,32 +1,31 @@
-	.data
-prompt1: .asciiz "Enter 1st number: "
-prompt2: .asciiz "Enter 2nd number: "
-prompt3: .asciiz "Sum of "
-prompt4: .asciiz " and "
-prompt5: .asciiz " is: "
-X: .word 0
-Y: .word 0
-S: .word 0
+.data
+	result: .asciiz "The double sum of integers from 0 to "
+	compare: .asciiz "Bigger"
+	compare2: .asciiz "Smaller"
+	number: .word 100
 	
-	.text
-main:
-	li $v0, 5
-	syscall
-	sw $v0, X
-	
-	li $v0, 5
-	syscall
-	sw $v0, Y
-	
-	lw $s0, X
-	lw $s1, Y
-	add $s2, $s0, $s1
-	add $s2, $s2, 1
-	sw $s2, S
-	
-	lw $a0, S
-	li $v0, 1
-	syscall
-	
-	li $v0, 10
-	syscall
+.text
+	main:
+		li $v0, 4
+		la $a0, result
+		syscall
+		
+		li $v0, 1
+		la $a0, number
+		syscall
+		
+		li $v0, 5
+		syscall
+		
+		bgt $v0, $a0, else
+		la $a0, compare2
+		li $v0, 4
+		syscall
+		
+	else: 
+		la $a0, compare
+		li $v0, 4
+		syscall
+		
+		li $v0, 10
+		syscall

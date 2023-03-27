@@ -1,13 +1,20 @@
 .data 
-	array: .word 404						# An array with a size of 101 (range 0 to 100 inclusive)
 	prompt: .asciiz "Enter an integer (0 to 100): "			
-	error: .asciiz "Invalid message!\n"
+	error: .asciiz "Invalid number!\n"
 	result1: .asciiz "The double sum of integers from 0 to "
 	result2: .asciiz " is "
-	length: .word 0							# Variable to indicate size of array
-	sum: .word 0							# Variable to hold sum of double integers
+	input: .word 0							# Variable to store input
+	arraySize: . word 101						# Variable to store array length
+	array: .word 101						# An array with a size of 101 (range 0 to 100 inclusive)
 	
 .text
+	# Registers:
+	#   t0 -- array pointer
+	#   t1 -- array length
+	#   t2 -- input
+	#   t3 -- sum
+	#   t4 -- counter
+	#   t5 -- placeholder
 	main:	
 		li $v0, 4				# Print prompt asking for user input
 		la $a0, prompt
@@ -16,43 +23,49 @@
 		li $v0, 5				# Asking for user input
 		syscall
 	
-		sw $v0, length				# Store input onto the X variable
-		lw $s1, length				# Load the value in X onto $s1 to compare the value with loop index
-		sll $s1, $s1, 2				# Shift bits to the left to multiply array length to bit size (1 = 4 bits)
-		add $s1, $s1, 4				# Increase by to not let the loop exit at the exact number (index <= length)
-	
-		beq $v0, $zero, errorDisplay		# If input value is 0 then branch to error to input again
-		add $t0, $zero, $zero			# Initialize the loop index = 0
-		add $s0, $zero, $zero			# Initialize the counter = 0
-		add $s2, $zero, $zero			# Initialize the sum = 0
-		j storeArray				# Jump to storing numbers into array
-	
-	errorDisplay:		
-		li $v0, 4				# Print the prompt for invalid value
-		la $a0, error
-		syscall
+		sw $v0, input				# Store input onto the X variable
+		lw $t2, input				# Load input onto register $t2
+		sll $t5, $t2, 2				# Load the value in X onto $s1 to compare the value with loop index
+		lw $t1, arraySize			# Load array size onto register $t1
 		
-		j main					# Go back to input the valid number input
-	
+		beq $t5, $zero, exit			# Exit program if input = 0
+		blt $t5, $zero, errorDisplay		# If input value is < 0 then branch to error
+		bgt $t5, $t1, errorDisplay		# If input value is > limit then branch to error
+		
+		add $t3, $zero, $zero			# Initialize sum = 0
+		add $t4, $zero, $zero			# Initialize counter = 0
+		add $t5, $zero, $zero
+		
+		la $t0, array				# Initialize the array pointer = base addr of array
+		j storeArray				# Jump to storing numbers into array
+		
 	storeArray:
-		beq $t0, $s1, exit			# If current loop index = length then exit loop
-		sll $t1, $s0, 1				# Multiply 2*currValue 
-		sw $t1, array($t0)			# Store 2*currValue into current array index
-		add $s2, $s2, $t1			# Add 2*currValue to the sum
-		add $s0, $s0, 1				# Increment counter by 1
-		addi $t0, $t0, 4			# Increase index by 4 bits (index++ = +4 bits)
-	
+		bgt $t4, $t2, addToSum			# If current loop index > length then exit loop
+		sll $t5, $t4, 1				# Multiply 2*currValue
+		sw $t5, ($t0)				# Store 2*currValue into current array index
+		addi $t0, $t0, 4			# Increment array address by 4
+		add $t4, $t4, 1				# Increment counter by 1
+					
 		j storeArray				# Loop again until branching
 	
-	exit:
-		sw $s2, sum				# Store the sum in the regiter into the variable
+	addToSum:
+		la $t0, array				# Initialize the array pointer again
+		add $t4, $zero, $zero			
+	loop:	bgt $t4, $t2, printSum			# If current loop index > length then exit loop	
+		lw $t5, 0($t0)				# Load word onto placeholder
+		add $t3, $t3, $t5			# Add to sum
+		addi $t0, $t0, 4			# Increment array address by 4
+		add $t4, $t4, 1				# Increment counter by 1
+		
+		j loop
 	
+	printSum:
 		li $v0, 4				# Print result 
 		la $a0, result1
 		syscall
 	
 		li $v0, 1
-		lw $a0, length
+		add $a0, $t2, $zero
 		syscall
 		
 		li $v0, 4
@@ -60,9 +73,17 @@
 		syscall
 		
 		li $v0, 1
-		lw $a0, sum
+		add $a0, $t3, $zero
 		syscall
-	
+		
+		j exit
+		
+	errorDisplay:		
+		li $v0, 4				# Print the prompt for invalid value
+		la $a0, error
+		syscall
+		
+	exit:
 		li $v0, 10				# Exit program
 		syscall		
 				
