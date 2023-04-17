@@ -38,3 +38,9 @@ printBoard:
 	syscall
 	
 	
+	jal printRowLabel
+	
+printRowLabel:
+	
+	
+	
