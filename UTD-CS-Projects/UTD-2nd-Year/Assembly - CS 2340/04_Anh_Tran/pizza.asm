@@ -11,19 +11,19 @@
 	space: .asciiz " "
 	newLine: .asciiz "\n"
 	
-	totalPizzas: .word 0						# Total pizzas sold
-	roundPizzas: .word 0						# Total round pizzas sold 
-	squarePizzas: .word 0						# Total square pizzas sold
-	roundSqFt: .word 0						# Round pizzas total square feet 
-	squareSqFt: .float 0						# Square pizzas total square feet
-	estimate: .float 0						# Estimate pizzas sold in square feet
-	actual: .float 0						# Actual pizzas sold in square feet
+	totalPizzas: .word 0							# Total pizzas sold
+	roundPizzas: .word 0							# Total round pizzas sold 
+	squarePizzas: .word 0							# Total square pizzas sold
+	roundSqFt: .word 0							# Round pizzas total square feet 
+	squareSqFt: .float 0							# Square pizzas total square feet
+	estimate: .float 0							# Estimate pizzas sold in square feet
+	actual: .float 0							# Actual pizzas sold in square feet
 	
-	ZERO: .float 0.0						# Zero constant
-	PI: .float 3.14159						# PI constant
-	FOOT: .float 0.083						# 1 inch = 0.083 foot	
-	RADIUS: .float 5 						# 10" diameter = 5" radius
-	SIDE: .word 12							# Side of the square
+	ZERO: .float 0.0							# Zero constant
+	PI: .float 3.14159							# PI constant
+	SQ_INCHES: .float 144.0							# 1 inch = 0.083 foot	
+	RADIUS: .float 5 							# 10" diameter = 5" radius
+	SIDE: .word 12								# Side of the square
 	
 .text
 
@@ -74,30 +74,30 @@ input:
 	
 calculations:
 	lwc1 $f1, ZERO
-	lwc1 $f2, FOOT
+	lwc1 $f2, SQ_INCHES
 	lwc1 $f3, RADIUS
 	lwc1 $f4, PI
 	lw $s0, SIDE
 	lw $s1, roundPizzas
 	lw $s2, squarePizzas
 	
-	round:
-	mtc1 $s1, $f5
-	cvt.s.w $f5, $f5
-	mul.s $f6, $f3, $f3						# PI^2
+	round:	
+	mtc1 $s1, $f5							# Load num of round pizzas onto floating point register
+	cvt.s.w $f5, $f5						# Convert the interger equivalent into floating point
+	mul.s $f6, $f3, $f3						# Radius^2
 	mul.s $f7, $f4, $f6						# Circle area = PI * Radius^2
 	mul.s $f8, $f7, $f5 						# Total sq inches of round pizzas = Area * Num of pizzas
-	mul.s $f8, $f8, $f2						# Convert total sq inches in to sq ft
+	div.s $f8, $f8, $f2						# Convert total sq inches in to sq ft
 	
 	square:
-	mtc1 $s2, $f9
-	cvt.s.w $f9, $f9
+	mtc1 $s2, $f9							# Load num of square pizzas onto floating point register
+	cvt.s.w $f9, $f9						# Convert the interger equivalent into floating point
 	mult $s0, $s0							# Square area = Side * Side
-	mflo $t0
-	mtc1 $t0, $f10
-	cvt.s.w $f10, $f10
+	mflo $t0							# Load from LO 32-bits product onto the register
+	mtc1 $t0, $f10							# Load the product onto floating point register
+	cvt.s.w $f10, $f10						# Convert the interger equivalent into floating point
 	mul.s $f11, $f10, $f9						# Total sq inches of square pizzas = Area * Num of Pizzas
-	mul.s $f11, $f11, $f2						# Convert total sq inches in to sq ft
+	div.s $f11, $f11, $f2						# Convert total sq inches in to sq ft
 	
 	swc1 $f8, roundSqFt
 	swc1 $f11, squareSqFt
@@ -107,7 +107,7 @@ sales:
  	la $a0, totalPizzasSqFt
  	syscall
  	
- 	add.s $f13, $f8, $f11
+ 	add.s $f13, $f8, $f11						# Add round and square to get total square feet
  	add.s $f12, $f13, $f1
  	li $v0, 2
  	syscall
@@ -141,8 +141,8 @@ sales:
  	syscall
 	
 profitOrLoss:
-	lwc1 $f14, estimate
-	c.lt.s $f14, $f13
+	lwc1 $f14, estimate						# Load estimation sales onto floating point register
+	c.lt.s $f14, $f13						# Compare if estimate is less than actual, if true then branch
 	bc1t else
 	li $v0, 4
  	la $a0, loss
