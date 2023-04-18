@@ -1,51 +1,51 @@
 	.data
 board:	
-	#.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	#.byte	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-	#.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	#.byte	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-	#.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	#.byte 	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-	#.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	#.byte 	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-	#.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	#.byte	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-	#.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	#.byte	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-	#.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+	.byte  	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+	.byte		' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+	.byte		'.', '.', '.', '.', '.', '.', '.', '.', '.'
+	.byte		' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+	.byte		'.', '.', '.', '.', '.', '.', '.', '.', '.'
+	.byte 	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+	.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+	.byte 	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+	.byte		'.', '.', '.', '.', '.', '.', '.', '.', '.'
+	.byte		' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+	.byte		'.', '.', '.', '.', '.', '.', '.', '.', '.'
+	.byte		' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+	.byte		'.', '.', '.', '.', '.', '.', '.', '.', '.'
 	
-	.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+	#.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+	#.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+	#.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+	#.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+	#.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+	#.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+	#.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
 	
-prompt1: 	.asciiz "Enter the 1st coordinate: "
-prompt2:	.asciiz "Enter the 2nd coordinate: "
+prompt1: 		.asciiz "Enter the 1st coordinate: "
+prompt2:		.asciiz "Enter the 2nd coordinate: "
 error1:		.asciiz "Line already exists!\n"
 error2:		.asciiz	"Coordinates must be adjacent!\n"
 	
-colA:		.asciiz "A"
-colB:		.asciiz "B" 
-colC: 		.asciiz "C"
-colD:		.asciiz "D"
-colE:		.asciiz "E"
-colF:		.asciiz "F"
-colG:		.asciiz "G"
-colLabel:	.word	colA, colB, colC, colD, colE, colF, colG
-rowLabel:	.word	1, 2, 3, 4, 5, 6, 7, 8, 9
-boardSize:	.word	63
-colSize:	.word	9
-rowSize:	.word 	7
+colA:			.asciiz 	"A"
+colB:			.asciiz 	"B" 
+colC: 		.asciiz 	"C"
+colD:			.asciiz 	"D"
+colE:			.asciiz 	"E"
+colF:			.asciiz 	"F"
+colG:			.asciiz 	"G"
+colLabel:		.word	colA, colB, colC, colD, colE, colF, colG
+rowLabel:		.word	1, 2, 3, 4, 5, 6, 7, 8, 9
+boardSize:		.word	221
+colSize:		.word	9
+rowSize:		.word 	13
 input:		.space 	4
-newLine:	.asciiz "\n"
-space:		.asciiz " "
-lineAcross:	.asciiz	"_"
-lineDown:	.asciiz	"|"
-player: 	.asciiz "P"
-computer:	.asciiz	"C"
+newLine:		.asciiz 	"\n"
+space:		.asciiz 	" "
+lineAcross:		.asciiz	"_"
+lineDown:		.asciiz	"|"
+player: 		.asciiz 	"P"
+computer:		.asciiz	"C"
 			
 	.text
 .globl printBoard
@@ -111,17 +111,19 @@ printRow:
 	lw $s3, colSize
 	
 	li $t0, 0
+	addi $t2, $t2, 2
+	addi $t3, $t3, 1
 	outerLoop:
 		bge $t0, $s2, exitOuterLoop
 		li $t1, 0
 		
-		#lb $t2, board($s0)
-		#lb $t3, space
-		#bne $t2, $t3, printNormal
-		#addi $s1, $s1, -4
-		#	j innerLoop
+		div $t0, $t2
+		mfhi $t4
+		bne $t3, $t4, printNormal
+		addi $s1, $s1, -4
+			j innerLoop
 		
-		#printNormal:
+		printNormal:
 			lw $a0, colLabel($s1)
 			li $v0, 4
 			syscall
@@ -140,7 +142,7 @@ printRow:
 			li $v0, 4
 			syscall
 		
-			add $s0, $s0, 1
+			addi $s0, $s0, 1
 			addi $t1, $t1, 1 
 			
 			j innerLoop
