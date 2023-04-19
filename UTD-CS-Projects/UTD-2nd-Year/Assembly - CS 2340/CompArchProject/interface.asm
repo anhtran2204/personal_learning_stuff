@@ -1,73 +1,130 @@
 	.data
 board:	
-	.byte  	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	.byte		' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-	.byte		'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	.byte		' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-	.byte		'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	.byte 	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-	.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	.byte 	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-	.byte		'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	.byte		' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-	.byte		'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	.byte		' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-	.byte		'.', '.', '.', '.', '.', '.', '.', '.', '.'
+		.byte  	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+		.byte	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+		.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+		.byte	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+		.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+		.byte 	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+		.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+		.byte 	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+		.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+		.byte	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+		.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+		.byte	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+		.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
 	
-	#.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	#.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	#.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	#.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	#.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	#.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	#.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	
-prompt1: 		.asciiz "Enter the 1st coordinate: "
-prompt2:		.asciiz "Enter the 2nd coordinate: "
+prompt: 	.asciiz "Enter the coordinates: "
 error1:		.asciiz "Line already exists!\n"
 error2:		.asciiz	"Coordinates must be adjacent!\n"
-	
-colA:			.asciiz 	"A"
-colB:			.asciiz 	"B" 
-colC: 		.asciiz 	"C"
-colD:			.asciiz 	"D"
-colE:			.asciiz 	"E"
-colF:			.asciiz 	"F"
-colG:			.asciiz 	"G"
-colLabel:		.word	colA, colB, colC, colD, colE, colF, colG
-rowLabel:		.word	1, 2, 3, 4, 5, 6, 7, 8, 9
-boardSize:		.word	221
-colSize:		.word	9
-rowSize:		.word 	13
-input:		.space 	4
-newLine:		.asciiz 	"\n"
-space:		.asciiz 	" "
-lineAcross:		.asciiz	"_"
-lineDown:		.asciiz	"|"
-player: 		.asciiz 	"P"
-computer:		.asciiz	"C"
+start:		.asciiz "The starting coordinate is: "
+end:		.asciiz "The ending coordinate is: "
+colA:		.asciiz "A"
+colB:		.asciiz "B" 
+colC: 		.asciiz "C"
+colD:		.asciiz "D"
+colE:		.asciiz "E"
+colF:		.asciiz "F"
+colG:		.asciiz "G"
+colLabel:	.word	colA, colB, colC, colD, colE, colF, colG
+rowLabel:	.word	1, 2, 3, 4, 5, 6, 7, 8, 9
+boardSize:	.word	221
+colSize:	.word	9
+rowSize:	.word 	13
+input:		.space 	16
+row1: 		.space 	4
+column1: 	.space 	4
+row2: 		.space 	4
+column2: 	.space 	4
+newLine:	.asciiz "\n"
+space:		.asciiz " "
+lineAcross:	.asciiz	"_"
+lineDown:	.asciiz	"|"
+player: 	.asciiz "P"
+computer:	.asciiz	"C"
 			
 	.text
 .globl printBoard
-
 printBoard:
 	li $v0, 4
 	la $a0, newLine
 	syscall
 	
-	jal printRowLabel
+	#jal printRow
+	
+	jal userInput
+	
+	#jal findColumn
+	
+	li $v0, 10
+	syscall
+
+userInput:
+	sw $ra, ($sp)
 	
 	li $v0, 4
-	la $a0, prompt1
+	la $a0, prompt
 	syscall
 	
 	li $v0, 8
 	la $a0, input
-	li $a1, 4
+	li $a1, 16
 	syscall
 	
-	li $v0, 10
+	li $t0, 0
+	lb $a0, input($t0)
+	sb $a0, row1
+	addi $t0, $t0, 1
+	
+	lb $a0, input($t0)
+	sb $a0, column1
+	addi $t0, $t0, 1
+	
+	lb $a0, input($t0)
+	sb $a0, row2
+	addi $t0, $t0, 1
+	
+	lb $a0, input($t0)
+	sb $a0, column2
+	
+	li $v0, 4
+	la $a0, newLine
 	syscall
+	
+	li $v0, 4
+	la $a0, start
+	syscall
+	
+	li $v0, 11
+	lb $a0, row1
+	syscall
+	
+	li $v0, 11
+	lb $a0, column1
+	syscall
+	
+	li $v0, 4
+	la $a0, newLine
+	syscall
+	
+	li $v0, 4
+	la $a0, end
+	syscall
+	
+	li $v0, 11
+	lb $a0, row2
+	syscall
+	
+	li $v0, 11
+	lb $a0, column2
+	syscall
+	
+	lw $ra, ($sp)
+	jr $ra
+	
+findColumn:
+	lw $t0, column1
+	
 	
 printRowLabel:
 	lw $t0, colSize
@@ -102,9 +159,12 @@ printRowLabel:
 		la $a0, newLine
 		syscall 
 		
-		j printRow
+		jr $ra
 	
 printRow:
+	sw $ra, ($sp)
+	jal printRowLabel
+	
 	li $s0, 0
 	li $s1, 0
 	lw $s2, rowSize
@@ -117,10 +177,11 @@ printRow:
 		bge $t0, $s2, exitOuterLoop
 		li $t1, 0
 		
-		div $t0, $t2
-		mfhi $t4
-		bne $t3, $t4, printNormal
-		addi $s1, $s1, -4
+		checkEmptyRows:
+			div $t0, $t2
+			mfhi $t4
+			bne $t3, $t4, printNormal
+			addi $s1, $s1, -4
 			j innerLoop
 		
 		printNormal:
@@ -159,6 +220,7 @@ printRow:
 		la $a0, newLine
 		syscall
 		
+		lw $ra, ($sp)
 		jr $ra
 	
 
