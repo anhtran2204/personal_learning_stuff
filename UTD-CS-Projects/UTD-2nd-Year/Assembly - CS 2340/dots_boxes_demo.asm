@@ -50,23 +50,23 @@ createBoard:
 		li $t4, 0
 		inner:
 			bge $t4, $t1, endInner
-			lb $t5, board($t3)
+			lb $a0, board($t3)
 			li $v0, 11
-			lw $a0, $t5
 			syscall
 			addi $t2, $t2, 1
 			addi $t3, $t3, 1
+			
 			j inner
-		
 		endInner:
 			addi $t2, $t2, 1
 			li $v0, 11
-			la $a0, newLine
+			lb $a0, newLine
 			syscall
-		
+			
+			j outer
 	endOuter:
 		li $v0, 11
-		la $a0, newLine
+		lb $a0, newLine
 		syscall
 		jr $ra
 

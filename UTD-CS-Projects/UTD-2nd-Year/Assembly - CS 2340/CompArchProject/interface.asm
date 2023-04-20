@@ -1,18 +1,18 @@
 	.data
 board:	
-		.byte  	'.', ' ',  '.', ' ', '.', ' ', '.',' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.'
-		.byte		' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-		.byte  	'.', ' ',  '.', ' ', '.', ' ', '.',' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.'
-		.byte		' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-		.byte  	'.', ' ',  '.', ' ', '.', ' ', '.',' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.'
-		.byte 	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-		.byte  	'.', ' ',  '.', ' ', '.', ' ', '.',' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.'
-		.byte 	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-		.byte  	'.', ' ',  '.', ' ', '.', ' ', '.',' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.'
-		.byte		' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-		.byte  	'.', ' ',  '.', ' ', '.', ' ', '.',' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.'
-		.byte		' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-		.byte  	'.', ' ',  '.', ' ', '.', ' ', '.',' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.'
+		.byte  	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+		.byte	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+		.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+		.byte	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+		.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+		.byte 	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+		.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+		.byte 	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+		.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+		.byte	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+		.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
+		.byte	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+		.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
 	
 prompt: 	.asciiz "Enter the coordinates: "
 error1:		.asciiz "Line already exists!\n"
@@ -26,10 +26,10 @@ colD:		.asciiz "D"
 colE:		.asciiz "E"
 colF:		.asciiz "F"
 colG:		.asciiz "G"
-rowLabel:	.word	colA, colB, colC, colD, colE, colF, colG
-colLabel:	.word	1, 2, 3, 4, 5, 6, 7, 8, 9
+colLabel:	.word	colA, colB, colC, colD, colE, colF, colG
+rowLabel:	.word	1, 2, 3, 4, 5, 6, 7, 8, 9
 boardSize:	.word	221
-colSize:	.word	17
+colSize:	.word	9
 rowSize:	.word 	13
 input:		.space 	16
 row1: 		.space 	4
@@ -54,14 +54,13 @@ printBoard:
 	
 	jal userInput
 	
-	#jal findIndex
+	#jal findColumn
 	
 	li $v0, 10
 	syscall
 
 userInput:
-	addi $sp, $sp, -4
-	sw $ra, 0($sp)
+	sw $ra, ($sp)
 	
 	li $v0, 4
 	la $a0, prompt
@@ -121,19 +120,16 @@ userInput:
 	syscall
 	
 	lw $ra, ($sp)
-	addi $sp $sp, 4
 	jr $ra
 	
-findIndex:
-	lw $a0, row1
+findColumn:
+	lw $t0, column1
 	
 	
-printColLabel:
+printRowLabel:
 	lw $t0, colSize
-	la $s0, colLabel
+	la $s0, rowLabel
 	li $t1, 0
-	li $t2, 2
-	li $t3, 1
 	
 	li $v0, 4
 	la $a0, space
@@ -146,21 +142,14 @@ printColLabel:
 	startLoop:
 		bge $t1, $t0, exitLoop
 		
-		div $t1, $t2
-		mfhi $t4
-		bne $t4, $t3, printLabel
+		li $v0, 1
+		lw $a0, 0($s0)
+		syscall 
+		
 		li $v0, 4
 		la $a0, space
 		syscall
-		addi $t1, $t1, 1
 		
-		j startLoop
-		
-		printLabel:
-		li $v0, 1
-		lw $a0, 0($s0)
-		syscall
-	
 		addi $s0, $s0, 4
 		addi $t1, $t1, 1
 		
@@ -174,7 +163,7 @@ printColLabel:
 	
 printRow:
 	sw $ra, ($sp)
-	jal printColLabel
+	jal printRowLabel
 	
 	li $s0, 0
 	li $s1, 0
@@ -182,12 +171,11 @@ printRow:
 	lw $s3, colSize
 	
 	li $t0, 0
-	li $t2, 2
-	li $t3, 1
+	addi $t2, $t2, 2
+	addi $t3, $t3, 1
 	outerLoop:
 		bge $t0, $s2, exitOuterLoop
 		li $t1, 0
-		
 		checkEmptyRows:
 			div $t0, $t2
 			mfhi $t4
@@ -196,7 +184,7 @@ printRow:
 			j innerLoop
 		
 		printNormal:
-			lw $a0, rowLabel($s1)
+			lw $a0, colLabel($s1)
 			li $v0, 4
 			syscall
 		
@@ -208,6 +196,10 @@ printRow:
 			
 			lb $a0, board($s0)
 			li $v0, 11
+			syscall
+			
+			la $a0, space
+			li $v0, 4
 			syscall
 		
 			addi $s0, $s0, 1
