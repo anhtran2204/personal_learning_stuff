@@ -1,227 +1,130 @@
 	.data
 board:	
-		.byte  	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-		.byte	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-		.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-		.byte	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-		.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-		.byte 	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-		.byte 	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-		.byte 	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-		.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-		.byte	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-		.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-		.byte	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-		.byte	'.', '.', '.', '.', '.', '.', '.', '.', '.'
-	
-prompt: 	.asciiz "Enter the coordinates: "
-error1:		.asciiz "Line already exists!\n"
-error2:		.asciiz	"Coordinates must be adjacent!\n"
-start:		.asciiz "The starting coordinate is: "
-end:		.asciiz "The ending coordinate is: "
-colA:		.asciiz "A"
-colB:		.asciiz "B" 
-colC: 		.asciiz "C"
-colD:		.asciiz "D"
-colE:		.asciiz "E"
-colF:		.asciiz "F"
-colG:		.asciiz "G"
-colLabel:	.word	colA, colB, colC, colD, colE, colF, colG
-rowLabel:	.word	1, 2, 3, 4, 5, 6, 7, 8, 9
-boardSize:	.word	221
-colSize:	.word	9
-rowSize:	.word 	13
-input:		.space 	16
-row1: 		.space 	4
-column1: 	.space 	4
-row2: 		.space 	4
-column2: 	.space 	4
-newLine:	.asciiz "\n"
-space:		.asciiz " "
-lineAcross:	.asciiz	"_"
-lineDown:	.asciiz	"|"
+		.byte	'.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.'
+		.byte 	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+		.byte	'.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.'
+		.byte 	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+		.byte	'.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.'
+		.byte 	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+		.byte	'.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.'
+		.byte 	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+		.byte	'.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.'
+		.byte 	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+		.byte	'.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.'
+		.byte 	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+		.byte	'.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.', ' ', '.'
+		
+rowLabel:	.byte 'A', 'B', 'C', 'D', 'E', 'F', 'G'
+colLabel: 	.byte 1, 2, 3, 4, 5, 6, 7, 8, 9
+rowSize:	.word 13
+colSize:	.word 17
+newLine:	.byte '\n'
+space:		.byte ' '
+horiLine:	.byte '_'
+vertLine:	.byte '|'
+dots:		.byte '.'
 player: 	.asciiz "P"
 computer:	.asciiz	"C"
-			
-	.text
-.globl printBoard
-printBoard:
-	li $v0, 4
-	la $a0, newLine
-	syscall
-	
-	jal printRow
-	
-	jal userInput
-	
-	#jal findColumn
-	
-	li $v0, 10
-	syscall
 
-userInput:
-	sw $ra, ($sp)
+row:		.space 4
+col: 		.space 4
+connection:		.space 4
+
+## ========= GLOBAL REGISTERS ========= 
+# t9 - Inner procedure register ptr.
+# sp - Outer procedure register ptr.
+# - Other registers are used differently
+#   within separate procedures.
+	.text
+.globl createBoard
+createBoard:
+	move $t9, $ra
+	add $s4, $a0, $0
+	add $s5, $a1, $0
+	sb $a2, connection
+	jal printColLabel
 	
-	li $v0, 4
-	la $a0, prompt
-	syscall
-	
-	li $v0, 8
-	la $a0, input
-	li $a1, 16
-	syscall
-	
-	li $t0, 0
-	lb $a0, input($t0)
-	sb $a0, row1
-	addi $t0, $t0, 1
-	
-	lb $a0, input($t0)
-	sb $a0, column1
-	addi $t0, $t0, 1
-	
-	lb $a0, input($t0)
-	sb $a0, row2
-	addi $t0, $t0, 1
-	
-	lb $a0, input($t0)
-	sb $a0, column2
-	
-	li $v0, 4
-	la $a0, newLine
-	syscall
-	
-	li $v0, 4
-	la $a0, start
-	syscall
-	
-	li $v0, 11
-	lb $a0, row1
-	syscall
-	
-	li $v0, 11
-	lb $a0, column1
-	syscall
-	
-	li $v0, 4
-	la $a0, newLine
-	syscall
-	
-	li $v0, 4
-	la $a0, end
-	syscall
-	
-	li $v0, 11
-	lb $a0, row2
-	syscall
-	
-	li $v0, 11
-	lb $a0, column2
-	syscall
-	
-	lw $ra, ($sp)
-	jr $ra
-	
-findColumn:
-	lw $t0, column1
+	lw $t0, rowSize
+	lw $t1, colSize
 	
 	
-printRowLabel:
-	lw $t0, colSize
-	la $s0, rowLabel
-	li $t1, 0
-	
-	li $v0, 4
-	la $a0, space
-	syscall		
-	
-	li $v0, 4
-	la $a0, space
-	syscall
-		
-	startLoop:
-		bge $t1, $t0, exitLoop
-		
-		li $v0, 1
-		lw $a0, 0($s0)
-		syscall 
-		
-		li $v0, 4
-		la $a0, space
-		syscall
-		
-		addi $s0, $s0, 4
-		addi $t1, $t1, 1
-		
-		j startLoop
-	exitLoop:
-		li $v0, 4
-		la $a0, newLine
-		syscall 
-		
-		jr $ra
-	
-printRow:
-	sw $ra, ($sp)
-	jal printRowLabel
-	
-	li $s0, 0
-	li $s1, 0
-	lw $s2, rowSize
-	lw $s3, colSize
-	
-	li $t0, 0
-	addi $t2, $t2, 2
-	addi $t3, $t3, 1
-	outerLoop:
-		bge $t0, $s2, exitOuterLoop
-		li $t1, 0
+	li $t2, 0	# Outer loop counter
+	li $t3, 0	# Row label index pointer
+	li $t5, 0	# Board index pointer
+	li $t6, 2	# Constant 2
+	li $t7, 1	# Constant 1
+	outer:	
+		li $t4, 0	# Inner loop counter
 		checkEmptyRows:
-			div $t0, $t2
-			mfhi $t4
-			bne $t3, $t4, printNormal
-			addi $s1, $s1, -4
-			j innerLoop
+			div $t2, $t6
+			mfhi $t8
+			bne $t7, $t8, printLabel
+			addi $t3, $t3, -1
+			jal addSpace
+			jal addSpace
+			j inner
 		
-		printNormal:
-			lw $a0, colLabel($s1)
-			li $v0, 4
-			syscall
-		
-			li $v0, 4
-			la $a0, space
-			syscall
-		innerLoop:
-			bge $t1, $s3, exitInnerLoop
-			
-			lb $a0, board($s0)
+		printLabel:
+			lb $a0, rowLabel($t3)
 			li $v0, 11
 			syscall
-			
-			la $a0, space
-			li $v0, 4
-			syscall
 		
-			addi $s0, $s0, 1
-			addi $t1, $t1, 1 
-			
-			j innerLoop
-		exitInnerLoop:
-			la $a0, newLine
-			li $v0, 4
+			jal addSpace
+		inner:
+			bne $s4, $t2, printNormal
+			bne $s5, $t4, printNormal
+			lb $a0, connection
+			li $v0, 11
 			syscall
+			j increment
+			printNormal:
+			lb $a0, board($t5)
+			li $v0, 11
+			syscall
+			increment:
+			addi $t4, $t4, 1
+			addi $t5, $t5, 1
 			
-			addi $t0, $t0, 1
-			addi $s1, $s1, 4
-			j outerLoop
-	exitOuterLoop:
-		li $v0, 4
-		la $a0, newLine
+			blt  $t4, $t1, inner
+		endInner:
+			addi $t2, $t2, 1
+			addi $t3, $t3, 1
+			jal addNewLine
+			blt $t2, $t0, outer
+	endOuter:
+		jal addNewLine
+		move $ra, $t9
+		jr $ra
+
+addSpace:
+	lb $a0, space($0)
+	li $v0, 11
+	syscall
+	jr $ra
+
+addNewLine:
+	lb $a0, newLine($0)
+	li $v0, 11
+	syscall
+	jr $ra
+	
+printColLabel:
+	sw $ra, ($sp)
+	jal addSpace
+	jal addSpace
+	lw $s0, colSize
+	li $t0, 0
+	li $t1, 1
+	loop:
+		lb $a0, colLabel($t0)
+		li $v0, 1
 		syscall
 		
+		jal addSpace
+		
+		addi $t0, $t0, 1
+		addi $t1, $t1, 2
+		ble $t1, $s0, loop
+		jal addNewLine
 		lw $ra, ($sp)
 		jr $ra
-	
-
-	
-	
