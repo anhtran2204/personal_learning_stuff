@@ -41,7 +41,7 @@ main:
 	li $a1, 0
 	sb $a0, row
 	sb $a1, col
-	jal createBoard
+	jal createNewBoard
 	
 	j exit
 	
@@ -78,7 +78,7 @@ printColLabel:
 		lw $ra, ($sp)
 		jr $ra
 	
-createBoard:
+createNewBoard:
 	move $t9, $ra
 	jal printColLabel
 	lw $t0, rowSize

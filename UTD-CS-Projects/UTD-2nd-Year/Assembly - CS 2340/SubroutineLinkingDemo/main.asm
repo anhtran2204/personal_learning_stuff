@@ -10,6 +10,7 @@ num2: .word 0
 sum: .word 0
 	
 	.text
+.globl main
 main:
 	li $v0, 4
 	la $a0, prompt
@@ -47,6 +48,8 @@ main:
 	li $v0, 1
 	lw $a0, sum
 	syscall
+	
+	lw $s0, board
 		
 exit:
 	li $v0, 10
