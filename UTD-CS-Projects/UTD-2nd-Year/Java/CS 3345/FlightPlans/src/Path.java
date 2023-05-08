@@ -1,40 +1,31 @@
-import java.util.ArrayList;
-import java.util.List;
-// Create the class
-class Path
-{
-    private List<String> path;
-    private String Node;
-    //Create the arrayList
-    public Path()
-    {
-        path = new ArrayList<String>();
+/**
+ * An path - "edge" - in the graph connecting two cities
+ */
+public class Path {
+    /** Name of destination city */
+    private String destination;
+
+    /** Cost of the path */
+    private int cost;
+
+    /** Time of traversal */
+    private int time;
+
+    public Path(String destination, int cost, int time) {
+        this.destination = destination;
+        this.cost = cost;
+        this.time = time;
     }
-    // Set the node
-    public void setNode(String Node)
-    {
-        this.Node = Node;
+
+    public String getDestination() {
+        return destination;
     }
-    // Get the node
-    public String getNode()
-    {
-        return this.Node;
+
+    public int getCost() {
+        return cost;
     }
-    // Check if the node exist or not
-    public Boolean exists(String node)
-    {
-        if(path.contains(node))
-            return true;
-        return false;
-    }
-    // Add the node in the array List
-    public void add(String node)
-    {
-        path.add(node);
-    }
-    //Delete the node from the list
-    public void delete(String node)
-    {
-        path.remove(node);
+
+    public int getTime() {
+        return time;
     }
 }
