@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main() {
-    printf("Type your full name and GPA: ");
+    printf("Type your full name and GPA: \n");
     char name[100];
     float gpa;
     fgets(name, sizeof(name), stdin);
