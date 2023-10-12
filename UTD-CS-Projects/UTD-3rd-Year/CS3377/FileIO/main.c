@@ -29,7 +29,7 @@ int main() {
     char lastNameOut[20];
     double gpaOut = 0.0;
     fscanf(fptr, "%s %s %lf", firstNameOut, lastNameOut, &gpaOut);
-    printf("Name: %s %s, GPA: %.2lf", firstNameOut, lastNameOut, gpaOut);
+    printf("Name: %s %s, GPA: %.2lf\n", firstNameOut, lastNameOut, gpaOut);
     fclose(fptr);
 
     return 0;
