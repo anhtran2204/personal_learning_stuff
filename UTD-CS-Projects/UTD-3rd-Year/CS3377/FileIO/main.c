@@ -4,12 +4,12 @@
 int main() {
     printf("Type your full name and GPA: \n");
     char name[100];
-    float gpa;
+    double gpa;
     fgets(name, sizeof(name), stdin);
-    scanf("%f", &gpa);
+    scanf("%lf", &gpa);
 
     FILE *fptr;
-    fptr = fopen("file.txt","w");
+    fptr = fopen("file.txt", "w");
 
     if (fptr == NULL) {
         printf("Error! File not exist!");
@@ -18,6 +18,19 @@ int main() {
 
     fprintf(fptr, "%s", name);
     fprintf(fptr, "%f", gpa);
+    fclose(fptr);
+
+    if ((fptr = fopen("file.txt", "r")) == NULL) {
+        printf("Error! Unable to open file!");
+        exit(1);
+    }
+
+    char firstNameOut[20];
+    char lastNameOut[20];
+    double gpaOut = 0.0;
+    fscanf(fptr, "%s %s %lf", firstNameOut, lastNameOut, &gpaOut);
+    printf("Name: %s %s, GPA: %.2lf", firstNameOut, lastNameOut, gpaOut);
+    fclose(fptr);
 
     return 0;
 }
