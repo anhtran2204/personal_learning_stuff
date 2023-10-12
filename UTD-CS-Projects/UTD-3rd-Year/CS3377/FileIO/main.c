@@ -17,7 +17,7 @@ int main() {
     }
 
     fprintf(fptr, "%s", name);
-    fprintf(fptr, "%f", gpa);
+    fprintf(fptr, "%.2lf", gpa);
     fclose(fptr);
 
     if ((fptr = fopen("file.txt", "r")) == NULL) {
