@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/FileIO.dir/error.c.o"
+  "CMakeFiles/FileIO.dir/error.c.o.d"
+  "CMakeFiles/FileIO.dir/errorlog.c.o"
+  "CMakeFiles/FileIO.dir/errorlog.c.o.d"
   "CMakeFiles/FileIO.dir/main.c.o"
   "CMakeFiles/FileIO.dir/main.c.o.d"
   "CMakeFiles/FileIO.dir/test.c.o"

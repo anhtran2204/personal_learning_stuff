@@ -129,6 +129,54 @@ FileIO/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FileIO.dir/build.make CMakeFiles/FileIO.dir/build
 .PHONY : FileIO/fast
 
+error.o: error.c.o
+.PHONY : error.o
+
+# target to build an object file
+error.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FileIO.dir/build.make CMakeFiles/FileIO.dir/error.c.o
+.PHONY : error.c.o
+
+error.i: error.c.i
+.PHONY : error.i
+
+# target to preprocess a source file
+error.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FileIO.dir/build.make CMakeFiles/FileIO.dir/error.c.i
+.PHONY : error.c.i
+
+error.s: error.c.s
+.PHONY : error.s
+
+# target to generate assembly for a file
+error.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FileIO.dir/build.make CMakeFiles/FileIO.dir/error.c.s
+.PHONY : error.c.s
+
+errorlog.o: errorlog.c.o
+.PHONY : errorlog.o
+
+# target to build an object file
+errorlog.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FileIO.dir/build.make CMakeFiles/FileIO.dir/errorlog.c.o
+.PHONY : errorlog.c.o
+
+errorlog.i: errorlog.c.i
+.PHONY : errorlog.i
+
+# target to preprocess a source file
+errorlog.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FileIO.dir/build.make CMakeFiles/FileIO.dir/errorlog.c.i
+.PHONY : errorlog.c.i
+
+errorlog.s: errorlog.c.s
+.PHONY : errorlog.s
+
+# target to generate assembly for a file
+errorlog.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FileIO.dir/build.make CMakeFiles/FileIO.dir/errorlog.c.s
+.PHONY : errorlog.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -186,6 +234,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... FileIO"
+	@echo "... error.o"
+	@echo "... error.i"
+	@echo "... error.s"
+	@echo "... errorlog.o"
+	@echo "... errorlog.i"
+	@echo "... errorlog.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
