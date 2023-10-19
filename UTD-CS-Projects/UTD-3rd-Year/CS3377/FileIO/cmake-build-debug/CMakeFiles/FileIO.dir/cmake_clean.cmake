@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/FileIO.dir/main.c.o"
   "CMakeFiles/FileIO.dir/main.c.o.d"
+  "CMakeFiles/FileIO.dir/test.c.o"
+  "CMakeFiles/FileIO.dir/test.c.o.d"
   "FileIO"
   "FileIO.pdb"
 )

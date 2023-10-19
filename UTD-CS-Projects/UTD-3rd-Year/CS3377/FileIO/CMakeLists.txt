@@ -3,4 +3,5 @@ project(FileIO C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(FileIO main.c)
+add_executable(FileIO main.c
+        test.c)
