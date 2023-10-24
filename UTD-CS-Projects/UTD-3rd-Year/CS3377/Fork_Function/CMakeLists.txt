@@ -3,4 +3,5 @@ project(Fork_Function C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(Fork_Function fork1.c)
+add_executable(Fork_Function fork1.c
+        error.c)

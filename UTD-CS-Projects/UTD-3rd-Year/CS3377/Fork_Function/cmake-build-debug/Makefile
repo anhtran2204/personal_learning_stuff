@@ -129,6 +129,30 @@ Fork_Function/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fork_Function.dir/build.make CMakeFiles/Fork_Function.dir/build
 .PHONY : Fork_Function/fast
 
+error.o: error.c.o
+.PHONY : error.o
+
+# target to build an object file
+error.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fork_Function.dir/build.make CMakeFiles/Fork_Function.dir/error.c.o
+.PHONY : error.c.o
+
+error.i: error.c.i
+.PHONY : error.i
+
+# target to preprocess a source file
+error.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fork_Function.dir/build.make CMakeFiles/Fork_Function.dir/error.c.i
+.PHONY : error.c.i
+
+error.s: error.c.s
+.PHONY : error.s
+
+# target to generate assembly for a file
+error.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fork_Function.dir/build.make CMakeFiles/Fork_Function.dir/error.c.s
+.PHONY : error.c.s
+
 fork1.o: fork1.c.o
 .PHONY : fork1.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Fork_Function"
+	@echo "... error.o"
+	@echo "... error.i"
+	@echo "... error.s"
 	@echo "... fork1.o"
 	@echo "... fork1.i"
 	@echo "... fork1.s"

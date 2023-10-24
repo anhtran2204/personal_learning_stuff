@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/Fork_Function.dir/fork1.c.o -o Fork_Function 
+/usr/bin/cc -g CMakeFiles/Fork_Function.dir/fork1.c.o CMakeFiles/Fork_Function.dir/error.c.o -o Fork_Function 

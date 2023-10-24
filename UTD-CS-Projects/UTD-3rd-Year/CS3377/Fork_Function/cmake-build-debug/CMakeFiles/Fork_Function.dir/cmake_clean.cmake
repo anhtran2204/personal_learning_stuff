@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Fork_Function.dir/error.c.o"
+  "CMakeFiles/Fork_Function.dir/error.c.o.d"
   "CMakeFiles/Fork_Function.dir/fork1.c.o"
   "CMakeFiles/Fork_Function.dir/fork1.c.o.d"
   "Fork_Function"
