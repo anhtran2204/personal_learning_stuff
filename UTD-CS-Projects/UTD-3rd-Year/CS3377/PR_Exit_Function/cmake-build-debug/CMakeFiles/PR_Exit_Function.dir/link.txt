@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/PR_Exit_Function.dir/main.c.o -o PR_Exit_Function 
