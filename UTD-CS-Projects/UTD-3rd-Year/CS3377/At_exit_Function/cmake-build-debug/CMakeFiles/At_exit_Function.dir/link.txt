@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/At_exit_Function.dir/doatexit.c.o CMakeFiles/At_exit_Function.dir/error.c.o -o At_exit_Function 
