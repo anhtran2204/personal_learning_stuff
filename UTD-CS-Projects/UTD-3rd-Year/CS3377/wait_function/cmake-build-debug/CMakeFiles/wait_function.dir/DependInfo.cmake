@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/wait_function/error.c" "CMakeFiles/wait_function.dir/error.c.o" "gcc" "CMakeFiles/wait_function.dir/error.c.o.d"
+  "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/wait_function/prexit.c" "CMakeFiles/wait_function.dir/prexit.c.o" "gcc" "CMakeFiles/wait_function.dir/prexit.c.o.d"
   "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/wait_function/wait1.c" "CMakeFiles/wait_function.dir/wait1.c.o" "gcc" "CMakeFiles/wait_function.dir/wait1.c.o.d"
   )
 

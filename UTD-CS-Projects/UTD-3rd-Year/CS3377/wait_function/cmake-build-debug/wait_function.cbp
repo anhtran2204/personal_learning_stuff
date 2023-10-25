@@ -79,6 +79,9 @@
 		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/wait_function/error.c">
 			<Option target="wait_function"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/wait_function/prexit.c">
+			<Option target="wait_function"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/wait_function/wait1.c">
 			<Option target="wait_function"/>
 		</Unit>

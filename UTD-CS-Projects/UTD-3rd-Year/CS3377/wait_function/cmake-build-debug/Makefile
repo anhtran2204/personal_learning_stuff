@@ -153,6 +153,30 @@ error.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/wait_function.dir/build.make CMakeFiles/wait_function.dir/error.c.s
 .PHONY : error.c.s
 
+prexit.o: prexit.c.o
+.PHONY : prexit.o
+
+# target to build an object file
+prexit.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wait_function.dir/build.make CMakeFiles/wait_function.dir/prexit.c.o
+.PHONY : prexit.c.o
+
+prexit.i: prexit.c.i
+.PHONY : prexit.i
+
+# target to preprocess a source file
+prexit.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wait_function.dir/build.make CMakeFiles/wait_function.dir/prexit.c.i
+.PHONY : prexit.c.i
+
+prexit.s: prexit.c.s
+.PHONY : prexit.s
+
+# target to generate assembly for a file
+prexit.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wait_function.dir/build.make CMakeFiles/wait_function.dir/prexit.c.s
+.PHONY : prexit.c.s
+
 wait1.o: wait1.c.o
 .PHONY : wait1.o
 
@@ -189,6 +213,9 @@ help:
 	@echo "... error.o"
 	@echo "... error.i"
 	@echo "... error.s"
+	@echo "... prexit.o"
+	@echo "... prexit.i"
+	@echo "... prexit.s"
 	@echo "... wait1.o"
 	@echo "... wait1.i"
 	@echo "... wait1.s"
