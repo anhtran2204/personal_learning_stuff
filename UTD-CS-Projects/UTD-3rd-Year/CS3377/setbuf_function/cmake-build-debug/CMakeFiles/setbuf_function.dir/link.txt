@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/setbuf_function.dir/setbuf.c.o -o setbuf_function 

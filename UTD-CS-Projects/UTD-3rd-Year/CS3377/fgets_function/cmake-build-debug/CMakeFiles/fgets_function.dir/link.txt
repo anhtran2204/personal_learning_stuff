@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/fgets_function.dir/fgets.c.o CMakeFiles/fgets_function.dir/error.c.o -o fgets_function 
