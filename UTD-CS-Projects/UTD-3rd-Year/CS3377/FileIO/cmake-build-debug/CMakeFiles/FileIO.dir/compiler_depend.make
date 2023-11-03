@@ -108,9 +108,6 @@ CMakeFiles/FileIO.dir/error.c.o: ../error.c \
   /usr/include/asm-generic/errno.h \
   /usr/include/asm-generic/errno-base.h
 
-CMakeFiles/FileIO.dir/errorlog.c.o: ../errorlog.c \
-  /usr/include/stdc-predef.h
-
 CMakeFiles/FileIO.dir/main.c.o: ../main.c \
   /usr/include/stdc-predef.h
 
@@ -345,8 +342,6 @@ CMakeFiles/FileIO.dir/test.c.o: ../test.c \
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
 /usr/include/features-time64.h:
-
-../errorlog.c:
 
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
 

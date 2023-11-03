@@ -5,5 +5,4 @@ set(CMAKE_C_STANDARD 11)
 
 add_executable(FileIO main.c
         test.c
-        ../UtilitiesFiles/error.c
-        ../UtilitiesFiles/errorlog.c)
+        error.c)

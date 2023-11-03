@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "FileIO"
+			"path" : "apend_flag"
 		}
 	],
 	"backtrace" : 1,
@@ -52,14 +52,11 @@
 			},
 			"sourceIndexes" : 
 			[
-				0,
-				1,
-				2,
-				3
+				0
 			]
 		}
 	],
-	"id" : "FileIO::@6890427a1f51a3e7e1df",
+	"id" : "apend_flag::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -75,8 +72,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "FileIO",
-	"nameOnDisk" : "FileIO",
+	"name" : "apend_flag",
+	"nameOnDisk" : "apend_flag",
 	"paths" : 
 	{
 		"build" : ".",
@@ -88,10 +85,7 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0,
-				1,
-				2,
-				3
+				0
 			]
 		}
 	],
@@ -100,25 +94,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "main.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "test.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "error.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "errorlog.c",
+			"path" : "apenfg.c",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -1,4 +1,4 @@
-#include "../UtilitiesFiles/apue.h"
+#include "apue.h"
 int
 main(int argc, char *argv[])
 {
@@ -7,7 +7,7 @@ main(int argc, char *argv[])
     char *ptr;
     for (i = 1; i < argc; i++) {
         printf("%s: ", argv[i]);
-        if (lstat(argv[i], &buf) < 0) {
+        if (stat(argv[i], &buf) < 0) {
             err_ret("lstat error");
             continue;
         }

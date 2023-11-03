@@ -29,3 +29,7 @@ int mydup2(int oldd,int newd){
 
   return mydup_rec(oldd,newd);
 }
+
+int main(){
+
+}
