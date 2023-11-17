@@ -69,28 +69,28 @@ include CMakeFiles/dup2.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/dup2.dir/flags.make
 
-CMakeFiles/dup2.dir/main.c.o: CMakeFiles/dup2.dir/flags.make
-CMakeFiles/dup2.dir/main.c.o: ../main.c
-CMakeFiles/dup2.dir/main.c.o: CMakeFiles/dup2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/dup2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/dup2.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/dup2.dir/main.c.o -MF CMakeFiles/dup2.dir/main.c.o.d -o CMakeFiles/dup2.dir/main.c.o -c /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/dup2/main.c
+CMakeFiles/dup2.dir/new_dup2.c.o: CMakeFiles/dup2.dir/flags.make
+CMakeFiles/dup2.dir/new_dup2.c.o: ../new_dup2.c
+CMakeFiles/dup2.dir/new_dup2.c.o: CMakeFiles/dup2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/dup2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/dup2.dir/new_dup2.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/dup2.dir/new_dup2.c.o -MF CMakeFiles/dup2.dir/new_dup2.c.o.d -o CMakeFiles/dup2.dir/new_dup2.c.o -c /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/dup2/new_dup2.c
 
-CMakeFiles/dup2.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dup2.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/dup2/main.c > CMakeFiles/dup2.dir/main.c.i
+CMakeFiles/dup2.dir/new_dup2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dup2.dir/new_dup2.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/dup2/new_dup2.c > CMakeFiles/dup2.dir/new_dup2.c.i
 
-CMakeFiles/dup2.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dup2.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/dup2/main.c -o CMakeFiles/dup2.dir/main.c.s
+CMakeFiles/dup2.dir/new_dup2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dup2.dir/new_dup2.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/dup2/new_dup2.c -o CMakeFiles/dup2.dir/new_dup2.c.s
 
 # Object files for target dup2
 dup2_OBJECTS = \
-"CMakeFiles/dup2.dir/main.c.o"
+"CMakeFiles/dup2.dir/new_dup2.c.o"
 
 # External object files for target dup2
 dup2_EXTERNAL_OBJECTS =
 
-dup2: CMakeFiles/dup2.dir/main.c.o
+dup2: CMakeFiles/dup2.dir/new_dup2.c.o
 dup2: CMakeFiles/dup2.dir/build.make
 dup2: CMakeFiles/dup2.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/dup2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable dup2"

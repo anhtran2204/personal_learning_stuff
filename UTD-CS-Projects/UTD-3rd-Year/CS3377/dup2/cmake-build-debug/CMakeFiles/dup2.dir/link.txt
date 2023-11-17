@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/dup2.dir/main.c.o -o dup2 
+/usr/bin/cc -g CMakeFiles/dup2.dir/new_dup2.c.o -o dup2 

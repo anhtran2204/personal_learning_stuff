@@ -76,7 +76,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/dup2/main.c">
+		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/dup2/new_dup2.c">
 			<Option target="dup2"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/dup2/CMakeLists.txt">

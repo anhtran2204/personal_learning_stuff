@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/dup2/main.c" "CMakeFiles/dup2.dir/main.c.o" "gcc" "CMakeFiles/dup2.dir/main.c.o.d"
+  "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/dup2/new_dup2.c" "CMakeFiles/dup2.dir/new_dup2.c.o" "gcc" "CMakeFiles/dup2.dir/new_dup2.c.o.d"
   )
 
 # Targets to which this target links.
