@@ -8,8 +8,8 @@ main(void)
         err_sys("can’t catch SIGUSR1");
     if (signal(SIGUSR2, sig_usr) == SIG_ERR)
         err_sys("can’t catch SIGUSR2");
-    for ( ; ; )
-        pause();
+    //for ( ; ; )
+    //    pause();
 }
 static void
 sig_usr(int signo) /* argument is signal number */
