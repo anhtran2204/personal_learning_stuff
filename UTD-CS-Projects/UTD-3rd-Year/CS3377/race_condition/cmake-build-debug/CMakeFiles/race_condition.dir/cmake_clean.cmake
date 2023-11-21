@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/race_condition.dir/error.c.o"
+  "CMakeFiles/race_condition.dir/error.c.o.d"
   "CMakeFiles/race_condition.dir/main.c.o"
   "CMakeFiles/race_condition.dir/main.c.o.d"
   "race_condition"

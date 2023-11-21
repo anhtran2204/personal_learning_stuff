@@ -129,6 +129,30 @@ race_condition/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/race_condition.dir/build.make CMakeFiles/race_condition.dir/build
 .PHONY : race_condition/fast
 
+error.o: error.c.o
+.PHONY : error.o
+
+# target to build an object file
+error.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/race_condition.dir/build.make CMakeFiles/race_condition.dir/error.c.o
+.PHONY : error.c.o
+
+error.i: error.c.i
+.PHONY : error.i
+
+# target to preprocess a source file
+error.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/race_condition.dir/build.make CMakeFiles/race_condition.dir/error.c.i
+.PHONY : error.c.i
+
+error.s: error.c.s
+.PHONY : error.s
+
+# target to generate assembly for a file
+error.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/race_condition.dir/build.make CMakeFiles/race_condition.dir/error.c.s
+.PHONY : error.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... race_condition"
+	@echo "... error.o"
+	@echo "... error.i"
+	@echo "... error.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
