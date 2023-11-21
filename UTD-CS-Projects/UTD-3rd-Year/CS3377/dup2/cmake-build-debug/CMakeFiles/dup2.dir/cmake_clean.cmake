@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/dup2.dir/main.c.o"
-  "CMakeFiles/dup2.dir/main.c.o.d"
+  "CMakeFiles/dup2.dir/new_dup2.c.o"
+  "CMakeFiles/dup2.dir/new_dup2.c.o.d"
   "dup2"
   "dup2.pdb"
 )

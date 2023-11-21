@@ -129,29 +129,29 @@ dup2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dup2.dir/build.make CMakeFiles/dup2.dir/build
 .PHONY : dup2/fast
 
-main.o: main.c.o
-.PHONY : main.o
+new_dup2.o: new_dup2.c.o
+.PHONY : new_dup2.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dup2.dir/build.make CMakeFiles/dup2.dir/main.c.o
-.PHONY : main.c.o
+new_dup2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dup2.dir/build.make CMakeFiles/dup2.dir/new_dup2.c.o
+.PHONY : new_dup2.c.o
 
-main.i: main.c.i
-.PHONY : main.i
+new_dup2.i: new_dup2.c.i
+.PHONY : new_dup2.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dup2.dir/build.make CMakeFiles/dup2.dir/main.c.i
-.PHONY : main.c.i
+new_dup2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dup2.dir/build.make CMakeFiles/dup2.dir/new_dup2.c.i
+.PHONY : new_dup2.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+new_dup2.s: new_dup2.c.s
+.PHONY : new_dup2.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dup2.dir/build.make CMakeFiles/dup2.dir/main.c.s
-.PHONY : main.c.s
+new_dup2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dup2.dir/build.make CMakeFiles/dup2.dir/new_dup2.c.s
+.PHONY : new_dup2.c.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... dup2"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... new_dup2.o"
+	@echo "... new_dup2.i"
+	@echo "... new_dup2.s"
 .PHONY : help
 
 
