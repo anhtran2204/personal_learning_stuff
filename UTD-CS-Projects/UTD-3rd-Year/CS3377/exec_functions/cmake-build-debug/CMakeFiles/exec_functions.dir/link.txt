@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/exec_functions.dir/main.c.o -o exec_functions 
