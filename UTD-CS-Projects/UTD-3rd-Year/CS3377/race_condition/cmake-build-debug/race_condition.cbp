@@ -82,6 +82,9 @@
 		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/race_condition/main.c">
 			<Option target="race_condition"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/race_condition/tellwait.c">
+			<Option target="race_condition"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/race_condition/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

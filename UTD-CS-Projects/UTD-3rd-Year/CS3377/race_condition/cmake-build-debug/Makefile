@@ -177,6 +177,30 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/race_condition.dir/build.make CMakeFiles/race_condition.dir/main.c.s
 .PHONY : main.c.s
 
+tellwait.o: tellwait.c.o
+.PHONY : tellwait.o
+
+# target to build an object file
+tellwait.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/race_condition.dir/build.make CMakeFiles/race_condition.dir/tellwait.c.o
+.PHONY : tellwait.c.o
+
+tellwait.i: tellwait.c.i
+.PHONY : tellwait.i
+
+# target to preprocess a source file
+tellwait.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/race_condition.dir/build.make CMakeFiles/race_condition.dir/tellwait.c.i
+.PHONY : tellwait.c.i
+
+tellwait.s: tellwait.c.s
+.PHONY : tellwait.s
+
+# target to generate assembly for a file
+tellwait.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/race_condition.dir/build.make CMakeFiles/race_condition.dir/tellwait.c.s
+.PHONY : tellwait.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +216,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... tellwait.o"
+	@echo "... tellwait.i"
+	@echo "... tellwait.s"
 .PHONY : help
 
 
