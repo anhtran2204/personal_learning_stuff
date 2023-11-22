@@ -76,6 +76,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/exec_functions/error.c">
+			<Option target="exec_functions"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/exec_functions/main.c">
 			<Option target="exec_functions"/>
 		</Unit>

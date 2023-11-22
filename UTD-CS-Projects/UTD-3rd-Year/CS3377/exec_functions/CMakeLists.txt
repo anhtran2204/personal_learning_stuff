@@ -3,4 +3,5 @@ project(exec_functions C)
 
 set(CMAKE_C_STANDARD 17)
 
-add_executable(exec_functions main.c)
+add_executable(exec_functions main.c
+        error.c)

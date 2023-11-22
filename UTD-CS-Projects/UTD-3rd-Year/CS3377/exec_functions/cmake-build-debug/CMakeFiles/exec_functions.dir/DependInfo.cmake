@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/exec_functions/error.c" "CMakeFiles/exec_functions.dir/error.c.o" "gcc" "CMakeFiles/exec_functions.dir/error.c.o.d"
   "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/exec_functions/main.c" "CMakeFiles/exec_functions.dir/main.c.o" "gcc" "CMakeFiles/exec_functions.dir/main.c.o.d"
   )
 

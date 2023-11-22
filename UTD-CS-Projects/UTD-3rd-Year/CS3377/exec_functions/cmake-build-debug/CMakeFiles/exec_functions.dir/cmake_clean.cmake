@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/exec_functions.dir/error.c.o"
+  "CMakeFiles/exec_functions.dir/error.c.o.d"
   "CMakeFiles/exec_functions.dir/main.c.o"
   "CMakeFiles/exec_functions.dir/main.c.o.d"
   "exec_functions"

@@ -129,6 +129,30 @@ exec_functions/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec_functions.dir/build.make CMakeFiles/exec_functions.dir/build
 .PHONY : exec_functions/fast
 
+error.o: error.c.o
+.PHONY : error.o
+
+# target to build an object file
+error.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec_functions.dir/build.make CMakeFiles/exec_functions.dir/error.c.o
+.PHONY : error.c.o
+
+error.i: error.c.i
+.PHONY : error.i
+
+# target to preprocess a source file
+error.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec_functions.dir/build.make CMakeFiles/exec_functions.dir/error.c.i
+.PHONY : error.c.i
+
+error.s: error.c.s
+.PHONY : error.s
+
+# target to generate assembly for a file
+error.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec_functions.dir/build.make CMakeFiles/exec_functions.dir/error.c.s
+.PHONY : error.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... exec_functions"
+	@echo "... error.o"
+	@echo "... error.i"
+	@echo "... error.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
