@@ -18,6 +18,10 @@ struct queue {
     pthread_rwlock_t  q_lock;
 };
 
+pthread_cond_t qready = PTHREAD_COND_INITIALIZER;
+pthread_mutex_t qlock = PTHREAD_MUTEX_INITIALIZER;
+
+
 void job_init(struct job *newJob){
     newJob->j_next = NULL;
     newJob->j_prev = NULL;
@@ -31,7 +35,7 @@ printids(const char *s)
     pthread_t tid;
     pid = getpid();
     tid = pthread_self();
-    printf("%s pid %lu tid %lu (0x%lx)\n", s, (unsigned long)pid,
+    printf("+ %s pid %lu tid %lu (0x%lx)\n", s, (unsigned long)pid,
            (unsigned long)tid, (unsigned long)tid);
 }
 
@@ -56,6 +60,7 @@ queue_init(struct queue *qp)
     if (err != 0)
         return(err);
     /* ... continue initialization ... */
+    pthread_cond_init(&qready, NULL);
     return(0);
 }
 
@@ -65,6 +70,7 @@ queue_init(struct queue *qp)
 void
 job_insert(struct queue *qp, struct job *jp)
 {
+    pthread_mutex_lock(&qlock);
     pthread_rwlock_wrlock(&qp->q_lock);
     jp->j_next = qp->q_head;
     jp->j_prev = NULL;
@@ -74,6 +80,8 @@ job_insert(struct queue *qp, struct job *jp)
         qp->q_tail = jp;	/* list was empty */
     qp->q_head = jp;
     pthread_rwlock_unlock(&qp->q_lock);
+    pthread_mutex_unlock(&qlock);
+    pthread_cond_signal(&qready);
 }
 
 /*
@@ -82,6 +90,7 @@ job_insert(struct queue *qp, struct job *jp)
 void
 job_append(struct queue *qp, struct job *jp)
 {
+    pthread_mutex_lock(&qlock);
     pthread_rwlock_wrlock(&qp->q_lock);
     jp->j_next = NULL;
     jp->j_prev = qp->q_tail;
@@ -91,6 +100,8 @@ job_append(struct queue *qp, struct job *jp)
         qp->q_head = jp;	/* list was empty */
     qp->q_tail = jp;
     pthread_rwlock_unlock(&qp->q_lock);
+    pthread_mutex_unlock(&qlock);
+    pthread_cond_signal(&qready);
 }
 
 /*
@@ -99,6 +110,7 @@ job_append(struct queue *qp, struct job *jp)
 void
 job_remove(struct queue *qp, struct job *jp)
 {
+    pthread_mutex_lock(&qlock);
     pthread_rwlock_wrlock(&qp->q_lock);
     if (jp == qp->q_head) {
         qp->q_head = jp->j_next;
@@ -113,7 +125,10 @@ job_remove(struct queue *qp, struct job *jp)
         jp->j_prev->j_next = jp->j_next;
         jp->j_next->j_prev = jp->j_prev;
     }
+    printf("-> Removed job from queue.\n");
     pthread_rwlock_unlock(&qp->q_lock);
+    pthread_mutex_unlock(&qlock);
+    pthread_cond_signal(&qready);
 }
 
 /*
@@ -160,6 +175,7 @@ main() {
 
     struct job *itr = myQueue.q_head;
     int i = 0;
+    printf("\n");
     while (itr != NULL) {
         printf("Job ID: %lu\n", itr->j_id);
         itr = itr->j_next;

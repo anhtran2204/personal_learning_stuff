@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/reader-writer-lock/error.c" "CMakeFiles/reader_writer_lock.dir/error.c.o" "gcc" "CMakeFiles/reader_writer_lock.dir/error.c.o.d"
   "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/reader-writer-lock/main.c" "CMakeFiles/reader_writer_lock.dir/main.c.o" "gcc" "CMakeFiles/reader_writer_lock.dir/main.c.o.d"
   )
 

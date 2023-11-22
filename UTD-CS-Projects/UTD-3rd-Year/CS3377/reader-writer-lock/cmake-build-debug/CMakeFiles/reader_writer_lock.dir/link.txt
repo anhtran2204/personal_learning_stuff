@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/reader_writer_lock.dir/main.c.o -o reader_writer_lock 
+/usr/bin/cc -g CMakeFiles/reader_writer_lock.dir/main.c.o CMakeFiles/reader_writer_lock.dir/error.c.o -o reader_writer_lock 
