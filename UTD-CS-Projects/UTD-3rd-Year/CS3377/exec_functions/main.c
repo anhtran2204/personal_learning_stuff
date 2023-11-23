@@ -1,19 +1,57 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <dirent.h>
-#include "apue.h"
+#include <fcntl.h>
+#include <unistd.h>
 
-int main(int argc, char *argv[]) {
-    DIR *dp;
-    struct dirent *dirp;
+int main() {
+    DIR *dir_stream;
+    int fd;
+    struct dirent *dir_entry;
 
-    if (argc != 2)
-        err_quit("usage: ls directory_name");
-    if ((dp = opendir(argv[1])) == NULL)
-        err_sys("can’t open %s", argv[1]);
-    while ((dirp = readdir(dp)) != NULL)
-        printf("%s\n", dirp->d_name);
+    // Open the root directory using opendir
+    dir_stream = opendir("/");
+    if (dir_stream == NULL) {
+        perror("opendir");
+        exit(EXIT_FAILURE);
+    }
 
-    closedir(dp);
-    exit(0);
+    // Peek at the implementation of the DIR structure and print close-on-exec flag
+    printf("Directory stream close-on-exec flag after opendir: ");
+    fd = dirfd(dir_stream);
+    if (fd == -1) {
+        perror("dirfd");
+        exit(EXIT_FAILURE);
+    }
+
+    int flags = fcntl(fd, F_GETFD);
+    if (flags == -1) {
+        perror("fcntl");
+        exit(EXIT_FAILURE);
+    }
+    printf("%s\n", (flags & FD_CLOEXEC) ? "FD_CLOEXEC is set" : "FD_CLOEXEC is not set");
+
+    // Close the directory stream
+    closedir(dir_stream);
+
+    // Open the same directory for reading
+    fd = open("/", O_RDONLY | O_DIRECTORY);
+    if (fd == -1) {
+        perror("open");
+        exit(EXIT_FAILURE);
+    }
+
+    // Peek at the close-on-exec flag for the file descriptor
+    printf("File descriptor close-on-exec flag after open: ");
+    flags = fcntl(fd, F_GETFD);
+    if (flags == -1) {
+        perror("fcntl");
+        exit(EXIT_FAILURE);
+    }
+    printf("%s\n", (flags & FD_CLOEXEC) ? "FD_CLOEXEC is set" : "FD_CLOEXEC is not set");
+
+    // Close the file descriptor
+    close(fd);
+
     return 0;
 }
