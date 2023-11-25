@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/timers.dir/main.c.o"
-  "CMakeFiles/timers.dir/main.c.o.d"
+  "CMakeFiles/timers.dir/timer.c.o"
+  "CMakeFiles/timers.dir/timer.c.o.d"
   "timers"
   "timers.pdb"
 )

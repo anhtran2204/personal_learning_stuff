@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "incorrect_pthread_exit"
+			"path" : "exec_functions"
 		}
 	],
 	"backtrace" : 1,
@@ -36,9 +36,6 @@
 			[
 				{
 					"fragment" : "-g"
-				},
-				{
-					"fragment" : "-std=gnu11"
 				}
 			],
 			"language" : "C",
@@ -48,7 +45,7 @@
 				[
 					1
 				],
-				"standard" : "11"
+				"standard" : "17"
 			},
 			"sourceIndexes" : 
 			[
@@ -57,7 +54,7 @@
 			]
 		}
 	],
-	"id" : "incorrect_pthread_exit::@6890427a1f51a3e7e1df",
+	"id" : "exec_functions::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -73,8 +70,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "incorrect_pthread_exit",
-	"nameOnDisk" : "incorrect_pthread_exit",
+	"name" : "exec_functions",
+	"nameOnDisk" : "exec_functions",
 	"paths" : 
 	{
 		"build" : ".",
@@ -96,7 +93,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "main.c",
+			"path" : "exec_funct.c",
 			"sourceGroupIndex" : 0
 		},
 		{

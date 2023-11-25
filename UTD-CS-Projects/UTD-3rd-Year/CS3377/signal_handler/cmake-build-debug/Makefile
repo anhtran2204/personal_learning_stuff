@@ -153,29 +153,29 @@ error.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal_handler.dir/build.make CMakeFiles/signal_handler.dir/error.c.s
 .PHONY : error.c.s
 
-main.o: main.c.o
-.PHONY : main.o
+signal_handler.o: signal_handler.c.o
+.PHONY : signal_handler.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal_handler.dir/build.make CMakeFiles/signal_handler.dir/main.c.o
-.PHONY : main.c.o
+signal_handler.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal_handler.dir/build.make CMakeFiles/signal_handler.dir/signal_handler.c.o
+.PHONY : signal_handler.c.o
 
-main.i: main.c.i
-.PHONY : main.i
+signal_handler.i: signal_handler.c.i
+.PHONY : signal_handler.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal_handler.dir/build.make CMakeFiles/signal_handler.dir/main.c.i
-.PHONY : main.c.i
+signal_handler.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal_handler.dir/build.make CMakeFiles/signal_handler.dir/signal_handler.c.i
+.PHONY : signal_handler.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+signal_handler.s: signal_handler.c.s
+.PHONY : signal_handler.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal_handler.dir/build.make CMakeFiles/signal_handler.dir/main.c.s
-.PHONY : main.c.s
+signal_handler.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/signal_handler.dir/build.make CMakeFiles/signal_handler.dir/signal_handler.c.s
+.PHONY : signal_handler.c.s
 
 # Help Target
 help:
@@ -189,9 +189,9 @@ help:
 	@echo "... error.o"
 	@echo "... error.i"
 	@echo "... error.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... signal_handler.o"
+	@echo "... signal_handler.i"
+	@echo "... signal_handler.s"
 .PHONY : help
 
 

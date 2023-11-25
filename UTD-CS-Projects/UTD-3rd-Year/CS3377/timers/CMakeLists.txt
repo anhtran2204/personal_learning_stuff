@@ -3,4 +3,4 @@ project(timers C)
 
 set(CMAKE_C_STANDARD 17)
 
-add_executable(timers main.c)
+add_executable(timers timer.c)

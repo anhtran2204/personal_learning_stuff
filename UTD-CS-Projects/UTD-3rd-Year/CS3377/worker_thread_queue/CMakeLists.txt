@@ -3,6 +3,6 @@ project(worker_thread_queue C)
 
 set(CMAKE_C_STANDARD 17)
 
-add_executable(worker_thread_queue main.c
+add_executable(worker_thread_queue work_queue.c
         thread_demo.c
         error.c)

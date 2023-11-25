@@ -69,19 +69,19 @@ include CMakeFiles/incorrect_pthread_exit.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/incorrect_pthread_exit.dir/flags.make
 
-CMakeFiles/incorrect_pthread_exit.dir/main.c.o: CMakeFiles/incorrect_pthread_exit.dir/flags.make
-CMakeFiles/incorrect_pthread_exit.dir/main.c.o: ../main.c
-CMakeFiles/incorrect_pthread_exit.dir/main.c.o: CMakeFiles/incorrect_pthread_exit.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/incorrect_pthread_exit/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/incorrect_pthread_exit.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/incorrect_pthread_exit.dir/main.c.o -MF CMakeFiles/incorrect_pthread_exit.dir/main.c.o.d -o CMakeFiles/incorrect_pthread_exit.dir/main.c.o -c /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/incorrect_pthread_exit/main.c
+CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.o: CMakeFiles/incorrect_pthread_exit.dir/flags.make
+CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.o: ../incorrect_pthread_exit.c
+CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.o: CMakeFiles/incorrect_pthread_exit.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/incorrect_pthread_exit/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.o -MF CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.o.d -o CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.o -c /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/incorrect_pthread_exit/incorrect_pthread_exit.c
 
-CMakeFiles/incorrect_pthread_exit.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/incorrect_pthread_exit.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/incorrect_pthread_exit/main.c > CMakeFiles/incorrect_pthread_exit.dir/main.c.i
+CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/incorrect_pthread_exit/incorrect_pthread_exit.c > CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.i
 
-CMakeFiles/incorrect_pthread_exit.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/incorrect_pthread_exit.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/incorrect_pthread_exit/main.c -o CMakeFiles/incorrect_pthread_exit.dir/main.c.s
+CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/incorrect_pthread_exit/incorrect_pthread_exit.c -o CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.s
 
 CMakeFiles/incorrect_pthread_exit.dir/error.c.o: CMakeFiles/incorrect_pthread_exit.dir/flags.make
 CMakeFiles/incorrect_pthread_exit.dir/error.c.o: ../error.c
@@ -99,13 +99,13 @@ CMakeFiles/incorrect_pthread_exit.dir/error.c.s: cmake_force
 
 # Object files for target incorrect_pthread_exit
 incorrect_pthread_exit_OBJECTS = \
-"CMakeFiles/incorrect_pthread_exit.dir/main.c.o" \
+"CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.o" \
 "CMakeFiles/incorrect_pthread_exit.dir/error.c.o"
 
 # External object files for target incorrect_pthread_exit
 incorrect_pthread_exit_EXTERNAL_OBJECTS =
 
-incorrect_pthread_exit: CMakeFiles/incorrect_pthread_exit.dir/main.c.o
+incorrect_pthread_exit: CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.o
 incorrect_pthread_exit: CMakeFiles/incorrect_pthread_exit.dir/error.c.o
 incorrect_pthread_exit: CMakeFiles/incorrect_pthread_exit.dir/build.make
 incorrect_pthread_exit: CMakeFiles/incorrect_pthread_exit.dir/link.txt

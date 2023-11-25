@@ -153,29 +153,29 @@ error.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec_functions.dir/build.make CMakeFiles/exec_functions.dir/error.c.s
 .PHONY : error.c.s
 
-main.o: main.c.o
-.PHONY : main.o
+exec_funct.o: exec_funct.c.o
+.PHONY : exec_funct.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec_functions.dir/build.make CMakeFiles/exec_functions.dir/main.c.o
-.PHONY : main.c.o
+exec_funct.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec_functions.dir/build.make CMakeFiles/exec_functions.dir/exec_funct.c.o
+.PHONY : exec_funct.c.o
 
-main.i: main.c.i
-.PHONY : main.i
+exec_funct.i: exec_funct.c.i
+.PHONY : exec_funct.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec_functions.dir/build.make CMakeFiles/exec_functions.dir/main.c.i
-.PHONY : main.c.i
+exec_funct.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec_functions.dir/build.make CMakeFiles/exec_functions.dir/exec_funct.c.i
+.PHONY : exec_funct.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+exec_funct.s: exec_funct.c.s
+.PHONY : exec_funct.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec_functions.dir/build.make CMakeFiles/exec_functions.dir/main.c.s
-.PHONY : main.c.s
+exec_funct.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec_functions.dir/build.make CMakeFiles/exec_functions.dir/exec_funct.c.s
+.PHONY : exec_funct.c.s
 
 # Help Target
 help:
@@ -189,9 +189,9 @@ help:
 	@echo "... error.o"
 	@echo "... error.i"
 	@echo "... error.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... exec_funct.o"
+	@echo "... exec_funct.i"
+	@echo "... exec_funct.s"
 .PHONY : help
 
 

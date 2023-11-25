@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/timers/main.c" "CMakeFiles/timers.dir/main.c.o" "gcc" "CMakeFiles/timers.dir/main.c.o.d"
+  "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/timers/timer.c" "CMakeFiles/timers.dir/timer.c.o" "gcc" "CMakeFiles/timers.dir/timer.c.o.d"
   )
 
 # Targets to which this target links.

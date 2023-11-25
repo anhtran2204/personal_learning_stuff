@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/signal_handler.dir/main.c.o CMakeFiles/signal_handler.dir/error.c.o -o signal_handler 
+/usr/bin/cc -g CMakeFiles/signal_handler.dir/signal_handler.c.o CMakeFiles/signal_handler.dir/error.c.o -o signal_handler 

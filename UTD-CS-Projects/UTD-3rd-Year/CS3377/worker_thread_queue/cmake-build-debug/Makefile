@@ -153,30 +153,6 @@ error.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/worker_thread_queue.dir/build.make CMakeFiles/worker_thread_queue.dir/error.c.s
 .PHONY : error.c.s
 
-main.o: main.c.o
-.PHONY : main.o
-
-# target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/worker_thread_queue.dir/build.make CMakeFiles/worker_thread_queue.dir/main.c.o
-.PHONY : main.c.o
-
-main.i: main.c.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/worker_thread_queue.dir/build.make CMakeFiles/worker_thread_queue.dir/main.c.i
-.PHONY : main.c.i
-
-main.s: main.c.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/worker_thread_queue.dir/build.make CMakeFiles/worker_thread_queue.dir/main.c.s
-.PHONY : main.c.s
-
 thread_demo.o: thread_demo.c.o
 .PHONY : thread_demo.o
 
@@ -201,6 +177,30 @@ thread_demo.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/worker_thread_queue.dir/build.make CMakeFiles/worker_thread_queue.dir/thread_demo.c.s
 .PHONY : thread_demo.c.s
 
+work_queue.o: work_queue.c.o
+.PHONY : work_queue.o
+
+# target to build an object file
+work_queue.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/worker_thread_queue.dir/build.make CMakeFiles/worker_thread_queue.dir/work_queue.c.o
+.PHONY : work_queue.c.o
+
+work_queue.i: work_queue.c.i
+.PHONY : work_queue.i
+
+# target to preprocess a source file
+work_queue.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/worker_thread_queue.dir/build.make CMakeFiles/worker_thread_queue.dir/work_queue.c.i
+.PHONY : work_queue.c.i
+
+work_queue.s: work_queue.c.s
+.PHONY : work_queue.s
+
+# target to generate assembly for a file
+work_queue.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/worker_thread_queue.dir/build.make CMakeFiles/worker_thread_queue.dir/work_queue.c.s
+.PHONY : work_queue.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -213,12 +213,12 @@ help:
 	@echo "... error.o"
 	@echo "... error.i"
 	@echo "... error.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
 	@echo "... thread_demo.o"
 	@echo "... thread_demo.i"
 	@echo "... thread_demo.s"
+	@echo "... work_queue.o"
+	@echo "... work_queue.i"
+	@echo "... work_queue.s"
 .PHONY : help
 
 

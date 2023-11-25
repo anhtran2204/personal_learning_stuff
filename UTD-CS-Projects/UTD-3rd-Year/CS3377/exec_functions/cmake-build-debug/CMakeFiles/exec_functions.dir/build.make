@@ -69,19 +69,19 @@ include CMakeFiles/exec_functions.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/exec_functions.dir/flags.make
 
-CMakeFiles/exec_functions.dir/main.c.o: CMakeFiles/exec_functions.dir/flags.make
-CMakeFiles/exec_functions.dir/main.c.o: ../main.c
-CMakeFiles/exec_functions.dir/main.c.o: CMakeFiles/exec_functions.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/exec_functions/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/exec_functions.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/exec_functions.dir/main.c.o -MF CMakeFiles/exec_functions.dir/main.c.o.d -o CMakeFiles/exec_functions.dir/main.c.o -c /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/exec_functions/main.c
+CMakeFiles/exec_functions.dir/exec_funct.c.o: CMakeFiles/exec_functions.dir/flags.make
+CMakeFiles/exec_functions.dir/exec_funct.c.o: ../exec_funct.c
+CMakeFiles/exec_functions.dir/exec_funct.c.o: CMakeFiles/exec_functions.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/exec_functions/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/exec_functions.dir/exec_funct.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/exec_functions.dir/exec_funct.c.o -MF CMakeFiles/exec_functions.dir/exec_funct.c.o.d -o CMakeFiles/exec_functions.dir/exec_funct.c.o -c /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/exec_functions/exec_funct.c
 
-CMakeFiles/exec_functions.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/exec_functions.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/exec_functions/main.c > CMakeFiles/exec_functions.dir/main.c.i
+CMakeFiles/exec_functions.dir/exec_funct.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/exec_functions.dir/exec_funct.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/exec_functions/exec_funct.c > CMakeFiles/exec_functions.dir/exec_funct.c.i
 
-CMakeFiles/exec_functions.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/exec_functions.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/exec_functions/main.c -o CMakeFiles/exec_functions.dir/main.c.s
+CMakeFiles/exec_functions.dir/exec_funct.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/exec_functions.dir/exec_funct.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/exec_functions/exec_funct.c -o CMakeFiles/exec_functions.dir/exec_funct.c.s
 
 CMakeFiles/exec_functions.dir/error.c.o: CMakeFiles/exec_functions.dir/flags.make
 CMakeFiles/exec_functions.dir/error.c.o: ../error.c
@@ -99,13 +99,13 @@ CMakeFiles/exec_functions.dir/error.c.s: cmake_force
 
 # Object files for target exec_functions
 exec_functions_OBJECTS = \
-"CMakeFiles/exec_functions.dir/main.c.o" \
+"CMakeFiles/exec_functions.dir/exec_funct.c.o" \
 "CMakeFiles/exec_functions.dir/error.c.o"
 
 # External object files for target exec_functions
 exec_functions_EXTERNAL_OBJECTS =
 
-exec_functions: CMakeFiles/exec_functions.dir/main.c.o
+exec_functions: CMakeFiles/exec_functions.dir/exec_funct.c.o
 exec_functions: CMakeFiles/exec_functions.dir/error.c.o
 exec_functions: CMakeFiles/exec_functions.dir/build.make
 exec_functions: CMakeFiles/exec_functions.dir/link.txt

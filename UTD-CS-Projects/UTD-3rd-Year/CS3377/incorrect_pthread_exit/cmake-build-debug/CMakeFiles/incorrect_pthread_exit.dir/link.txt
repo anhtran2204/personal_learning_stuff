@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/incorrect_pthread_exit.dir/main.c.o CMakeFiles/incorrect_pthread_exit.dir/error.c.o -o incorrect_pthread_exit 
+/usr/bin/cc -g CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.o CMakeFiles/incorrect_pthread_exit.dir/error.c.o -o incorrect_pthread_exit 

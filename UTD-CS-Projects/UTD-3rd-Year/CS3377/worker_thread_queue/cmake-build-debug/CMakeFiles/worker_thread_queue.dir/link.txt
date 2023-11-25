@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/worker_thread_queue.dir/main.c.o CMakeFiles/worker_thread_queue.dir/thread_demo.c.o CMakeFiles/worker_thread_queue.dir/error.c.o -o worker_thread_queue 
+/usr/bin/cc -g CMakeFiles/worker_thread_queue.dir/work_queue.c.o CMakeFiles/worker_thread_queue.dir/thread_demo.c.o CMakeFiles/worker_thread_queue.dir/error.c.o -o worker_thread_queue 

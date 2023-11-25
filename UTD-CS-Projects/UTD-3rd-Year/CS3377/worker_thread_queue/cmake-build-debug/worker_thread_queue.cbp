@@ -79,10 +79,10 @@
 		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/error.c">
 			<Option target="worker_thread_queue"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/main.c">
+		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/thread_demo.c">
 			<Option target="worker_thread_queue"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/thread_demo.c">
+		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/work_queue.c">
 			<Option target="worker_thread_queue"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/CMakeLists.txt">

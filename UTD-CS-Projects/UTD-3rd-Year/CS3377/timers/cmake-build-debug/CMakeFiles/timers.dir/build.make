@@ -69,28 +69,28 @@ include CMakeFiles/timers.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/timers.dir/flags.make
 
-CMakeFiles/timers.dir/main.c.o: CMakeFiles/timers.dir/flags.make
-CMakeFiles/timers.dir/main.c.o: ../main.c
-CMakeFiles/timers.dir/main.c.o: CMakeFiles/timers.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/timers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/timers.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/timers.dir/main.c.o -MF CMakeFiles/timers.dir/main.c.o.d -o CMakeFiles/timers.dir/main.c.o -c /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/timers/main.c
+CMakeFiles/timers.dir/timer.c.o: CMakeFiles/timers.dir/flags.make
+CMakeFiles/timers.dir/timer.c.o: ../timer.c
+CMakeFiles/timers.dir/timer.c.o: CMakeFiles/timers.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/timers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/timers.dir/timer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/timers.dir/timer.c.o -MF CMakeFiles/timers.dir/timer.c.o.d -o CMakeFiles/timers.dir/timer.c.o -c /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/timers/timer.c
 
-CMakeFiles/timers.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/timers.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/timers/main.c > CMakeFiles/timers.dir/main.c.i
+CMakeFiles/timers.dir/timer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/timers.dir/timer.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/timers/timer.c > CMakeFiles/timers.dir/timer.c.i
 
-CMakeFiles/timers.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/timers.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/timers/main.c -o CMakeFiles/timers.dir/main.c.s
+CMakeFiles/timers.dir/timer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/timers.dir/timer.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/timers/timer.c -o CMakeFiles/timers.dir/timer.c.s
 
 # Object files for target timers
 timers_OBJECTS = \
-"CMakeFiles/timers.dir/main.c.o"
+"CMakeFiles/timers.dir/timer.c.o"
 
 # External object files for target timers
 timers_EXTERNAL_OBJECTS =
 
-timers: CMakeFiles/timers.dir/main.c.o
+timers: CMakeFiles/timers.dir/timer.c.o
 timers: CMakeFiles/timers.dir/build.make
 timers: CMakeFiles/timers.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/timers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable timers"

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/signal_handler.dir/error.c.o"
   "CMakeFiles/signal_handler.dir/error.c.o.d"
-  "CMakeFiles/signal_handler.dir/main.c.o"
-  "CMakeFiles/signal_handler.dir/main.c.o.d"
+  "CMakeFiles/signal_handler.dir/signal_handler.c.o"
+  "CMakeFiles/signal_handler.dir/signal_handler.c.o.d"
   "signal_handler"
   "signal_handler.pdb"
 )

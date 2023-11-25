@@ -153,29 +153,29 @@ error.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/incorrect_pthread_exit.dir/build.make CMakeFiles/incorrect_pthread_exit.dir/error.c.s
 .PHONY : error.c.s
 
-main.o: main.c.o
-.PHONY : main.o
+incorrect_pthread_exit.o: incorrect_pthread_exit.c.o
+.PHONY : incorrect_pthread_exit.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/incorrect_pthread_exit.dir/build.make CMakeFiles/incorrect_pthread_exit.dir/main.c.o
-.PHONY : main.c.o
+incorrect_pthread_exit.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/incorrect_pthread_exit.dir/build.make CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.o
+.PHONY : incorrect_pthread_exit.c.o
 
-main.i: main.c.i
-.PHONY : main.i
+incorrect_pthread_exit.i: incorrect_pthread_exit.c.i
+.PHONY : incorrect_pthread_exit.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/incorrect_pthread_exit.dir/build.make CMakeFiles/incorrect_pthread_exit.dir/main.c.i
-.PHONY : main.c.i
+incorrect_pthread_exit.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/incorrect_pthread_exit.dir/build.make CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.i
+.PHONY : incorrect_pthread_exit.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+incorrect_pthread_exit.s: incorrect_pthread_exit.c.s
+.PHONY : incorrect_pthread_exit.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/incorrect_pthread_exit.dir/build.make CMakeFiles/incorrect_pthread_exit.dir/main.c.s
-.PHONY : main.c.s
+incorrect_pthread_exit.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/incorrect_pthread_exit.dir/build.make CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.s
+.PHONY : incorrect_pthread_exit.c.s
 
 # Help Target
 help:
@@ -189,9 +189,9 @@ help:
 	@echo "... error.o"
 	@echo "... error.i"
 	@echo "... error.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... incorrect_pthread_exit.o"
+	@echo "... incorrect_pthread_exit.i"
+	@echo "... incorrect_pthread_exit.s"
 .PHONY : help
 
 

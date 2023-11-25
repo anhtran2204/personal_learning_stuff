@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/incorrect_pthread_exit.dir/error.c.o"
   "CMakeFiles/incorrect_pthread_exit.dir/error.c.o.d"
-  "CMakeFiles/incorrect_pthread_exit.dir/main.c.o"
-  "CMakeFiles/incorrect_pthread_exit.dir/main.c.o.d"
+  "CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.o"
+  "CMakeFiles/incorrect_pthread_exit.dir/incorrect_pthread_exit.c.o.d"
   "incorrect_pthread_exit"
   "incorrect_pthread_exit.pdb"
 )

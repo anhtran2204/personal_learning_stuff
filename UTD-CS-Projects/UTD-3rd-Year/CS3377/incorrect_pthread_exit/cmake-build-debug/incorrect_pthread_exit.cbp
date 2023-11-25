@@ -79,7 +79,7 @@
 		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/incorrect_pthread_exit/error.c">
 			<Option target="incorrect_pthread_exit"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/incorrect_pthread_exit/main.c">
+		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/incorrect_pthread_exit/incorrect_pthread_exit.c">
 			<Option target="incorrect_pthread_exit"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/incorrect_pthread_exit/CMakeLists.txt">

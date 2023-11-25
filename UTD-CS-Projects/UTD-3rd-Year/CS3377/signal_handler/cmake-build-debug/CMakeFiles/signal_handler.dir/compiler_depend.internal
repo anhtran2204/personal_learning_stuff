@@ -109,8 +109,8 @@ CMakeFiles/signal_handler.dir/error.c.o
  /usr/include/asm-generic/errno.h
  /usr/include/asm-generic/errno-base.h
 
-CMakeFiles/signal_handler.dir/main.c.o
- /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/signal_handler/main.c
+CMakeFiles/signal_handler.dir/signal_handler.c.o
+ /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/signal_handler/signal_handler.c
  /usr/include/stdc-predef.h
  /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/signal_handler/apue.h
  /usr/include/x86_64-linux-gnu/sys/types.h

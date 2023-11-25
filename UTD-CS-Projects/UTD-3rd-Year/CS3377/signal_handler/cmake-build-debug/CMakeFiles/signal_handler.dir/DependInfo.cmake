@@ -9,7 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/signal_handler/error.c" "CMakeFiles/signal_handler.dir/error.c.o" "gcc" "CMakeFiles/signal_handler.dir/error.c.o.d"
-  "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/signal_handler/main.c" "CMakeFiles/signal_handler.dir/main.c.o" "gcc" "CMakeFiles/signal_handler.dir/main.c.o.d"
+  "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/signal_handler/signal_handler.c" "CMakeFiles/signal_handler.dir/signal_handler.c.o" "gcc" "CMakeFiles/signal_handler.dir/signal_handler.c.o.d"
   )
 
 # Targets to which this target links.

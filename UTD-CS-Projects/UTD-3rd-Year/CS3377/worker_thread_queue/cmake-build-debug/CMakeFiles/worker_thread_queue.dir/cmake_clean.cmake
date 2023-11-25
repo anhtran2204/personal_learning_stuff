@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/worker_thread_queue.dir/error.c.o"
   "CMakeFiles/worker_thread_queue.dir/error.c.o.d"
-  "CMakeFiles/worker_thread_queue.dir/main.c.o"
-  "CMakeFiles/worker_thread_queue.dir/main.c.o.d"
   "CMakeFiles/worker_thread_queue.dir/thread_demo.c.o"
   "CMakeFiles/worker_thread_queue.dir/thread_demo.c.o.d"
+  "CMakeFiles/worker_thread_queue.dir/work_queue.c.o"
+  "CMakeFiles/worker_thread_queue.dir/work_queue.c.o.d"
   "worker_thread_queue"
   "worker_thread_queue.pdb"
 )

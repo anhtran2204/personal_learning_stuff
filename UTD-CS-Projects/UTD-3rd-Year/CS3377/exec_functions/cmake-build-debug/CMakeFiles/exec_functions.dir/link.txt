@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/exec_functions.dir/main.c.o CMakeFiles/exec_functions.dir/error.c.o -o exec_functions 
+/usr/bin/cc -g CMakeFiles/exec_functions.dir/exec_funct.c.o CMakeFiles/exec_functions.dir/error.c.o -o exec_functions 

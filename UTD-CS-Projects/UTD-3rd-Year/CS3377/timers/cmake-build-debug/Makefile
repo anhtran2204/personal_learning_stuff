@@ -129,29 +129,29 @@ timers/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/timers.dir/build.make CMakeFiles/timers.dir/build
 .PHONY : timers/fast
 
-main.o: main.c.o
-.PHONY : main.o
+timer.o: timer.c.o
+.PHONY : timer.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timers.dir/build.make CMakeFiles/timers.dir/main.c.o
-.PHONY : main.c.o
+timer.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/timers.dir/build.make CMakeFiles/timers.dir/timer.c.o
+.PHONY : timer.c.o
 
-main.i: main.c.i
-.PHONY : main.i
+timer.i: timer.c.i
+.PHONY : timer.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timers.dir/build.make CMakeFiles/timers.dir/main.c.i
-.PHONY : main.c.i
+timer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/timers.dir/build.make CMakeFiles/timers.dir/timer.c.i
+.PHONY : timer.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+timer.s: timer.c.s
+.PHONY : timer.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timers.dir/build.make CMakeFiles/timers.dir/main.c.s
-.PHONY : main.c.s
+timer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/timers.dir/build.make CMakeFiles/timers.dir/timer.c.s
+.PHONY : timer.c.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... timers"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... timer.o"
+	@echo "... timer.i"
+	@echo "... timer.s"
 .PHONY : help
 
 

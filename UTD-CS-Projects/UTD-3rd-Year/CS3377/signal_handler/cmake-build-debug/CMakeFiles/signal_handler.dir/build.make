@@ -69,19 +69,19 @@ include CMakeFiles/signal_handler.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/signal_handler.dir/flags.make
 
-CMakeFiles/signal_handler.dir/main.c.o: CMakeFiles/signal_handler.dir/flags.make
-CMakeFiles/signal_handler.dir/main.c.o: ../main.c
-CMakeFiles/signal_handler.dir/main.c.o: CMakeFiles/signal_handler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/signal_handler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/signal_handler.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/signal_handler.dir/main.c.o -MF CMakeFiles/signal_handler.dir/main.c.o.d -o CMakeFiles/signal_handler.dir/main.c.o -c /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/signal_handler/main.c
+CMakeFiles/signal_handler.dir/signal_handler.c.o: CMakeFiles/signal_handler.dir/flags.make
+CMakeFiles/signal_handler.dir/signal_handler.c.o: ../signal_handler.c
+CMakeFiles/signal_handler.dir/signal_handler.c.o: CMakeFiles/signal_handler.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/signal_handler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/signal_handler.dir/signal_handler.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/signal_handler.dir/signal_handler.c.o -MF CMakeFiles/signal_handler.dir/signal_handler.c.o.d -o CMakeFiles/signal_handler.dir/signal_handler.c.o -c /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/signal_handler/signal_handler.c
 
-CMakeFiles/signal_handler.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/signal_handler.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/signal_handler/main.c > CMakeFiles/signal_handler.dir/main.c.i
+CMakeFiles/signal_handler.dir/signal_handler.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/signal_handler.dir/signal_handler.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/signal_handler/signal_handler.c > CMakeFiles/signal_handler.dir/signal_handler.c.i
 
-CMakeFiles/signal_handler.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/signal_handler.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/signal_handler/main.c -o CMakeFiles/signal_handler.dir/main.c.s
+CMakeFiles/signal_handler.dir/signal_handler.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/signal_handler.dir/signal_handler.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/signal_handler/signal_handler.c -o CMakeFiles/signal_handler.dir/signal_handler.c.s
 
 CMakeFiles/signal_handler.dir/error.c.o: CMakeFiles/signal_handler.dir/flags.make
 CMakeFiles/signal_handler.dir/error.c.o: ../error.c
@@ -99,13 +99,13 @@ CMakeFiles/signal_handler.dir/error.c.s: cmake_force
 
 # Object files for target signal_handler
 signal_handler_OBJECTS = \
-"CMakeFiles/signal_handler.dir/main.c.o" \
+"CMakeFiles/signal_handler.dir/signal_handler.c.o" \
 "CMakeFiles/signal_handler.dir/error.c.o"
 
 # External object files for target signal_handler
 signal_handler_EXTERNAL_OBJECTS =
 
-signal_handler: CMakeFiles/signal_handler.dir/main.c.o
+signal_handler: CMakeFiles/signal_handler.dir/signal_handler.c.o
 signal_handler: CMakeFiles/signal_handler.dir/error.c.o
 signal_handler: CMakeFiles/signal_handler.dir/build.make
 signal_handler: CMakeFiles/signal_handler.dir/link.txt

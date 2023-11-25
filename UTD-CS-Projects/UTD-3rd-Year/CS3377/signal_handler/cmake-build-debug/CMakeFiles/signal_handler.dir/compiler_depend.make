@@ -108,7 +108,7 @@ CMakeFiles/signal_handler.dir/error.c.o: ../error.c \
   /usr/include/asm-generic/errno.h \
   /usr/include/asm-generic/errno-base.h
 
-CMakeFiles/signal_handler.dir/main.c.o: ../main.c \
+CMakeFiles/signal_handler.dir/signal_handler.c.o: ../signal_handler.c \
   /usr/include/stdc-predef.h \
   ../apue.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
@@ -210,8 +210,6 @@ CMakeFiles/signal_handler.dir/main.c.o: ../main.c \
   /usr/include/x86_64-linux-gnu/bits/signal_ext.h
 
 
-../main.c:
-
 /usr/include/asm-generic/errno-base.h:
 
 /usr/include/x86_64-linux-gnu/bits/errno.h:
@@ -235,6 +233,8 @@ CMakeFiles/signal_handler.dir/main.c.o: ../main.c \
 /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/signum-arch.h:
+
+../signal_handler.c:
 
 /usr/include/x86_64-linux-gnu/bits/signum-generic.h:
 

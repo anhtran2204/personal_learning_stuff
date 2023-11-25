@@ -69,19 +69,19 @@ include CMakeFiles/worker_thread_queue.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/worker_thread_queue.dir/flags.make
 
-CMakeFiles/worker_thread_queue.dir/main.c.o: CMakeFiles/worker_thread_queue.dir/flags.make
-CMakeFiles/worker_thread_queue.dir/main.c.o: ../main.c
-CMakeFiles/worker_thread_queue.dir/main.c.o: CMakeFiles/worker_thread_queue.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/worker_thread_queue.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/worker_thread_queue.dir/main.c.o -MF CMakeFiles/worker_thread_queue.dir/main.c.o.d -o CMakeFiles/worker_thread_queue.dir/main.c.o -c /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/main.c
+CMakeFiles/worker_thread_queue.dir/work_queue.c.o: CMakeFiles/worker_thread_queue.dir/flags.make
+CMakeFiles/worker_thread_queue.dir/work_queue.c.o: ../work_queue.c
+CMakeFiles/worker_thread_queue.dir/work_queue.c.o: CMakeFiles/worker_thread_queue.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/worker_thread_queue.dir/work_queue.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/worker_thread_queue.dir/work_queue.c.o -MF CMakeFiles/worker_thread_queue.dir/work_queue.c.o.d -o CMakeFiles/worker_thread_queue.dir/work_queue.c.o -c /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/work_queue.c
 
-CMakeFiles/worker_thread_queue.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/worker_thread_queue.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/main.c > CMakeFiles/worker_thread_queue.dir/main.c.i
+CMakeFiles/worker_thread_queue.dir/work_queue.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/worker_thread_queue.dir/work_queue.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/work_queue.c > CMakeFiles/worker_thread_queue.dir/work_queue.c.i
 
-CMakeFiles/worker_thread_queue.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/worker_thread_queue.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/main.c -o CMakeFiles/worker_thread_queue.dir/main.c.s
+CMakeFiles/worker_thread_queue.dir/work_queue.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/worker_thread_queue.dir/work_queue.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/work_queue.c -o CMakeFiles/worker_thread_queue.dir/work_queue.c.s
 
 CMakeFiles/worker_thread_queue.dir/thread_demo.c.o: CMakeFiles/worker_thread_queue.dir/flags.make
 CMakeFiles/worker_thread_queue.dir/thread_demo.c.o: ../thread_demo.c
@@ -113,14 +113,14 @@ CMakeFiles/worker_thread_queue.dir/error.c.s: cmake_force
 
 # Object files for target worker_thread_queue
 worker_thread_queue_OBJECTS = \
-"CMakeFiles/worker_thread_queue.dir/main.c.o" \
+"CMakeFiles/worker_thread_queue.dir/work_queue.c.o" \
 "CMakeFiles/worker_thread_queue.dir/thread_demo.c.o" \
 "CMakeFiles/worker_thread_queue.dir/error.c.o"
 
 # External object files for target worker_thread_queue
 worker_thread_queue_EXTERNAL_OBJECTS =
 
-worker_thread_queue: CMakeFiles/worker_thread_queue.dir/main.c.o
+worker_thread_queue: CMakeFiles/worker_thread_queue.dir/work_queue.c.o
 worker_thread_queue: CMakeFiles/worker_thread_queue.dir/thread_demo.c.o
 worker_thread_queue: CMakeFiles/worker_thread_queue.dir/error.c.o
 worker_thread_queue: CMakeFiles/worker_thread_queue.dir/build.make
