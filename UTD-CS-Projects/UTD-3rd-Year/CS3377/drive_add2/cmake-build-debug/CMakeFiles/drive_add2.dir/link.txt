@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/drive_add2.dir/main.c.o -o drive_add2 
+/usr/bin/cc -g CMakeFiles/drive_add2.dir/add2_filter.c.o CMakeFiles/drive_add2.dir/error.c.o -o drive_add2 

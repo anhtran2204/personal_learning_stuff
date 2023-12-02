@@ -69,31 +69,47 @@ include CMakeFiles/drive_add2.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/drive_add2.dir/flags.make
 
-CMakeFiles/drive_add2.dir/main.c.o: CMakeFiles/drive_add2.dir/flags.make
-CMakeFiles/drive_add2.dir/main.c.o: ../main.c
-CMakeFiles/drive_add2.dir/main.c.o: CMakeFiles/drive_add2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/drive_add2.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/drive_add2.dir/main.c.o -MF CMakeFiles/drive_add2.dir/main.c.o.d -o CMakeFiles/drive_add2.dir/main.c.o -c /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2/main.c
+CMakeFiles/drive_add2.dir/add2_filter.c.o: CMakeFiles/drive_add2.dir/flags.make
+CMakeFiles/drive_add2.dir/add2_filter.c.o: ../add2_filter.c
+CMakeFiles/drive_add2.dir/add2_filter.c.o: CMakeFiles/drive_add2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/drive_add2.dir/add2_filter.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/drive_add2.dir/add2_filter.c.o -MF CMakeFiles/drive_add2.dir/add2_filter.c.o.d -o CMakeFiles/drive_add2.dir/add2_filter.c.o -c /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2/add2_filter.c
 
-CMakeFiles/drive_add2.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/drive_add2.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2/main.c > CMakeFiles/drive_add2.dir/main.c.i
+CMakeFiles/drive_add2.dir/add2_filter.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/drive_add2.dir/add2_filter.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2/add2_filter.c > CMakeFiles/drive_add2.dir/add2_filter.c.i
 
-CMakeFiles/drive_add2.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/drive_add2.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2/main.c -o CMakeFiles/drive_add2.dir/main.c.s
+CMakeFiles/drive_add2.dir/add2_filter.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/drive_add2.dir/add2_filter.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2/add2_filter.c -o CMakeFiles/drive_add2.dir/add2_filter.c.s
+
+CMakeFiles/drive_add2.dir/error.c.o: CMakeFiles/drive_add2.dir/flags.make
+CMakeFiles/drive_add2.dir/error.c.o: ../error.c
+CMakeFiles/drive_add2.dir/error.c.o: CMakeFiles/drive_add2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/drive_add2.dir/error.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/drive_add2.dir/error.c.o -MF CMakeFiles/drive_add2.dir/error.c.o.d -o CMakeFiles/drive_add2.dir/error.c.o -c /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2/error.c
+
+CMakeFiles/drive_add2.dir/error.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/drive_add2.dir/error.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2/error.c > CMakeFiles/drive_add2.dir/error.c.i
+
+CMakeFiles/drive_add2.dir/error.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/drive_add2.dir/error.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2/error.c -o CMakeFiles/drive_add2.dir/error.c.s
 
 # Object files for target drive_add2
 drive_add2_OBJECTS = \
-"CMakeFiles/drive_add2.dir/main.c.o"
+"CMakeFiles/drive_add2.dir/add2_filter.c.o" \
+"CMakeFiles/drive_add2.dir/error.c.o"
 
 # External object files for target drive_add2
 drive_add2_EXTERNAL_OBJECTS =
 
-drive_add2: CMakeFiles/drive_add2.dir/main.c.o
+drive_add2: CMakeFiles/drive_add2.dir/add2_filter.c.o
+drive_add2: CMakeFiles/drive_add2.dir/error.c.o
 drive_add2: CMakeFiles/drive_add2.dir/build.make
 drive_add2: CMakeFiles/drive_add2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable drive_add2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable drive_add2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/drive_add2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

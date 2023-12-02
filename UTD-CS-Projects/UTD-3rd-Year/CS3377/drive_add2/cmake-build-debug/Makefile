@@ -129,29 +129,53 @@ drive_add2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/drive_add2.dir/build.make CMakeFiles/drive_add2.dir/build
 .PHONY : drive_add2/fast
 
-main.o: main.c.o
-.PHONY : main.o
+add2_filter.o: add2_filter.c.o
+.PHONY : add2_filter.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/drive_add2.dir/build.make CMakeFiles/drive_add2.dir/main.c.o
-.PHONY : main.c.o
+add2_filter.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/drive_add2.dir/build.make CMakeFiles/drive_add2.dir/add2_filter.c.o
+.PHONY : add2_filter.c.o
 
-main.i: main.c.i
-.PHONY : main.i
+add2_filter.i: add2_filter.c.i
+.PHONY : add2_filter.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/drive_add2.dir/build.make CMakeFiles/drive_add2.dir/main.c.i
-.PHONY : main.c.i
+add2_filter.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/drive_add2.dir/build.make CMakeFiles/drive_add2.dir/add2_filter.c.i
+.PHONY : add2_filter.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+add2_filter.s: add2_filter.c.s
+.PHONY : add2_filter.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/drive_add2.dir/build.make CMakeFiles/drive_add2.dir/main.c.s
-.PHONY : main.c.s
+add2_filter.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/drive_add2.dir/build.make CMakeFiles/drive_add2.dir/add2_filter.c.s
+.PHONY : add2_filter.c.s
+
+error.o: error.c.o
+.PHONY : error.o
+
+# target to build an object file
+error.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/drive_add2.dir/build.make CMakeFiles/drive_add2.dir/error.c.o
+.PHONY : error.c.o
+
+error.i: error.c.i
+.PHONY : error.i
+
+# target to preprocess a source file
+error.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/drive_add2.dir/build.make CMakeFiles/drive_add2.dir/error.c.i
+.PHONY : error.c.i
+
+error.s: error.c.s
+.PHONY : error.s
+
+# target to generate assembly for a file
+error.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/drive_add2.dir/build.make CMakeFiles/drive_add2.dir/error.c.s
+.PHONY : error.c.s
 
 # Help Target
 help:
@@ -162,9 +186,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... drive_add2"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... add2_filter.o"
+	@echo "... add2_filter.i"
+	@echo "... add2_filter.s"
+	@echo "... error.o"
+	@echo "... error.i"
+	@echo "... error.s"
 .PHONY : help
 
 

@@ -6,8 +6,8 @@ main(void)
     int n, fd1[2], fd2[2];
     pid_t pid;
     char line[MAXLINE];
-//    if (signal(SIGPIPE, sig_pipe) == SIG_ERR)
-//        err_sys("signal error");
+    if (signal(SIGPIPE, sig_pipe) == SIG_ERR)
+        err_sys("signal error");
     if (pipe(fd1) < 0 || pipe(fd2) < 0)
         err_sys("pipe error");
     if ((pid = fork()) < 0) {
