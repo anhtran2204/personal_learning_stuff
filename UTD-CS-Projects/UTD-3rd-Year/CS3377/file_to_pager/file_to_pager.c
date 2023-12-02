@@ -29,8 +29,8 @@ main(int argc, char *argv[])
         if (ferror(fp))
             err_sys("fgets error");
         close(fd[1]); /* close write end of pipe for reader */
-        if (waitpid(pid, NULL, 0) < 0)
-            err_sys("waitpid error");
+//        if (waitpid(pid, NULL, 0) < 0)
+//            err_sys("waitpid error");
         exit(0);
     } else { /* child */
         close(fd[1]); /* close write end */
