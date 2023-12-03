@@ -38,12 +38,12 @@ main(void)
 //            if (fputs(line, stdout) == EOF)
 //                err_sys("fputs error");
 
-//            if (fputs(line, fpout) == EOF)
-//                err_sys("fputs error to pipe");
-//            if (fgets(line, MAXLINE, fpin) == NULL) {
-//                err_msg("child closed pipe");
-//                break;
-//            }
+            if (fputs(line, fpout) == EOF)
+                err_sys("fputs error to pipe");
+            if (fgets(line, MAXLINE, fpin) == NULL) {
+                err_msg("child closed pipe");
+                break;
+            }
         }
         if (ferror(stdin))
             err_sys("fgets error on stdin");
