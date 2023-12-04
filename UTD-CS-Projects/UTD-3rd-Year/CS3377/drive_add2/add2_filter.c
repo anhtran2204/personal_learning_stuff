@@ -5,7 +5,6 @@ main(void)
 {
     int n, fd1[2], fd2[2];
     pid_t pid;
-    FILE *fpin, *fpout;
     char line[MAXLINE];
     if (signal(SIGPIPE, sig_pipe) == SIG_ERR)
         err_sys("signal error");
@@ -16,14 +15,6 @@ main(void)
     } else if (pid > 0) { /* parent */
         close(fd1[0]);
         close(fd2[1]);
-//        if ((fpin = fdopen(fd2[0], "r")) == NULL)
-//            err_sys("fdopen error");
-//        if ((fpout = fdopen(fd1[1], "w")) == NULL)
-//            err_sys("fdopen error");
-//        if (setvbuf(fpin, NULL, _IOLBF, 0) < 0)
-//            err_sys("setvbuf error");
-//        if (setvbuf(fpout, NULL, _IOLBF, 0) < 0)
-//            err_sys("setvbuf error");
         while (fgets(line, MAXLINE, stdin) != NULL) {
             n=strlen(line);
             if (write(fd1[1], line, n) != n)
@@ -37,13 +28,6 @@ main(void)
             line[n] = 0; /* null terminate */
             if (fputs(line, stdout) == EOF)
                 err_sys("fputs error");
-
-//            if (fputs(line, fpout) == EOF)
-//                err_sys("fputs error to pipe");
-//            if (fgets(line, MAXLINE, fpin) == NULL) {
-//                err_msg("child closed pipe");
-//                break;
-//            }
         }
         if (ferror(stdin))
             err_sys("fgets error on stdin");
