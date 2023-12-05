@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/stat_struct_socket.dir/error.c.o CMakeFiles/stat_struct_socket.dir/socket.c.o -o stat_struct_socket 
