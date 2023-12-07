@@ -16,14 +16,14 @@ main(void)
     } else if (pid > 0) { /* parent */
         close(fd1[0]);
         close(fd2[1]);
-        if ((fpin = fdopen(fd2[0], "r")) == NULL)
-            err_sys("fdopen error");
-        if ((fpout = fdopen(fd1[1], "w")) == NULL)
-            err_sys("fdopen error");
-        if (setvbuf(fpin, NULL, _IOLBF, 0) < 0)
-            err_sys("setvbuf error");
-        if (setvbuf(fpout, NULL, _IOLBF, 0) < 0)
-            err_sys("setvbuf error");
+//        if ((fpin = fdopen(fd2[0], "r")) == NULL)
+//            err_sys("fdopen error");
+//        if ((fpout = fdopen(fd1[1], "w")) == NULL)
+//            err_sys("fdopen error");
+//        if (setvbuf(fpin, NULL, _IOLBF, 0) < 0)
+//            err_sys("setvbuf error");
+//        if (setvbuf(fpout, NULL, _IOLBF, 0) < 0)
+//            err_sys("setvbuf error");
         while (fgets(line, MAXLINE, stdin) != NULL) {
             n=strlen(line);
             if (write(fd1[1], line, n) != n)
