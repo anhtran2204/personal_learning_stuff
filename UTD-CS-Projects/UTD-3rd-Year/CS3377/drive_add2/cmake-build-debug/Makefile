@@ -129,6 +129,30 @@ drive_add2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/drive_add2.dir/build.make CMakeFiles/drive_add2.dir/build
 .PHONY : drive_add2/fast
 
+add2.o: add2.c.o
+.PHONY : add2.o
+
+# target to build an object file
+add2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/drive_add2.dir/build.make CMakeFiles/drive_add2.dir/add2.c.o
+.PHONY : add2.c.o
+
+add2.i: add2.c.i
+.PHONY : add2.i
+
+# target to preprocess a source file
+add2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/drive_add2.dir/build.make CMakeFiles/drive_add2.dir/add2.c.i
+.PHONY : add2.c.i
+
+add2.s: add2.c.s
+.PHONY : add2.s
+
+# target to generate assembly for a file
+add2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/drive_add2.dir/build.make CMakeFiles/drive_add2.dir/add2.c.s
+.PHONY : add2.c.s
+
 add2_filter.o: add2_filter.c.o
 .PHONY : add2_filter.o
 
@@ -186,6 +210,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... drive_add2"
+	@echo "... add2.o"
+	@echo "... add2.i"
+	@echo "... add2.s"
 	@echo "... add2_filter.o"
 	@echo "... add2_filter.i"
 	@echo "... add2_filter.s"

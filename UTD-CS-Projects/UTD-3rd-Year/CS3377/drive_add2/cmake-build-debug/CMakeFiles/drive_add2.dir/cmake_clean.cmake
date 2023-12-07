@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/drive_add2.dir/add2.c.o"
+  "CMakeFiles/drive_add2.dir/add2.c.o.d"
   "CMakeFiles/drive_add2.dir/add2_filter.c.o"
   "CMakeFiles/drive_add2.dir/add2_filter.c.o.d"
   "CMakeFiles/drive_add2.dir/error.c.o"
