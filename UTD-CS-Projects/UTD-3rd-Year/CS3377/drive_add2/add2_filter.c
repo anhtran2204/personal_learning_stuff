@@ -34,21 +34,12 @@ main(void)
                 err_msg("child closed pipe");
                 break;
             }
-<<<<<<< HEAD
-//	    if (fputs(line, fpout) == EOF)
-//                err_sys("fputs error to pipe");
-//            if (fgets(line, MAXLINE, fpin) == NULL) {
-//               err_msg("child closed pipe");
-//                break;
-//	    }
-=======
 //            if (fputs(line, fpout) == EOF)
 //                err_sys("fputs error to pipe");
 //            if (fgets(line, MAXLINE, fpin) == NULL) {
 //                err_msg("child closed pipe");
 //                break;
 //            }
->>>>>>> f135061263ef51ec773fbd0322bfb83fbf5d4f96
             line[n] = 0; /* null terminate */
             if (fputs(line, stdout) == EOF)
                 err_sys("fputs error");
