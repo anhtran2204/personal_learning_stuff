@@ -26,20 +26,20 @@ main(void)
             err_sys("setvbuf error");
         while (fgets(line, MAXLINE, stdin) != NULL) {
             n=strlen(line);
-//            if (write(fd1[1], line, n) != n)
-//                err_sys("write error to pipe");
-//            if ((n = read(fd2[0], line, MAXLINE)) < 0)
-//                err_sys("read error from pipe");
-//            if (n == 0) {
-//                err_msg("child closed pipe");
-//                break;
-//            }
-            if (fputs(line, fpout) == EOF)
-                err_sys("fputs error to pipe");
-            if (fgets(line, MAXLINE, fpin) == NULL) {
+            if (write(fd1[1], line, n) != n)
+                err_sys("write error to pipe");
+            if ((n = read(fd2[0], line, MAXLINE)) < 0)
+                err_sys("read error from pipe");
+            if (n == 0) {
                 err_msg("child closed pipe");
                 break;
             }
+//	    if (fputs(line, fpout) == EOF)
+//                err_sys("fputs error to pipe");
+//            if (fgets(line, MAXLINE, fpin) == NULL) {
+//               err_msg("child closed pipe");
+//                break;
+//	    }
             line[n] = 0; /* null terminate */
             if (fputs(line, stdout) == EOF)
                 err_sys("fputs error");
