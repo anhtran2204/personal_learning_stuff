@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/child_to_chld_pipes.dir/main.c.o -o child_to_chld_pipes 
