@@ -50,8 +50,7 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1,
-				2
+				1
 			]
 		}
 	],
@@ -85,8 +84,7 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1,
-				2
+				1
 			]
 		}
 	],
@@ -102,12 +100,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "add2_filter.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "add2.c",
 			"sourceGroupIndex" : 0
 		}
 	],

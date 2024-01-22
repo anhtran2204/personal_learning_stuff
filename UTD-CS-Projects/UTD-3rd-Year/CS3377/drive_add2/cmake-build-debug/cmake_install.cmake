@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2
+# Install script for directory: /home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug"
+			"value" : "/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -527,7 +527,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket"
+			"value" : "/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1095,7 +1095,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug"
+			"value" : "/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug"
 		},
 		{
 			"name" : "stat_struct_socket_IS_TOP_LEVEL",
@@ -1119,7 +1119,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket"
+			"value" : "/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket"
 		}
 	],
 	"kind" : "cache",

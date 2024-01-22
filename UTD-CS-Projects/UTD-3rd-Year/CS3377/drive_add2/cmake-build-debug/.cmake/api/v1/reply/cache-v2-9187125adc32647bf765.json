@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2/cmake-build-debug"
+			"value" : "/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -527,7 +527,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2"
+			"value" : "/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1095,7 +1095,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2/cmake-build-debug"
+			"value" : "/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2/cmake-build-debug"
 		},
 		{
 			"name" : "drive_add2_IS_TOP_LEVEL",
@@ -1119,7 +1119,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2"
+			"value" : "/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/drive_add2"
 		}
 	],
 	"kind" : "cache",

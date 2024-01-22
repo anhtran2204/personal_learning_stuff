@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/error.c" "CMakeFiles/stat_struct_socket.dir/error.c.o" "gcc" "CMakeFiles/stat_struct_socket.dir/error.c.o.d"
-  "/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/socket.c" "CMakeFiles/stat_struct_socket.dir/socket.c.o" "gcc" "CMakeFiles/stat_struct_socket.dir/socket.c.o.d"
+  "/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/error.c" "CMakeFiles/stat_struct_socket.dir/error.c.o" "gcc" "CMakeFiles/stat_struct_socket.dir/error.c.o.d"
+  "/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/socket.c" "CMakeFiles/stat_struct_socket.dir/socket.c.o" "gcc" "CMakeFiles/stat_struct_socket.dir/socket.c.o.d"
   )
 
 # Targets to which this target links.

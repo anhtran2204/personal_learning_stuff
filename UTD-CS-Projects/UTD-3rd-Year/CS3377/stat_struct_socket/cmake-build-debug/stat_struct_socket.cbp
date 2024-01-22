@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug"/>
+				<Option working_dir="/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="stat_struct_socket">
-				<Option output="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/stat_struct_socket" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug"/>
+				<Option output="/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/stat_struct_socket" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -30,15 +30,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 stat_struct_socket"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 stat_struct_socket"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="stat_struct_socket/fast">
-				<Option output="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/stat_struct_socket" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug"/>
+				<Option output="/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/stat_struct_socket" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -49,40 +49,40 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 stat_struct_socket/fast"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 stat_struct_socket/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug"/>
+				<Option working_dir="/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug"/>
+				<Option working_dir="/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/error.c">
+		<Unit filename="/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/error.c">
 			<Option target="stat_struct_socket"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/socket.c">
+		<Unit filename="/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/socket.c">
 			<Option target="stat_struct_socket"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/CMakeLists.txt">
+		<Unit filename="/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

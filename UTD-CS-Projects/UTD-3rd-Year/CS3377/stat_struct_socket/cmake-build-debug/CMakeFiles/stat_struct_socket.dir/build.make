@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket
+CMAKE_SOURCE_DIR = /home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug
+CMAKE_BINARY_DIR = /home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/stat_struct_socket.dir/depend.make
@@ -72,30 +72,30 @@ include CMakeFiles/stat_struct_socket.dir/flags.make
 CMakeFiles/stat_struct_socket.dir/error.c.o: CMakeFiles/stat_struct_socket.dir/flags.make
 CMakeFiles/stat_struct_socket.dir/error.c.o: ../error.c
 CMakeFiles/stat_struct_socket.dir/error.c.o: CMakeFiles/stat_struct_socket.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/stat_struct_socket.dir/error.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/stat_struct_socket.dir/error.c.o -MF CMakeFiles/stat_struct_socket.dir/error.c.o.d -o CMakeFiles/stat_struct_socket.dir/error.c.o -c /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/error.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/stat_struct_socket.dir/error.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/stat_struct_socket.dir/error.c.o -MF CMakeFiles/stat_struct_socket.dir/error.c.o.d -o CMakeFiles/stat_struct_socket.dir/error.c.o -c /home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/error.c
 
 CMakeFiles/stat_struct_socket.dir/error.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/stat_struct_socket.dir/error.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/error.c > CMakeFiles/stat_struct_socket.dir/error.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/error.c > CMakeFiles/stat_struct_socket.dir/error.c.i
 
 CMakeFiles/stat_struct_socket.dir/error.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/stat_struct_socket.dir/error.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/error.c -o CMakeFiles/stat_struct_socket.dir/error.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/error.c -o CMakeFiles/stat_struct_socket.dir/error.c.s
 
 CMakeFiles/stat_struct_socket.dir/socket.c.o: CMakeFiles/stat_struct_socket.dir/flags.make
 CMakeFiles/stat_struct_socket.dir/socket.c.o: ../socket.c
 CMakeFiles/stat_struct_socket.dir/socket.c.o: CMakeFiles/stat_struct_socket.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/stat_struct_socket.dir/socket.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/stat_struct_socket.dir/socket.c.o -MF CMakeFiles/stat_struct_socket.dir/socket.c.o.d -o CMakeFiles/stat_struct_socket.dir/socket.c.o -c /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/socket.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/stat_struct_socket.dir/socket.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/stat_struct_socket.dir/socket.c.o -MF CMakeFiles/stat_struct_socket.dir/socket.c.o.d -o CMakeFiles/stat_struct_socket.dir/socket.c.o -c /home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/socket.c
 
 CMakeFiles/stat_struct_socket.dir/socket.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/stat_struct_socket.dir/socket.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/socket.c > CMakeFiles/stat_struct_socket.dir/socket.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/socket.c > CMakeFiles/stat_struct_socket.dir/socket.c.i
 
 CMakeFiles/stat_struct_socket.dir/socket.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/stat_struct_socket.dir/socket.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/socket.c -o CMakeFiles/stat_struct_socket.dir/socket.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/socket.c -o CMakeFiles/stat_struct_socket.dir/socket.c.s
 
 # Object files for target stat_struct_socket
 stat_struct_socket_OBJECTS = \
@@ -109,7 +109,7 @@ stat_struct_socket: CMakeFiles/stat_struct_socket.dir/error.c.o
 stat_struct_socket: CMakeFiles/stat_struct_socket.dir/socket.c.o
 stat_struct_socket: CMakeFiles/stat_struct_socket.dir/build.make
 stat_struct_socket: CMakeFiles/stat_struct_socket.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable stat_struct_socket"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable stat_struct_socket"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/stat_struct_socket.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -121,6 +121,6 @@ CMakeFiles/stat_struct_socket.dir/clean:
 .PHONY : CMakeFiles/stat_struct_socket.dir/clean
 
 CMakeFiles/stat_struct_socket.dir/depend:
-	cd /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug /mnt/c/Users/anhph/OneDrive/Documents/GitHub/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/CMakeFiles/stat_struct_socket.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket /home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket /home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug /home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug /home/jasontran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/stat_struct_socket/cmake-build-debug/CMakeFiles/stat_struct_socket.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/stat_struct_socket.dir/depend
 
