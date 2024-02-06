@@ -1,13 +1,45 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <ctype.h>
+
+#define SIZE 100
 
 int main() {
     int memory[2000];
     int PC, SP, IR, AC, X, Y;
+    int instructions;
+
+    printf("Choose input file to read: \n");
+    char fileName[SIZE];
+    fgets(fileName, sizeof(fileName), stdin);
+
+    FILE *fptr;
+    fptr = fopen(fileName, "w");
+    char ch;
+
+    if (fptr == NULL) {
+        printf("Error: File doesn't exist!\n");
+        _exit(1);
+    }
+
+    int count = 0;
+    int data;
+    while (ch != EOF) {
+        ch = fgetc(fptr);
+        if (isdigit(ch)) {
+            printf("integer\n");
+            data = ch - '0';
+            memory[count] = ch;
+            printf("%d\n", memory[count]);
+
+        }
+        count++;
+    }
 
     int result = fork();
     if (result == 0) {
         // child process
+        
     } else {
         // parent process
         switch (instructions) {

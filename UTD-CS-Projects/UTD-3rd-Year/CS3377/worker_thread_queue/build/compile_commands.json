@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/anhtran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/build",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/worker_thread_queue.dir/work_queue.c.o -c /home/anhtran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/work_queue.c",
+  "file": "/home/anhtran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/work_queue.c"
+},
+{
+  "directory": "/home/anhtran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/build",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/worker_thread_queue.dir/thread_demo.c.o -c /home/anhtran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/thread_demo.c",
+  "file": "/home/anhtran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/thread_demo.c"
+},
+{
+  "directory": "/home/anhtran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/build",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/worker_thread_queue.dir/error.c.o -c /home/anhtran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/error.c",
+  "file": "/home/anhtran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS3377/worker_thread_queue/error.c"
+}
+]
