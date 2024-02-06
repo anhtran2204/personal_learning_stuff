@@ -1,37 +1,34 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include <ctype.h>
 
 #define SIZE 100
 
-int main() {
+int main(int argc, char *argv[]) {
     int memory[2000];
     int PC, SP, IR, AC, X, Y;
     int instructions;
 
-    printf("Choose input file to read: \n");
-    char fileName[SIZE];
-    fgets(fileName, sizeof(fileName), stdin);
-
     FILE *fptr;
-    fptr = fopen(fileName, "w");
-    char ch;
+    fptr = fopen("sample1.txt", "w");
 
     if (fptr == NULL) {
-        printf("Error: File doesn't exist!\n");
-        _exit(1);
+        printf("Error: File doesn't exist!");
+        exit(0);
     }
 
     int count = 0;
     int data;
+    char ch;
     while (ch != EOF) {
         ch = fgetc(fptr);
+        printf(ch);
         if (isdigit(ch)) {
             printf("integer\n");
             data = ch - '0';
-            memory[count] = ch;
-            printf("%d\n", memory[count]);
-
+            memory[count] = data;
+            printf("%d", data);
         }
         count++;
     }
@@ -43,7 +40,7 @@ int main() {
     } else {
         // parent process
         switch (instructions) {
-            case 1:
+            case 1:         // Load value into AC
                 break;
 
             case 2:
