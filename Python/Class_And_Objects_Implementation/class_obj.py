@@ -1,28 +1,25 @@
-def make_instance(cls):
-        """Return a new object instance, which is a dispatch dictionary."""
+def my_object(cls):
         def get_value(name):
             if name in attributes:
                 return attributes[name]
             else:
                 value = cls['get'](name)
-                return bind_method(value, instance)
+                return bind_method(value, obj)
         def set_value(name, value):
             attributes[name] = value
         attributes = {}
-        instance = {'get': get_value, 'set': set_value}
-        return instance
+        obj = {'get': get_value, 'set': set_value}
+        return obj
 
-def bind_method(value, instance):
-        """Return a bound method if value is callable, or value otherwise."""
+def bind_method(value, obj):
         if callable(value):
             def method(*args):
-                return value(instance, *args)
+                return value(obj, *args)
             return method
         else:
             return value
 
-def make_class(attributes, base_class=None):
-        """Return a new class, which is a dispatch dictionary."""
+def my_class(attributes, base_class=None):
         def get_value(name):
             if name in attributes:
                 return attributes[name]
@@ -31,17 +28,16 @@ def make_class(attributes, base_class=None):
         def set_value(name, value):
             attributes[name] = value
         def new(*args):
-            return init_instance(cls, *args)
-        cls = {'get': get_value, 'set': set_value, 'new': new}
-        return cls
+            return init_object(obj, *args)
+        obj = {'get': get_value, 'set': set_value, 'new': new}
+        return obj
 
-def init_instance(cls, *args):
-        """Return a new object with type cls, initialized with args."""
-        instance = make_instance(cls)
-        init = cls['get']('__init__')
+def init_object(obj, *args):
+        new_obj = my_object(obj)
+        init = obj['get']('__init__')
         if init:
-            init(instance, *args)
-        return instance
+            init(new_obj, *args)
+        return new_obj
 
 def make_account_class():
         """Return the Account class, which has deposit and withdraw methods."""
@@ -61,7 +57,7 @@ def make_account_class():
                 return 'Insufficient funds'
             self['set']('balance', balance - amount)
             return self['get']('balance')
-        return make_class(locals())
+        return my_class(locals())
 
 Account = make_account_class()
 kirk_account = Account['new']('Kirk')
