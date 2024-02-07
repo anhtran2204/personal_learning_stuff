@@ -21,7 +21,9 @@ int main(int argc, char *argv[]) {
 
     char buf[1000];
     while (fgets(buf, sizeof(buf), fptr) != NULL) {
-        printf("%d\n", atoi(buf));
+        if (atoi(buf) != 50) {
+
+        }
     }
 
 //    int memory[2000];

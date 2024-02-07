@@ -1,21 +1,18 @@
-def ascii_string(list, ascii_code):
+def ascii_string(dict, ascii_code):
     char = chr(ascii_code)
-    list.append(char)
-	
-list = []
-ascii_string(list, 104)
-ascii_string(list, 101)
-ascii_string(list, 108)
-ascii_string(list, 108)
-ascii_string(list, 111)
-ascii_string(list, 32)
-ascii_string(list, 119)
-ascii_string(list, 111)
-ascii_string(list, 114)
-ascii_string(list, 108)
-ascii_string(list, 100)
+    dict[ascii_code] = char
 
-str = ""
-for x in list:
-    str += x
-print(str)
+def string_concat(dict, ascii_code):
+    str = ""
+    for x in ascii_code:
+        str += dict[x]
+    return str
+	
+dict = {}
+ascii_code = [104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]
+
+for code in range(97, 123):
+    ascii_string(dict, code)
+ascii_string(dict, 32)
+
+print(string_concat(dict, ascii_code))
