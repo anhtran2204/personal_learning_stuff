@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader"><![CDATA[{
+  "useNewFormat": true
+}]]></component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="71a41e7d-947b-4c57-9349-31d038f5e0e1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Project_1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/.idea/Project_1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/.vscode/c_cpp_properties.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/.vscode/tasks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/.cmake/api/v1/query/client-vscode/query.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/.cmake/api/v1/reply/cache-v2-f75af4c0490a2d1062c9.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/.cmake/api/v1/reply/cmakeFiles-v1-f62a3871fcd127901b64.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/.cmake/api/v1/reply/codemodel-v2-b4046452df25dada1286.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/.cmake/api/v1/reply/index-2024-02-05T23-46-00-0012.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/.cmake/api/v1/reply/target-Project_1-Debug-b2405c2d2ef23ba739b9.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/.cmake/api/v1/reply/toolchains-v1-ec18b641e945b69b470f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeFiles/3.22.1/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeFiles/3.22.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeFiles/3.22.1/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeFiles/3.22.1/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeFiles/Project_1.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeFiles/Project_1.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeFiles/Project_1.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeFiles/Project_1.dir/compiler_depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeFiles/Project_1.dir/compiler_depend.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeFiles/Project_1.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeFiles/Project_1.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeFiles/Project_1.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeFiles/Project_1.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/build/compile_commands.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/.cmake/api/v1/query/cache-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/.cmake/api/v1/reply/cache-v2-a6748cd3ac8606fca7ac.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-24e4248ceb8992a73e91.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-f81aa7b3091b21369e31.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/.cmake/api/v1/reply/index-2024-02-01T04-18-03-0447.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/.cmake/api/v1/reply/target-Project_1-Debug-b2405c2d2ef23ba739b9.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-ab6bc179ddbddbdb0d31.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/3.22.1/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/3.22.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/3.22.1/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/3.22.1/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/Project_1.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/Project_1.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/Project_1.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/Project_1.dir/compiler_depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/Project_1.dir/compiler_depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/Project_1.dir/compiler_depend.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/Project_1.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/Project_1.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/Project_1.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/Project_1.dir/main.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/Project_1.dir/main.c.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/Project_1.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/Project_1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/Project_1.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/cmake-build-debug/sample1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/main" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/project_1.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/project_1.docx:Zone.Identifier" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/sample0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sample0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/sample1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sample1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/sample2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sample2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/sample3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sample3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/sample4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sample4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_1/sample_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sample_output.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2023" />
+    <option name="minorVersion" value="3" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2c2ovjDooXjSzX7R3hx7sPP59F0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "CMakeSettings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl.localhost\Ubuntu\home\anhtran2048\personal_learning_stuff\UTD-CS-Projects\UTD-3rd-Year\CS4348\Project1" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="71a41e7d-947b-4c57-9349-31d038f5e0e1" name="Changes" comment="" />
+      <created>1707319267529</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707319267529</updated>
+      <workItem from="1707319270301" duration="517000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
+  </component>
+</project>
