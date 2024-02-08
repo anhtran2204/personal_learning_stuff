@@ -10,7 +10,8 @@
 using namespace std;
 
 int main(int argc, char *argv[]) {
-    int fd[2];
+    int mem_to_cpu[2];
+    int cpu_to_mem[2];
     pid_t pid;
     int PC, SP, IR, AC, X, Y;
     int instructions;
