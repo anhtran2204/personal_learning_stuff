@@ -9,13 +9,9 @@
 
 using namespace std;
 
-<<<<<<< HEAD
-int main(int argc, char *argv[]) {
-=======
 int *load_data(const char *file_name);
 
 int main(int argc, const char *argv[]) {
->>>>>>> 27e8024e8fbe1d07b6208d8d906b3036c087356d
     int mem_to_cpu[2];
     int cpu_to_mem[2];
     pid_t pid;
@@ -167,6 +163,7 @@ int main(int argc, const char *argv[]) {
 int *load_data(const char *file_name) {
     static int memory[2000];
     char buf[1000];
+    int line = 0;
 
     FILE *file;
     file = fopen(file_name, "r");
@@ -177,8 +174,19 @@ int *load_data(const char *file_name) {
     }
 
     while(fgets(buf, sizeof(buf), file) != NULL) {
-
+        if (isdigit((int) buf[0]) || buf[0] == '.') {
+            int num;
+            if (buf[0] == '.') {
+                sscanf(buf, "%d %*s\n", &num);
+                line = num;
+                memory[num] = line;
+            } else {
+                sscanf(buf, "%d %*s\n", &num);
+                memory[num] = line;
+                line++;
+            }
+        }
     }
-    close(file);
+    fclose(file);
     return memory;
 }
