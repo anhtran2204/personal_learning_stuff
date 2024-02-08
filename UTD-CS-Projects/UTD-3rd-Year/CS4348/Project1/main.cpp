@@ -37,6 +37,7 @@ int main(int argc, const char *argv[]) {
     else if (pid == 0) {
         // Memory process
         int *memory = load_data(file);
+        int PC, data, address;
 
         int count = 0;
         while (true) {
@@ -168,7 +169,7 @@ int *load_data(const char *file_name) {
     FILE *file;
     file = fopen(file_name, "r");
 
-    if (file == NULL) {
+    if (!file) {
         PERROR("The file %s could not be opened", file_name);
         exit( EXIT_FAILURE );
     }
@@ -177,12 +178,12 @@ int *load_data(const char *file_name) {
         if (isdigit((int) buf[0]) || buf[0] == '.') {
             int num;
             if (buf[0] == '.') {
-                sscanf(buf, "%d %*s\n", &num);
+                sscanf(buf, ".%d %*s\n", &num);
                 line = num;
-                memory[num] = line;
+                memory[line] = num;
             } else {
                 sscanf(buf, "%d %*s\n", &num);
-                memory[num] = line;
+                memory[line] = num;
                 line++;
             }
         }

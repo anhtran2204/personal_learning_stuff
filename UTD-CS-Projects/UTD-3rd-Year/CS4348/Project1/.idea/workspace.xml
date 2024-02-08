@@ -54,7 +54,7 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Merging main",
     "last_opened_file_path": "//wsl.localhost/Ubuntu/home/anhtran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS4348/examples",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -100,7 +100,7 @@
       <workItem from="1707324090510" duration="409000" />
       <workItem from="1707324555170" duration="453000" />
       <workItem from="1707333260743" duration="764000" />
-      <workItem from="1707334307998" duration="7153000" />
+      <workItem from="1707334307998" duration="7480000" />
     </task>
     <servers />
   </component>
