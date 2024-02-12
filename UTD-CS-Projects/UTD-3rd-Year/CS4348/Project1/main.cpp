@@ -3,6 +3,7 @@
 #include <cstring>
 #include <unistd.h>
 #include <sstream>
+#include <wait.h>
 
 #define PERROR(FMT,...) \
   fprintf(stderr, FMT ": %s\n", ##__VA_ARGS__, strerror(errno))
@@ -43,8 +44,7 @@ int main(int argc, const char *argv[]) {
         while (true) {
             close(mem_to_cpu[0]);
             buf[count] = memory[count];
-            write(mem_to_cpu[1], &buf[0], sizeof(buf[0]));
-            close(mem_to_cpu[1]);
+            write(mem_to_cpu[1], &buf[count], sizeof(buf[0]));
             count++;
         }
     } else {
@@ -59,7 +59,6 @@ int main(int argc, const char *argv[]) {
                 exit(0);
             }
             cout << instructions << endl;
-            close(mem_to_cpu[0]);
         }
 
 //        switch (instructions) {
