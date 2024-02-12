@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <sstream>
 #include <wait.h>
+#include <random>
 
 #define PERROR(FMT,...) \
   fprintf(stderr, FMT ": %s\n", ##__VA_ARGS__, strerror(errno))
@@ -50,7 +51,16 @@ int main(int argc, const char *argv[]) {
     } else {
         // CPU process
         int PC, SP, IR, AC, X, Y;
+        int port = 0;
         int instructions;
+
+        X = 0;
+        Y = 0;
+        IR = 0;
+        AC = 0;
+        SP = 1000;
+        PC = 0;
+        bool mode = false; // true: kernel mode; false: user mode
 
         while (true) {
             close(mem_to_cpu[1]);
@@ -59,6 +69,40 @@ int main(int argc, const char *argv[]) {
                 exit(0);
             }
             cout << instructions << endl;
+            switch (instructions) {
+                case 8: {
+                    std::random_device seed;
+                    std::mt19937 gen{seed()}; // seed the generator
+                    std::uniform_int_distribution<> dist{1, 100}; // set min and max
+                    AC = dist(gen);
+                    break;
+                }
+
+                case 9:
+                    if (port == 1) {
+                        printf("%i", AC);
+                    } else if (port == 2) {
+                        printf("%c", AC);
+                    }
+                    break;
+
+                case 10:
+                    AC += X;
+                    break;
+
+                case 11:
+                    AC += Y;
+                    break;
+
+                case 14:
+                    X = AC;
+                    break;
+
+                case 16:
+                    Y = AC;
+                    break;
+
+            }
         }
 
 //        switch (instructions) {
