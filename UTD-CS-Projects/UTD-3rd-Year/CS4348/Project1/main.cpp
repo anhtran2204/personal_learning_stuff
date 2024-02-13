@@ -44,9 +44,7 @@ int main(int argc, const char *argv[]) {
         int count = 0;
         while (true) {
             close(mem_to_cpu[0]);
-            buf[count] = memory[count];
-            write(mem_to_cpu[1], &buf[count], sizeof(buf[0]));
-            count++;
+            write(mem_to_cpu[1], &memory[PC], sizeof(memory[0]));
         }
     } else {
         // CPU process
@@ -68,9 +66,9 @@ int main(int argc, const char *argv[]) {
             if (instructions == 50) {
                 exit(0);
             }
-            cout << instructions << endl;
             switch (instructions) {
                 case 8: {
+                    PC++;
                     std::random_device seed;
                     std::mt19937 gen{seed()}; // seed the generator
                     std::uniform_int_distribution<> dist{1, 100}; // set min and max
@@ -79,6 +77,9 @@ int main(int argc, const char *argv[]) {
                 }
 
                 case 9:
+                    PC++;
+                    write(cpu_to_mem[1], &PC, sizeof(PC));
+                    read(mem_to_cpu[0], &port, sizeof(port));
                     if (port == 1) {
                         printf("%i", AC);
                     } else if (port == 2) {
@@ -102,6 +103,9 @@ int main(int argc, const char *argv[]) {
                     Y = AC;
                     break;
 
+                default:
+                    PC++;
+                    break;
             }
         }
 
