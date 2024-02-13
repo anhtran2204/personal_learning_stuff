@@ -43,14 +43,15 @@ int main(int argc, const char *argv[]) {
 
         int count = 0;
         while (true) {
-            close(mem_to_cpu[0]);
-            write(mem_to_cpu[1], &memory[PC], sizeof(memory[0]));
+            read(cpu_to_mem[0], &PC, sizeof(PC));
+            int instruction = memory[PC];
+            write(mem_to_cpu[1], &instruction, sizeof(memory[0]));
         }
     } else {
         // CPU process
         int PC, SP, IR, AC, X, Y;
         int port = 0;
-        int instructions;
+        int operand = 0;
 
         X = 0;
         Y = 0;
@@ -61,12 +62,9 @@ int main(int argc, const char *argv[]) {
         bool mode = false; // true: kernel mode; false: user mode
 
         while (true) {
-            close(mem_to_cpu[1]);
-            read(mem_to_cpu[0], &instructions, sizeof(instructions));
-            if (instructions == 50) {
-                exit(0);
-            }
-            switch (instructions) {
+            write(cpu_to_mem[1], &PC, sizeof(PC));
+            read(mem_to_cpu[0], &IR, sizeof(IR));
+            switch (IR) {
                 case 8: {
                     PC++;
                     std::random_device seed;
@@ -81,27 +79,34 @@ int main(int argc, const char *argv[]) {
                     write(cpu_to_mem[1], &PC, sizeof(PC));
                     read(mem_to_cpu[0], &port, sizeof(port));
                     if (port == 1) {
-                        printf("%i", AC);
+                        printf("%i\n", AC);
                     } else if (port == 2) {
-                        printf("%c", AC);
+                        printf("%c\n", AC);
                     }
                     break;
 
                 case 10:
+                    PC++;
                     AC += X;
                     break;
 
                 case 11:
+                    PC++;
                     AC += Y;
                     break;
 
                 case 14:
+                    PC++;
                     X = AC;
                     break;
 
                 case 16:
+                    PC++;
                     Y = AC;
                     break;
+
+                case 50:
+                    exit(0);
 
                 default:
                     PC++;
