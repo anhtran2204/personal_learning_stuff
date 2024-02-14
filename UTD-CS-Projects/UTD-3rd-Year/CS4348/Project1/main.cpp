@@ -65,32 +65,68 @@ int main(int argc, const char *argv[]) {
             write(cpu_to_mem[1], &PC, sizeof(PC));
             read(mem_to_cpu[0], &IR, sizeof(IR));
             switch (IR) {
-                case 1:         // Load value into AC
+                case 1:         // Load value: Load value into AC
                     PC++;
                     write(cpu_to_mem[1], &PC, sizeof(PC));
-                    read(mem_to_cpu[0], &AC, sizeof(AC));
+                    read(mem_to_cpu[0], &operand, sizeof(operand));
+                    AC = operand;
                     break;
 
                 case 2:
                     PC++;
                     write(cpu_to_mem[1], &PC, sizeof(PC));
-                    read(mem_to_cpu[0], &AC, sizeof(AC));
+                    read(mem_to_cpu[0], &operand, sizeof(operand));
+                    AC = operand;
                     break;
 
-                case 3:
+                case 3: {
+                    PC++;
+                    write(cpu_to_mem[1], &PC, sizeof(PC));
+                    read(mem_to_cpu[0], &operand, sizeof(operand));
+                    write(cpu_to_mem[1], &operand, sizeof(operand));
+                    read(mem_to_cpu[0], &operand, sizeof(operand));
+                    if (operand >= 1000 && !mode) {
+                        PERROR("Error: Unauthorized attempt to access system memory at address \"%d\" in user mode!", operand);
+                        exit(1);
+                    }
+                    write(cpu_to_mem[1], &operand, sizeof(operand));
+                    read(mem_to_cpu[0], &operand, sizeof(operand));
+                    AC = operand;
                     break;
+                }
 
-                case 4:
+                case 4: {
+                    PC++;
+                    int addrX = PC + X;
+                    write(cpu_to_mem[1], &addrX, sizeof(addrX));
+                    read(mem_to_cpu[0], &operand, sizeof(operand));
+                    AC = operand;
                     break;
+                }
 
-                case 5:
+                case 5: {
+                    PC++;
+                    int addrY = PC + Y;
+                    write(cpu_to_mem[1], &addrY, sizeof(addrY));
+                    read(mem_to_cpu[0], &operand, sizeof(operand));
+                    AC = operand;
                     break;
+                }
 
-                case 6:
+                case 6: {
+                    PC++;
+                    int spX = SP + Y;
+                    write(cpu_to_mem[1], &spX, sizeof(spX));
+                    read(mem_to_cpu[0], &operand, sizeof(operand));
+                    AC = operand;
                     break;
+                }
 
-                case 7:
+                case 7: {
+                    PC++;
+
                     break;
+                }
 
                 case 8: {
                     PC++;
@@ -101,7 +137,7 @@ int main(int argc, const char *argv[]) {
                     break;
                 }
 
-                case 9:
+                case 9: {
                     PC++;
                     write(cpu_to_mem[1], &PC, sizeof(PC));
                     read(mem_to_cpu[0], &port, sizeof(port));
@@ -111,6 +147,7 @@ int main(int argc, const char *argv[]) {
                         printf("%c\n", AC);
                     }
                     break;
+                }
 
                 case 10:
                     PC++;
@@ -128,6 +165,7 @@ int main(int argc, const char *argv[]) {
                     break;
 
                 case 15:
+                    PC++;
                     break;
 
                 case 16:
@@ -135,52 +173,65 @@ int main(int argc, const char *argv[]) {
                     Y = AC;
                     break;
                 case 17:
+                    PC++;
                     break;
 
                 case 18:
+                    PC++;
                     break;
 
                 case 19:
+                    PC++;
                     break;
 
                 case 20:
+                    PC++;
                     break;
 
                 case 21:
+                    PC++;
                     break;
 
                 case 22:
+                    PC++;
                     break;
 
                 case 23:
+                    PC++;
                     break;
 
                 case 24:
+                    PC++;
                     break;
 
                 case 25:
+                    PC++;
                     break;
 
                 case 26:
+                    PC++;
                     break;
 
                 case 27:
+                    PC++;
                     break;
 
                 case 28:
+                    PC++;
                     break;
 
                 case 29:
+                    PC++;
                     break;
 
                 case 30:
+                    PC++;
                     break;
 
                 case 50:
                     exit(0);
 
                 default:
-                    PC++;
                     break;
             }
         }
