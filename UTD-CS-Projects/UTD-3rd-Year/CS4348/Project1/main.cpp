@@ -159,7 +159,7 @@ int main(int argc, const char *argv[]) {
                     PC++;
                     write(cpu_to_mem[1], &PC, sizeof(PC));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
-                    operand += SP;
+                    operand = SP + X;
                     write(cpu_to_mem[1], &operand, sizeof(operand));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
                     AC = operand;
@@ -168,8 +168,11 @@ int main(int argc, const char *argv[]) {
 
                 case 7: {       // Store addr: Store the value in the AC into the address?? Need work
                     PC++;
-                    operand = AC;
+                    write(cpu_to_mem[1], &PC, sizeof(PC));
+                    read(mem_to_cpu[0], &operand, sizeof(operand));
+                    write(cpu_to_mem[1], &write_flag, sizeof(write_flag));
                     write(cpu_to_mem[1], &operand, sizeof(operand));
+                    write(cpu_to_mem[1], &AC, sizeof(AC));
                     break;
                 }
 
@@ -202,6 +205,16 @@ int main(int argc, const char *argv[]) {
                 case 11:
                     PC++;
                     AC += Y;
+                    break;
+
+                case 12:
+                    PC++;
+                    AC -= X;
+                    break;
+
+                case 13:
+                    PC++;
+                    AC -= Y;
                     break;
 
                 case 14:
@@ -248,6 +261,7 @@ int main(int argc, const char *argv[]) {
 
                 case 23:
                     PC++;
+
                     break;
 
                 case 24:
