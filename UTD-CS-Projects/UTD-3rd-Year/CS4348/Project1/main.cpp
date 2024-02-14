@@ -18,6 +18,9 @@ int main(int argc, const char *argv[]) {
     int cpu_to_mem[2];
     pid_t pid;
 
+    string file_name = argv[1];
+    int timer = 30;
+
     int result1 = pipe(mem_to_cpu);
     int result2 = pipe(cpu_to_mem);
 
@@ -41,11 +44,16 @@ int main(int argc, const char *argv[]) {
         int *memory = load_data(file);
         int PC, data, address;
 
-        int count = 0;
         while (true) {
             read(cpu_to_mem[0], &PC, sizeof(PC));
-            int instruction = memory[PC];
-            write(mem_to_cpu[1], &instruction, sizeof(memory[0]));
+            if (PC == -1) {
+                read(cpu_to_mem[0], &address, sizeof(address));
+                read(cpu_to_mem[0], &data, sizeof(data));
+                memory[address] = data;
+            } else {
+                int instruction = memory[PC];
+                write(mem_to_cpu[1], &instruction, sizeof(memory[0]));
+            }
         }
     } else {
         // CPU process
@@ -60,8 +68,32 @@ int main(int argc, const char *argv[]) {
         SP = 1000;
         PC = 0;
         bool mode = false; // true: kernel mode; false: user mode
+        int write_flag = -1;
+        int interrupt_flag = 0;
+        bool timer_interrupt_flag = false;
+        int timer_counter = 0;
 
         while (true) {
+            if (timer_interrupt_flag && interrupt_flag == 0) {
+                timer_interrupt_flag = false;
+                interrupt_flag = 2;
+
+                mode = true;
+                SP = 2000;
+                SP--;
+                PC++;
+                write(cpu_to_mem[1], &write_flag, sizeof(write_flag));
+                write(cpu_to_mem[1], &SP, sizeof(SP));
+                write(cpu_to_mem[1], &PC, sizeof(PC));
+
+                SP--;
+                write(cpu_to_mem[1], &write_flag, sizeof(write_flag));
+                write(cpu_to_mem[1], &SP, sizeof(SP));
+                SP = 1000;
+                write(cpu_to_mem[1], &SP, sizeof(SP));
+                PC = 1000;
+            }
+
             write(cpu_to_mem[1], &PC, sizeof(PC));
             read(mem_to_cpu[0], &IR, sizeof(IR));
             switch (IR) {
@@ -75,6 +107,12 @@ int main(int argc, const char *argv[]) {
                 case 2:
                     PC++;
                     write(cpu_to_mem[1], &PC, sizeof(PC));
+                    read(mem_to_cpu[0], &operand, sizeof(operand));
+                    if (operand >= 1000 && !mode) {
+                        PERROR("Error: Unauthorized attempt to access system memory at address \"%d\" in user mode!", operand);
+                        exit(1);
+                    }
+                    write(cpu_to_mem[1], &operand, sizeof(operand));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
                     AC = operand;
                     break;
@@ -97,8 +135,10 @@ int main(int argc, const char *argv[]) {
 
                 case 4: {
                     PC++;
-                    int addrX = PC + X;
-                    write(cpu_to_mem[1], &addrX, sizeof(addrX));
+                    write(cpu_to_mem[1], &PC, sizeof(PC));
+                    read(mem_to_cpu[0], &operand, sizeof(operand));
+                    operand += X;
+                    write(cpu_to_mem[1], &operand, sizeof(operand));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
                     AC = operand;
                     break;
@@ -106,8 +146,10 @@ int main(int argc, const char *argv[]) {
 
                 case 5: {
                     PC++;
-                    int addrY = PC + Y;
-                    write(cpu_to_mem[1], &addrY, sizeof(addrY));
+                    write(cpu_to_mem[1], &PC, sizeof(PC));
+                    read(mem_to_cpu[0], &operand, sizeof(operand));
+                    operand += Y;
+                    write(cpu_to_mem[1], &operand, sizeof(operand));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
                     AC = operand;
                     break;
@@ -115,16 +157,19 @@ int main(int argc, const char *argv[]) {
 
                 case 6: {
                     PC++;
-                    int spX = SP + Y;
-                    write(cpu_to_mem[1], &spX, sizeof(spX));
+                    write(cpu_to_mem[1], &PC, sizeof(PC));
+                    read(mem_to_cpu[0], &operand, sizeof(operand));
+                    operand += SP;
+                    write(cpu_to_mem[1], &operand, sizeof(operand));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
                     AC = operand;
                     break;
                 }
 
-                case 7: {
+                case 7: {       // Store addr: Store the value in the AC into the address?? Need work
                     PC++;
-
+                    operand = AC;
+                    write(cpu_to_mem[1], &operand, sizeof(operand));
                     break;
                 }
 
@@ -166,6 +211,7 @@ int main(int argc, const char *argv[]) {
 
                 case 15:
                     PC++;
+                    AC = X;
                     break;
 
                 case 16:
@@ -174,18 +220,22 @@ int main(int argc, const char *argv[]) {
                     break;
                 case 17:
                     PC++;
+                    AC = Y;
                     break;
 
                 case 18:
                     PC++;
+                    SP = AC;
                     break;
 
                 case 19:
                     PC++;
+                    AC = SP;
                     break;
 
                 case 20:
                     PC++;
+
                     break;
 
                 case 21:
@@ -206,10 +256,12 @@ int main(int argc, const char *argv[]) {
 
                 case 25:
                     PC++;
+                    X++;
                     break;
 
                 case 26:
                     PC++;
+                    X--;
                     break;
 
                 case 27:
@@ -232,10 +284,15 @@ int main(int argc, const char *argv[]) {
                     exit(0);
 
                 default:
-                    break;
+                    PERROR("Error: Not a command!\n");
+            }
+            timer_counter++;
+            PC++;
+
+            if (timer_counter == timer) {
+                timer_interrupt_flag = true;
             }
         }
-
     }
     return 0;
 }
