@@ -1,9 +1,6 @@
 #include <iostream>
-#include <fstream>
 #include <cstring>
 #include <unistd.h>
-#include <sstream>
-#include <wait.h>
 #include <random>
 
 #define PERROR(FMT,...) \
@@ -18,8 +15,9 @@ int main(int argc, const char *argv[]) {
     int cpu_to_mem[2];
     pid_t pid;
 
-    string file_name = argv[1];
-    int timer = 30;
+    const char *file_name = argv[1];
+    int timer = atoi(argv[2]);
+//    int timer = 30;
 
     int result1 = pipe(mem_to_cpu);
     int result2 = pipe(cpu_to_mem);
@@ -29,8 +27,8 @@ int main(int argc, const char *argv[]) {
         exit(1);
     }
 
-    const char *file = "sample0.txt";
-    load_data(file);
+//    const char *file = "sample1.txt";
+//    load_data(file_name);
 
     int buf[100];
     fflush(0);
@@ -41,12 +39,20 @@ int main(int argc, const char *argv[]) {
     }
     else if (pid == 0) {
         // Memory process
-        int *memory = load_data(file);
+        int *memory = load_data(file_name);
         int PC, data, address;
+        PC = 0;
+        data = 0;
+        address = 0;
+        const int write_flag = -1;
+        const int kill_child = -2;
 
         while (true) {
+            if (PC == kill_child) {
+                _exit(0);
+            }
             read(cpu_to_mem[0], &PC, sizeof(PC));
-            if (PC == -1) {
+            if (PC == write_flag) {
                 read(cpu_to_mem[0], &address, sizeof(address));
                 read(cpu_to_mem[0], &data, sizeof(data));
                 memory[address] = data;
@@ -58,7 +64,7 @@ int main(int argc, const char *argv[]) {
     } else {
         // CPU process
         int PC, SP, IR, AC, X, Y;
-        int port = 0;
+        int tempReg = 0;
         int operand = 0;
 
         X = 0;
@@ -68,12 +74,13 @@ int main(int argc, const char *argv[]) {
         SP = 1000;
         PC = 0;
 
-        bool mode = false; // true: kernel mode; false: user mode
+        bool kernel_mode = false; // true: kernel mode; false: user mode
         int interrupt_flag = 0;
         bool timer_interrupt_flag = false;
         int timer_counter = 0;
 
         const int write_flag = -1;
+        const int kill_child = -2;
         const int INT_INTERRUPT_ADDR = 1500;
 
         while (true) {
@@ -81,9 +88,10 @@ int main(int argc, const char *argv[]) {
                 timer_interrupt_flag = false;
                 interrupt_flag = 2;
 
-                mode = true;
-                operand = SP;
+                kernel_mode = true;
+                tempReg = SP;
                 SP = 2000;
+
                 SP--;
                 PC++;
                 write(cpu_to_mem[1], &write_flag, sizeof(write_flag));
@@ -93,7 +101,7 @@ int main(int argc, const char *argv[]) {
                 SP--;
                 write(cpu_to_mem[1], &write_flag, sizeof(write_flag));
                 write(cpu_to_mem[1], &SP, sizeof(SP));
-                write(cpu_to_mem[1], &operand, sizeof(SP));
+                write(cpu_to_mem[1], &tempReg, sizeof(tempReg));
                 PC = 1000;
             }
 
@@ -111,8 +119,8 @@ int main(int argc, const char *argv[]) {
                     PC++;
                     write(cpu_to_mem[1], &PC, sizeof(PC));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
-                    if (operand >= 1000 && !mode) {
-                        PERROR("Error: Unauthorized attempt to access system memory at address \"%d\" in user mode!", operand);
+                    if (operand >= 1000 && !kernel_mode) {
+                        PERROR("Memory violation: accessing system address %d in user mode\n", operand);
                         exit(1);
                     }
                     write(cpu_to_mem[1], &operand, sizeof(operand));
@@ -126,8 +134,8 @@ int main(int argc, const char *argv[]) {
                     read(mem_to_cpu[0], &operand, sizeof(operand));
                     write(cpu_to_mem[1], &operand, sizeof(operand));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
-                    if (operand >= 1000 && !mode) {
-                        PERROR("Error: Unauthorized attempt to access system memory at address \"%d\" in user mode!", operand);
+                    if (operand >= 1000 && !kernel_mode) {
+                        PERROR("Memory violation: accessing system address %d in user mode\n", operand);
                         exit(1);
                     }
                     write(cpu_to_mem[1], &operand, sizeof(operand));
@@ -159,9 +167,6 @@ int main(int argc, const char *argv[]) {
                 }
 
                 case 6: {
-                    PC++;
-                    write(cpu_to_mem[1], &PC, sizeof(PC));
-                    read(mem_to_cpu[0], &operand, sizeof(operand));
                     operand = SP + X;
                     write(cpu_to_mem[1], &operand, sizeof(operand));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
@@ -180,7 +185,6 @@ int main(int argc, const char *argv[]) {
                 }
 
                 case 8: {
-                    PC++;
                     std::random_device seed;
                     std::mt19937 gen{seed()}; // seed the generator
                     std::uniform_int_distribution<> dist{1, 100}; // set min and max
@@ -191,61 +195,52 @@ int main(int argc, const char *argv[]) {
                 case 9: {
                     PC++;
                     write(cpu_to_mem[1], &PC, sizeof(PC));
-                    read(mem_to_cpu[0], &port, sizeof(port));
-                    if (port == 1) {
-                        printf("%i\n", AC);
-                    } else if (port == 2) {
-                        printf("%c\n", AC);
+                    read(mem_to_cpu[0], &operand, sizeof(operand));
+                    if (operand == 1) {
+                        printf("%d", AC);
+                    } else if (operand == 2) {
+                        printf("%c", AC);
                     }
                     break;
                 }
 
                 case 10:
-                    PC++;
                     AC += X;
                     break;
 
                 case 11:
-                    PC++;
                     AC += Y;
                     break;
 
                 case 12:
-                    PC++;
                     AC -= X;
                     break;
 
                 case 13:
-                    PC++;
                     AC -= Y;
                     break;
 
                 case 14:
-                    PC++;
                     X = AC;
                     break;
 
                 case 15:
-                    PC++;
                     AC = X;
                     break;
 
                 case 16:
-                    PC++;
                     Y = AC;
                     break;
+
                 case 17:
-                    PC++;
                     AC = Y;
                     break;
 
                 case 18:
-                    PC++;
                     SP = AC;
                     break;
 
                 case 19:
-                    PC++;
                     AC = SP;
                     break;
 
@@ -259,18 +254,18 @@ int main(int argc, const char *argv[]) {
 
                 case 21:
                     PC++;
+                    write(cpu_to_mem[1], &PC, sizeof(PC));
+                    read(mem_to_cpu[0], &operand, sizeof(operand));
                     if (AC == 0) {
-                        write(cpu_to_mem[1], &PC, sizeof(PC));
-                        read(mem_to_cpu[0], &operand, sizeof(operand));
                         PC = operand + write_flag;
                     }
                     break;
 
                 case 22:
                     PC++;
+                    write(cpu_to_mem[1], &PC, sizeof(PC));
+                    read(mem_to_cpu[0], &operand, sizeof(operand));
                     if (AC != 0) {
-                        write(cpu_to_mem[1], &PC, sizeof(PC));
-                        read(mem_to_cpu[0], &operand, sizeof(operand));
                         PC = operand + write_flag;
                     }
                     break;
@@ -290,32 +285,29 @@ int main(int argc, const char *argv[]) {
                 case 24:
                     write(cpu_to_mem[1], &SP, sizeof(SP));
                     read(mem_to_cpu[0], &PC, sizeof(PC));
-                    SP++;
                     PC--;
+                    SP++;
                     break;
 
                 case 25:
-                    PC++;
                     X++;
                     break;
 
                 case 26:
-                    PC++;
                     X--;
                     break;
 
                 case 27:
-                    PC++;
+                    SP--;
                     write(cpu_to_mem[1], &write_flag, sizeof(write_flag));
                     write(cpu_to_mem[1], &SP, sizeof(SP));
                     write(cpu_to_mem[1], &AC, sizeof(AC));
-                    SP--;
                     break;
 
                 case 28:
-                    PC++;
                     write(cpu_to_mem[1], &SP, sizeof(SP));
                     read(mem_to_cpu[0], &AC, sizeof(AC));
+                    SP++;
                     break;
 
                 case 29:
@@ -324,7 +316,9 @@ int main(int argc, const char *argv[]) {
                     }
                     interrupt_flag = 1;
 
-                    operand = SP;
+                    kernel_mode = true;
+
+                    tempReg = SP;
                     SP = 2000;
 
                     SP--;
@@ -335,20 +329,36 @@ int main(int argc, const char *argv[]) {
                     SP--;
                     write(cpu_to_mem[1], &write_flag, sizeof(write_flag));
                     write(cpu_to_mem[1], &SP, sizeof(SP));
-                    write(cpu_to_mem[1], &operand, sizeof(operand));
+                    write(cpu_to_mem[1], &tempReg, sizeof(tempReg));
 
                     PC = INT_INTERRUPT_ADDR;
                     break;
 
                 case 30:
-                    PC++;
+                    write(cpu_to_mem[1], &SP, sizeof(SP));
+                    read(mem_to_cpu[0], &tempReg, sizeof(tempReg));
+                    SP++;
+                    write(cpu_to_mem[1], &SP, sizeof(SP));
+                    read(mem_to_cpu[0], &PC, sizeof(PC));
+                    PC -= 2;
+                    SP++;
+
+                    if (interrupt_flag == 2) {
+                        timer_interrupt_flag = false;
+                    }
+
+                    interrupt_flag = 0;
+                    kernel_mode = false;
+                    SP = tempReg;
                     break;
 
                 case 50:
-                    exit(0);
+                    write(cpu_to_mem[1], &kill_child, sizeof(kill_child));
+                    _exit(0);
+                    break;
 
                 default:
-                    PERROR("Error: Not a command!\n");
+                    printf("Error: %d not an instruction!\n", IR);
             }
             timer_counter++;
             PC++;
@@ -373,6 +383,11 @@ int *load_data(const char *file_name) {
         PERROR("The file %s could not be opened", file_name);
         exit( EXIT_FAILURE );
     }
+
+//    int size = sizeof(memory) / sizeof(memory[0]);
+//    for (int i = 0; i < size; ++i) {
+//        cout << memory[i] << endl;
+//    }
 
     while(fgets(buf, sizeof(buf), file) != NULL) {
         if (isdigit((int) buf[0]) || buf[0] == '.') {
