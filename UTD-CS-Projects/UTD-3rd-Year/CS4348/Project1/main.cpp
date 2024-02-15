@@ -67,11 +67,14 @@ int main(int argc, const char *argv[]) {
         AC = 0;
         SP = 1000;
         PC = 0;
+
         bool mode = false; // true: kernel mode; false: user mode
-        int write_flag = -1;
         int interrupt_flag = 0;
         bool timer_interrupt_flag = false;
         int timer_counter = 0;
+
+        const int write_flag = -1;
+        const int INT_INTERRUPT_ADDR = 1500;
 
         while (true) {
             if (timer_interrupt_flag && interrupt_flag == 0) {
@@ -79,6 +82,7 @@ int main(int argc, const char *argv[]) {
                 interrupt_flag = 2;
 
                 mode = true;
+                operand = SP;
                 SP = 2000;
                 SP--;
                 PC++;
@@ -89,8 +93,7 @@ int main(int argc, const char *argv[]) {
                 SP--;
                 write(cpu_to_mem[1], &write_flag, sizeof(write_flag));
                 write(cpu_to_mem[1], &SP, sizeof(SP));
-                SP = 1000;
-                write(cpu_to_mem[1], &SP, sizeof(SP));
+                write(cpu_to_mem[1], &operand, sizeof(SP));
                 PC = 1000;
             }
 
@@ -246,26 +249,49 @@ int main(int argc, const char *argv[]) {
                     AC = SP;
                     break;
 
-                case 20:
+                case 20: {
                     PC++;
-
+                    write(cpu_to_mem[1], &PC, sizeof(PC));
+                    read(mem_to_cpu[0], &operand, sizeof(operand));
+                    PC = operand + write_flag;
                     break;
+                }
 
                 case 21:
                     PC++;
+                    if (AC == 0) {
+                        write(cpu_to_mem[1], &PC, sizeof(PC));
+                        read(mem_to_cpu[0], &operand, sizeof(operand));
+                        PC = operand + write_flag;
+                    }
                     break;
 
                 case 22:
                     PC++;
+                    if (AC != 0) {
+                        write(cpu_to_mem[1], &PC, sizeof(PC));
+                        read(mem_to_cpu[0], &operand, sizeof(operand));
+                        PC = operand + write_flag;
+                    }
                     break;
 
                 case 23:
                     PC++;
-
+                    write(cpu_to_mem[1], &PC, sizeof(PC));
+                    read(mem_to_cpu[0], &operand, sizeof(operand));
+                    SP--;
+                    PC++;
+                    write(cpu_to_mem[1], &write_flag, sizeof(write_flag));
+                    write(cpu_to_mem[1], &SP, sizeof(SP));
+                    write(cpu_to_mem[1], &PC, sizeof(PC));
+                    PC = operand + write_flag;
                     break;
 
                 case 24:
-                    PC++;
+                    write(cpu_to_mem[1], &SP, sizeof(SP));
+                    read(mem_to_cpu[0], &PC, sizeof(PC));
+                    SP++;
+                    PC--;
                     break;
 
                 case 25:
@@ -280,14 +306,38 @@ int main(int argc, const char *argv[]) {
 
                 case 27:
                     PC++;
+                    write(cpu_to_mem[1], &write_flag, sizeof(write_flag));
+                    write(cpu_to_mem[1], &SP, sizeof(SP));
+                    write(cpu_to_mem[1], &AC, sizeof(AC));
+                    SP--;
                     break;
 
                 case 28:
                     PC++;
+                    write(cpu_to_mem[1], &SP, sizeof(SP));
+                    read(mem_to_cpu[0], &AC, sizeof(AC));
                     break;
 
                 case 29:
-                    PC++;
+                    if (interrupt_flag != 0) {
+                        break;
+                    }
+                    interrupt_flag = 1;
+
+                    operand = SP;
+                    SP = 2000;
+
+                    SP--;
+                    write(cpu_to_mem[1], &write_flag, sizeof(write_flag));
+                    write(cpu_to_mem[1], &SP, sizeof(SP));
+                    write(cpu_to_mem[1], &PC, sizeof(PC));
+
+                    SP--;
+                    write(cpu_to_mem[1], &write_flag, sizeof(write_flag));
+                    write(cpu_to_mem[1], &SP, sizeof(SP));
+                    write(cpu_to_mem[1], &operand, sizeof(operand));
+
+                    PC = INT_INTERRUPT_ADDR;
                     break;
 
                 case 30:
