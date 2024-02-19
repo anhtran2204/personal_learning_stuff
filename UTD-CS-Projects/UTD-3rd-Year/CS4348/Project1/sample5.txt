@@ -1,0 +1,17 @@
+.0  // This sample5.txt will reverse a word by push each letter on the stack in reverse
+1   // Load 68
+68
+1   // Load 101
+101
+1   // Load 115
+115
+1   // Load 115
+115
+1   // Load 101
+101
+1   // Load 114
+114
+1   // Load 116
+116
+1   // Load 115
+115

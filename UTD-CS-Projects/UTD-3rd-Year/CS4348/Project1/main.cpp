@@ -23,18 +23,18 @@ int main(int argc, const char *argv[]) {
     int result2 = pipe(cpu_to_mem);
 
     if (result1 < 0 || result2 < 0) {
-        PERROR("pipe() failed");
+        printf("pipe() failed");
         exit(1);
     }
 
-//    const char *file = "sample1.txt";
+//    const char *file_name = "sample3.txt";
 //    load_data(file_name);
 
     int buf[100];
     fflush(0);
     pid = fork();
     if (pid < 0) {
-        PERROR("fork() failed!");
+        printf("fork() failed!");
         exit(1);
     }
     else if (pid == 0) {
@@ -58,7 +58,7 @@ int main(int argc, const char *argv[]) {
                 memory[address] = data;
             } else {
                 int instruction = memory[PC];
-                write(mem_to_cpu[1], &instruction, sizeof(memory[0]));
+                write(mem_to_cpu[1], &instruction, sizeof(instruction));
             }
         }
     } else {
@@ -81,7 +81,7 @@ int main(int argc, const char *argv[]) {
 
         const int write_flag = -1;
         const int kill_child = -2;
-        const int INT_INTERRUPT_ADDR = 1500;
+        const int INT_INTERRUPT_ADDR = 1499;
 
         while (true) {
             if (timer_interrupt_flag && interrupt_flag == 0) {
@@ -120,7 +120,7 @@ int main(int argc, const char *argv[]) {
                     write(cpu_to_mem[1], &PC, sizeof(PC));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
                     if (operand >= 1000 && !kernel_mode) {
-                        PERROR("Memory violation: accessing system address %d in user mode\n", operand);
+                        printf("Memory violation: accessing system address %d in user mode\n", operand);
                         exit(1);
                     }
                     write(cpu_to_mem[1], &operand, sizeof(operand));
@@ -135,7 +135,7 @@ int main(int argc, const char *argv[]) {
                     write(cpu_to_mem[1], &operand, sizeof(operand));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
                     if (operand >= 1000 && !kernel_mode) {
-                        PERROR("Memory violation: accessing system address %d in user mode\n", operand);
+                        printf("Memory violation: accessing system address %d in user mode\n", operand);
                         exit(1);
                     }
                     write(cpu_to_mem[1], &operand, sizeof(operand));
@@ -187,7 +187,7 @@ int main(int argc, const char *argv[]) {
                 case 8: {
                     std::random_device seed;
                     std::mt19937 gen{seed()}; // seed the generator
-                    std::uniform_int_distribution<> dist{1, 100}; // set min and max
+                    std::uniform_int_distribution<> dist{1, 101}; // set min and max
                     AC = dist(gen);
                     break;
                 }
@@ -197,7 +197,7 @@ int main(int argc, const char *argv[]) {
                     write(cpu_to_mem[1], &PC, sizeof(PC));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
                     if (operand == 1) {
-                        printf("%d", AC);
+                        printf("%i", AC);
                     } else if (operand == 2) {
                         printf("%c", AC);
                     }
@@ -346,16 +346,14 @@ int main(int argc, const char *argv[]) {
                     if (interrupt_flag == 2) {
                         timer_interrupt_flag = false;
                     }
-
                     interrupt_flag = 0;
-                    kernel_mode = false;
                     SP = tempReg;
+                    kernel_mode = false;
                     break;
 
                 case 50:
                     write(cpu_to_mem[1], &kill_child, sizeof(kill_child));
-                    _exit(0);
-                    break;
+                    exit(0);
 
                 default:
                     printf("Error: %d not an instruction!\n", IR);
@@ -363,7 +361,7 @@ int main(int argc, const char *argv[]) {
             timer_counter++;
             PC++;
 
-            if (timer_counter == timer) {
+            if (timer_counter % timer == 0) {
                 timer_interrupt_flag = true;
             }
         }
@@ -380,8 +378,8 @@ int *load_data(const char *file_name) {
     file = fopen(file_name, "r");
 
     if (!file) {
-        PERROR("The file %s could not be opened", file_name);
-        exit( EXIT_FAILURE );
+        printf("The file %s could not be opened", file_name);
+        return memory;
     }
 
 //    int size = sizeof(memory) / sizeof(memory[0]);
@@ -389,7 +387,7 @@ int *load_data(const char *file_name) {
 //        cout << memory[i] << endl;
 //    }
 
-    while(fgets(buf, sizeof(buf), file) != NULL) {
+    while(fgets(buf, sizeof(buf), file) != nullptr) {
         if (isdigit((int) buf[0]) || buf[0] == '.') {
             int num;
             if (buf[0] == '.') {
