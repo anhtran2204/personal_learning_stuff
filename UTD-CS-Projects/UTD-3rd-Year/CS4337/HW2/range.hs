@@ -1,3 +1,4 @@
+range :: (Ord t, Num t) => t -> t -> [t]
 range x y
     | x > y = []
     | x == y = [y]
