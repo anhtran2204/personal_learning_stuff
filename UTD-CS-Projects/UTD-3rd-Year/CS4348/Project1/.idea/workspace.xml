@@ -19,10 +19,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71a41e7d-947b-4c57-9349-31d038f5e0e1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../CS4337/HW2/classsAverage.hs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS4337/HW2/sumPairs.hs" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS4337/HW2/sumPairs.hs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main" beforeDir="false" afterPath="$PROJECT_DIR$/main" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sample3.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
