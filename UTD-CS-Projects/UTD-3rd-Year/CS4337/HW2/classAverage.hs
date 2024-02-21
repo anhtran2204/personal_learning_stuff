@@ -9,3 +9,10 @@ classAverages students = zipWith (*) weights (map (/ fromIntegral (length studen
                 classAveragesHelper [] acc = acc
                 classAveragesHelper ((a,b,c,d):xs) [exams, homework, projects, quizzes]
                     = classAveragesHelper xs [exams + a, homework + b, projects + c, quizzes + d]
+
+main :: IO()
+main = print (classAverages [
+    (80.4,79.8,89.3,90.5),
+    (87.4,65.2,74.6,76.1),
+    (81.4,75.2,94.6,86.1),
+    (67.4,55.2,74.6,86.1)])

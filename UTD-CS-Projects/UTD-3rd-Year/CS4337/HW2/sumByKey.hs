@@ -6,3 +6,6 @@ sumByKey pairs = sumByKeyHelper pairs (0, 0)
       | k == 0 = sumByKeyHelper xs (sum0 + v, sum1)
       | k == 1 = sumByKeyHelper xs (sum0, sum1 + v)
       | otherwise = error "Invalid key found. Only 0 or 1 are allowed."
+
+main :: IO()
+main = print (sumByKey [(1,2),(1,2),(1,2)])
