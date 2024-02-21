@@ -15,9 +15,9 @@ int main(int argc, const char *argv[]) {
     int cpu_to_mem[2];
     pid_t pid;
 
-    const char *file_name = argv[1];
-    int timer = atoi(argv[2]);
-//    int timer = 30;
+    // const char *file_name = argv[1];
+    // int timer = atoi(argv[2]);
+   int timer = 30;
 
     int result1 = pipe(mem_to_cpu);
     int result2 = pipe(cpu_to_mem);
@@ -27,7 +27,7 @@ int main(int argc, const char *argv[]) {
         exit(1);
     }
 
-//    const char *file_name = "sample3.txt";
+   const char *file_name = "sample5.txt";
 //    load_data(file_name);
 
     int buf[100];
