@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="RegisterUser_BlackBox_Testing" tests="24" skipped="0" failures="0" errors="0" timestamp="2021-11-07T19:59:36" hostname="DESKTOP-3PIFD03" time="0.051">
+  <properties/>
+  <testcase name="register_BC_RetypedPwd_TC1()" classname="RegisterUser_BlackBox_Testing" time="0.024"/>
+  <testcase name="register_BC_RetypedPwd_TC2()" classname="RegisterUser_BlackBox_Testing" time="0.001"/>
+  <testcase name="register_BC_PwdLength_TC1()" classname="RegisterUser_BlackBox_Testing" time="0.0"/>
+  <testcase name="register_BC_PwdLength_TC2()" classname="RegisterUser_BlackBox_Testing" time="0.001"/>
+  <testcase name="register_BC_PwdLength_TC3()" classname="RegisterUser_BlackBox_Testing" time="0.001"/>
+  <testcase name="register_BC_PwdLength_TC5()" classname="RegisterUser_BlackBox_Testing" time="0.001"/>
+  <testcase name="register_BC_PwdLength_TC6()" classname="RegisterUser_BlackBox_Testing" time="0.001"/>
+  <testcase name="register_BC_PwdLength_TC7()" classname="RegisterUser_BlackBox_Testing" time="0.001"/>
+  <testcase name="register_BC_PwdLength_TC8()" classname="RegisterUser_BlackBox_Testing" time="0.001"/>
+  <testcase name="register_BC_PwdLength_TC9()" classname="RegisterUser_BlackBox_Testing" time="0.001"/>
+  <testcase name="register_BC_PwdLength_TC4a()" classname="RegisterUser_BlackBox_Testing" time="0.001"/>
+  <testcase name="register_BC_PwdLength_TC4b()" classname="RegisterUser_BlackBox_Testing" time="0.001"/>
+  <testcase name="register_BC_PwdLength_TC4c()" classname="RegisterUser_BlackBox_Testing" time="0.001"/>
+  <testcase name="register_BC_PwdLength_TC4d()" classname="RegisterUser_BlackBox_Testing" time="0.001"/>
+  <testcase name="register_BC_PwdLength_TC4e()" classname="RegisterUser_BlackBox_Testing" time="0.001"/>
+  <testcase name="register_BC_LoginLength_TC4a()" classname="RegisterUser_BlackBox_Testing" time="0.001"/>
+  <testcase name="register_BC_LoginLength_TC1()" classname="RegisterUser_BlackBox_Testing" time="0.0"/>
+  <testcase name="register_BC_LoginLength_TC2()" classname="RegisterUser_BlackBox_Testing" time="0.0"/>
+  <testcase name="register_BC_LoginLength_TC3()" classname="RegisterUser_BlackBox_Testing" time="0.0"/>
+  <testcase name="register_BC_LoginLength_TC5()" classname="RegisterUser_BlackBox_Testing" time="0.001"/>
+  <testcase name="register_BC_LoginLength_TC6()" classname="RegisterUser_BlackBox_Testing" time="0.001"/>
+  <testcase name="register_BC_LoginLength_TC7()" classname="RegisterUser_BlackBox_Testing" time="0.001"/>
+  <testcase name="register_BC_LoginLength_TC8()" classname="RegisterUser_BlackBox_Testing" time="0.0"/>
+  <testcase name="register_BC_LoginLength_TC9()" classname="RegisterUser_BlackBox_Testing" time="0.0"/>
+  <system-out><![CDATA[abcdef1234% length is :11
+abcdef1234% length is :11
+ length is :0
+x length is :1
+abcdef1 length is :7
+abcdef12% length is :9
+abcdef1234% length is :11
+abcdef12345% length is :12
+abcdef123456% length is :13
+a0123456789a0123456789a0123456789a0123456789a0123456789a0123456789a0123456789a0123456789a0123456789a0123456789 length is :110
+abcdefg? length is :8
+abc def1 length is :8
+abcdefgh length is :8
+12345678 length is :8
+abcdefg1 length is :8
+xft123%PLM length is :10
+xft123%PLM length is :10
+xft123%PLM length is :10
+xft123%PLM length is :10
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
