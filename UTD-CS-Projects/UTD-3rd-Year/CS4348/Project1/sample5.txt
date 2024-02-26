@@ -51,6 +51,10 @@
 2
 22  // Jump to address if AC != 0
 47
+1    // Load newline
+10
+9    // Output newline
+2
 50  // End
 
 .1000

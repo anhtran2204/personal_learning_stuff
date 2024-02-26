@@ -1,4 +1,6 @@
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 #include <cstring>
 #include <unistd.h>
 #include <random>
@@ -15,9 +17,9 @@ int main(int argc, const char *argv[]) {
     int cpu_to_mem[2];
     pid_t pid;
 
-    // const char *file_name = argv[1];
-    // int timer = atoi(argv[2]);
-   int timer = 30;
+    const char *file_name = argv[1];
+    int timer = atoi(argv[2]);
+//    int timer = 30;
 
     int result1 = pipe(mem_to_cpu);
     int result2 = pipe(cpu_to_mem);
@@ -27,7 +29,7 @@ int main(int argc, const char *argv[]) {
         exit(1);
     }
 
-   const char *file_name = "sample5.txt";
+//   const char *file_name = "sample5.txt";
 //    load_data(file_name);
 
     int buf[100];
@@ -185,10 +187,7 @@ int main(int argc, const char *argv[]) {
                 }
 
                 case 8: {
-                    std::random_device seed;
-                    std::mt19937 gen{seed()}; // seed the generator
-                    std::uniform_int_distribution<> dist{1, 101}; // set min and max
-                    AC = dist(gen);
+                    AC = rand() % 100 + 1;
                     break;
                 }
 
@@ -387,7 +386,7 @@ int *load_data(const char *file_name) {
 //        cout << memory[i] << endl;
 //    }
 
-    while(fgets(buf, sizeof(buf), file) != nullptr) {
+    while(fgets(buf, sizeof(buf), file) != NULL) {
         if (isdigit((int) buf[0]) || buf[0] == '.') {
             int num;
             if (buf[0] == '.') {
