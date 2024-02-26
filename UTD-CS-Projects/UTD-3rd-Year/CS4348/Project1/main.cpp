@@ -54,11 +54,11 @@ int main(int argc, const char *argv[]) {
                 _exit(0);
             }
             read(cpu_to_mem[0], &PC, sizeof(PC));
-            if (PC == write_flag) {
+            if (PC == write_flag) {         // Writing to the memory
                 read(cpu_to_mem[0], &address, sizeof(address));
                 read(cpu_to_mem[0], &data, sizeof(data));
                 memory[address] = data;
-            } else {
+            } else {                        // Reading from the memory 
                 int instruction = memory[PC];
                 write(mem_to_cpu[1], &instruction, sizeof(instruction));
             }
@@ -76,16 +76,17 @@ int main(int argc, const char *argv[]) {
         SP = 1000;
         PC = 0;
 
-        bool kernel_mode = false; // true: kernel mode; false: user mode
-        int interrupt_flag = 0;
+        bool kernel_mode = false;   // true: kernel mode; false: user mode
+        int interrupt_flag = 0;     // 0: no interrupt; 1: int insutrction; 2: timer interrupt
         bool timer_interrupt_flag = false;
         int timer_counter = 0;
 
-        const int write_flag = -1;
-        const int kill_child = -2;
+        const int write_flag = -1;  // flag to signify writing to the memory
+        const int kill_child = -2;  // flag to notify memory to terminate all child processes
         const int INT_INTERRUPT_ADDR = 1499;
 
         while (true) {
+            // Timer Interrupt Handler
             if (timer_interrupt_flag && interrupt_flag == 0) {
                 timer_interrupt_flag = false;
                 interrupt_flag = 2;
@@ -107,17 +108,18 @@ int main(int argc, const char *argv[]) {
                 PC = 1000;
             }
 
+            // Read from the memory to get the instructions
             write(cpu_to_mem[1], &PC, sizeof(PC));
             read(mem_to_cpu[0], &IR, sizeof(IR));
             switch (IR) {
-                case 1:         // Load value: Load value into AC
+                case 1:         // Load value into AC
                     PC++;
                     write(cpu_to_mem[1], &PC, sizeof(PC));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
                     AC = operand;
                     break;
 
-                case 2:
+                case 2:         // Load from address given into AC
                     PC++;
                     write(cpu_to_mem[1], &PC, sizeof(PC));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
@@ -130,7 +132,7 @@ int main(int argc, const char *argv[]) {
                     AC = operand;
                     break;
 
-                case 3: {
+                case 3: {       // Load from address found in given address into AC
                     PC++;
                     write(cpu_to_mem[1], &PC, sizeof(PC));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
@@ -146,7 +148,7 @@ int main(int argc, const char *argv[]) {
                     break;
                 }
 
-                case 4: {
+                case 4: {       // Load value at (addr + X) into AC
                     PC++;
                     write(cpu_to_mem[1], &PC, sizeof(PC));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
@@ -157,7 +159,7 @@ int main(int argc, const char *argv[]) {
                     break;
                 }
 
-                case 5: {
+                case 5: {       // Load value at (addr + Y) into AC
                     PC++;
                     write(cpu_to_mem[1], &PC, sizeof(PC));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
@@ -168,7 +170,7 @@ int main(int argc, const char *argv[]) {
                     break;
                 }
 
-                case 6: {
+                case 6: {       //  Load from (SP + X) into AC
                     operand = SP + X;
                     write(cpu_to_mem[1], &operand, sizeof(operand));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
@@ -186,12 +188,12 @@ int main(int argc, const char *argv[]) {
                     break;
                 }
 
-                case 8: {
+                case 8: {       // Get a random int from 1-100 into AC
                     AC = rand() % 100 + 1;
                     break;
                 }
 
-                case 9: {
+                case 9: {       // If operand == 1, print AC as int; if operand == 2, print as char
                     PC++;
                     write(cpu_to_mem[1], &PC, sizeof(PC));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
@@ -203,47 +205,47 @@ int main(int argc, const char *argv[]) {
                     break;
                 }
 
-                case 10:
+                case 10:        // Add X to AC
                     AC += X;
                     break;
 
-                case 11:
+                case 11:        // Add Y to AC
                     AC += Y;
                     break;
 
-                case 12:
+                case 12:        // Subtract X from AC
                     AC -= X;
                     break;
 
-                case 13:
+                case 13:        // Subtract X from AC
                     AC -= Y;
                     break;
 
-                case 14:
+                case 14:        // Copy value of AC to X
                     X = AC;
                     break;
 
                 case 15:
-                    AC = X;
+                    AC = X;     // Copy value of X to AC
                     break;
 
                 case 16:
-                    Y = AC;
+                    Y = AC;     // Copy value of AC to Y
                     break;
 
-                case 17:
+                case 17:        // Copy value of Y to AC
                     AC = Y;
                     break;
 
-                case 18:
+                case 18:        // Copy value of AC to SP
                     SP = AC;
                     break;
 
-                case 19:
+                case 19:        // Copy value of SP to AC
                     AC = SP;
                     break;
 
-                case 20: {
+                case 20: {      // Jump to address given
                     PC++;
                     write(cpu_to_mem[1], &PC, sizeof(PC));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
@@ -251,7 +253,7 @@ int main(int argc, const char *argv[]) {
                     break;
                 }
 
-                case 21:
+                case 21:        // Jump to address given if AC is zero
                     PC++;
                     write(cpu_to_mem[1], &PC, sizeof(PC));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
@@ -260,7 +262,7 @@ int main(int argc, const char *argv[]) {
                     }
                     break;
 
-                case 22:
+                case 22:        // Jump to address given if AC is not zero
                     PC++;
                     write(cpu_to_mem[1], &PC, sizeof(PC));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
@@ -269,7 +271,7 @@ int main(int argc, const char *argv[]) {
                     }
                     break;
 
-                case 23:
+                case 23:        // Push return address onto stack, jump to the address
                     PC++;
                     write(cpu_to_mem[1], &PC, sizeof(PC));
                     read(mem_to_cpu[0], &operand, sizeof(operand));
@@ -281,35 +283,35 @@ int main(int argc, const char *argv[]) {
                     PC = operand + write_flag;
                     break;
 
-                case 24:
+                case 24:        // Pop return address from stack, jump to the address
                     write(cpu_to_mem[1], &SP, sizeof(SP));
                     read(mem_to_cpu[0], &PC, sizeof(PC));
                     PC--;
                     SP++;
                     break;
 
-                case 25:
+                case 25:        // Increment X
                     X++;
                     break;
 
-                case 26:
+                case 26:        // Decrement X
                     X--;
                     break;
 
-                case 27:
+                case 27:        // Push value of AC onto stack
                     SP--;
                     write(cpu_to_mem[1], &write_flag, sizeof(write_flag));
                     write(cpu_to_mem[1], &SP, sizeof(SP));
                     write(cpu_to_mem[1], &AC, sizeof(AC));
                     break;
 
-                case 28:
+                case 28:        // Pop from stack into AC
                     write(cpu_to_mem[1], &SP, sizeof(SP));
                     read(mem_to_cpu[0], &AC, sizeof(AC));
                     SP++;
                     break;
 
-                case 29:
+                case 29:        // Perform system call
                     if (interrupt_flag != 0) {
                         break;
                     }
@@ -333,7 +335,7 @@ int main(int argc, const char *argv[]) {
                     PC = INT_INTERRUPT_ADDR;
                     break;
 
-                case 30:
+                case 30:        // Return from system call
                     write(cpu_to_mem[1], &SP, sizeof(SP));
                     read(mem_to_cpu[0], &tempReg, sizeof(tempReg));
                     SP++;
@@ -350,16 +352,17 @@ int main(int argc, const char *argv[]) {
                     kernel_mode = false;
                     break;
 
-                case 50:
+                case 50:        // End program
                     write(cpu_to_mem[1], &kill_child, sizeof(kill_child));
                     exit(0);
 
-                default:
+                default:        // Invalid instruction
                     printf("Error: %d not an instruction!\n", IR);
             }
             timer_counter++;
             PC++;
 
+            // Validify if timer flag is true
             if (timer_counter % timer == 0) {
                 timer_interrupt_flag = true;
             }
@@ -368,10 +371,12 @@ int main(int argc, const char *argv[]) {
     return 0;
 }
 
+/*  Load the instructions and data 
+    from the input files into the memory*/
 int *load_data(const char *file_name) {
-    static int memory[2000];
-    char buf[1000];
-    int line = 0;
+    static int memory[2000];    // Memory
+    char buf[1000];             // Buffer
+    int line = 0;               
 
     FILE *file;
     file = fopen(file_name, "r");
@@ -387,7 +392,10 @@ int *load_data(const char *file_name) {
 //    }
 
     while(fgets(buf, sizeof(buf), file) != NULL) {
-        if (isdigit((int) buf[0]) || buf[0] == '.') {
+        // Check for address for system call and interrupt and its handler
+        // If starts with '.', load the instructions that handle this handler
+        // into the system portion of the memory
+        if (isdigit((int) buf[0]) || buf[0] == '.') { 
             int num;
             if (buf[0] == '.') {
                 sscanf(buf, ".%d %*s\n", &num);
