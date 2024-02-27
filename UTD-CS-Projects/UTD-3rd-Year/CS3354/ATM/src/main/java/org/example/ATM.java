@@ -38,8 +38,13 @@ public class ATM {
             return false;
         }
 
+<<<<<<< HEAD
         if (this.getFunds() - amount < 0) {
             System.out.println("Insufficient Funds");
+=======
+        if ((this.getFunds() - amount) < 0) {
+            System.out.println("Insufficient funds");
+>>>>>>> 5fc38b331865b1d762a42803eb987c7da88101c4
             return false;
         }
 
@@ -53,6 +58,37 @@ public class ATM {
     }
 
     private boolean isBankAccountNumberValid(String bankAccountNumber) {
+<<<<<<< HEAD
         return getBankAccountNumber().matches("[0-9]+$");
+=======
+        // Check if the string is not null or empty
+        if (bankAccountNumber == null || bankAccountNumber.isEmpty()) {
+            return false;
+        }
+
+        if (bankAccountNumber.length() >= 12 || bankAccountNumber.length() <= 9) {
+            return false;
+        }
+
+        // Check if the string contains only digits
+        for (char c : bankAccountNumber.toCharArray()) {
+            if (!Character.isDigit(c)) {
+                return false;
+            }
+        }
+
+        // Check if the string contains unique digits
+        boolean[] digitSeen = new boolean[10]; // Array to track digits (0-9)
+        for (char c : bankAccountNumber.toCharArray()) {
+            int digit = Character.getNumericValue(c);
+            if (digitSeen[digit]) {
+                return false; // Duplicate digit found
+            }
+            digitSeen[digit] = true;
+        }
+
+        // All checks passed
+        return true;
+>>>>>>> 5fc38b331865b1d762a42803eb987c7da88101c4
     }
 }

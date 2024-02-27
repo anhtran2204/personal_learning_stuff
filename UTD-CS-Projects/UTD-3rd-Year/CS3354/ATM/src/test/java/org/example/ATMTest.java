@@ -10,15 +10,79 @@ class ATMTest {
 
     @BeforeEach
     void setUp() {
+<<<<<<< HEAD
         System.out.println("Before each test case methods");
+=======
+        System.out.println("Before each test method");
+>>>>>>> 5fc38b331865b1d762a42803eb987c7da88101c4
     }
 
     @AfterEach
     void tearDown() {
+<<<<<<< HEAD
         System.out.println("After each test case methods");
     }
 
     @Test
     void transfer() {
+=======
+        System.out.println("After each test method");
+    }
+
+    @Test
+    void testValidTransfer() {
+        // Initialize the ATM with the source account number and balance
+        ATM atm = new ATM("1234567890", 1000);
+        // Set the destination account number
+        String destAcctNum = "0987654321";
+        // Perform the transfer
+        boolean result = atm.transfer(destAcctNum, 500);
+        // Check that the transfer was successful
+        assertTrue(result);
+        // Check that the source account balance was updated
+        assertEquals(500, atm.getFunds());
+    }
+
+    @Test
+    void testInvalidAccountNumber() {
+        // Initialize the ATM with the source account number and balance
+        ATM atm = new ATM("1234567890", 100);
+        // Set an invalid destination account number
+        String destAcctNum = "0000000000";
+        // Perform the transfer
+        boolean result = atm.transfer(destAcctNum, 100);
+        // Check that the transfer was not successful
+        assertFalse(result);
+        // Check that the source account balance was not updated
+        assertEquals(100, atm.getFunds());
+    }
+
+    @Test
+    void testInsufficientFunds() {
+        // Initialize the ATM with the source account number and balance
+        ATM atm = new ATM("1234567890", 100);
+        // Set the destination account number
+        String destAcctNum = "0987654321";
+        // Perform the transfer
+        boolean result = atm.transfer(destAcctNum, 500);
+        // Check that the transfer was not successful
+        assertFalse(result);
+        // Check that the source account balance was not updated
+        assertEquals(100, atm.getFunds());
+    }
+
+    @Test
+    void testNegativeAmount() {
+        // Initialize the ATM with the source account number and balance
+        ATM atm = new ATM("1234567890", 1000);
+        // Set the destination account number
+        String destAcctNum = "0987654321";
+        // Perform the transfer
+        boolean result = atm.transfer(destAcctNum, -500);
+        // Check that the transfer was not successful
+        assertFalse(result);
+        // Check that the source account balance was not updated
+        assertEquals(1000, atm.getFunds());
+>>>>>>> 5fc38b331865b1d762a42803eb987c7da88101c4
     }
 }
