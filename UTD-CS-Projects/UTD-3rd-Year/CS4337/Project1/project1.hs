@@ -1,4 +1,13 @@
 module Main where
 
-main :: IO()
-main = putStrLn "Hello World!"
+prompt :: IO ()
+prompt = putStrLn "Please enter the expression: "
+
+error :: IO ()
+error = putStrLn "Invalid Expression"
+
+
+
+main :: IO ()
+main = do 
+    prompt
