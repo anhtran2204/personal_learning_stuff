@@ -10,11 +10,22 @@ class ATMTest {
 
     @BeforeEach
     void setUp() {
+<<<<<<< HEAD
+        System.out.println("Before each test case methods");
+=======
         System.out.println("Before each test method");
+>>>>>>> 5fc38b331865b1d762a42803eb987c7da88101c4
     }
 
     @AfterEach
     void tearDown() {
+<<<<<<< HEAD
+        System.out.println("After each test case methods");
+    }
+
+    @Test
+    void transfer() {
+=======
         System.out.println("After each test method");
     }
 
@@ -72,5 +83,6 @@ class ATMTest {
         assertFalse(result);
         // Check that the source account balance was not updated
         assertEquals(1000, atm.getFunds());
+>>>>>>> 5fc38b331865b1d762a42803eb987c7da88101c4
     }
 }

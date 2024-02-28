@@ -38,8 +38,13 @@ public class ATM {
             return false;
         }
 
+<<<<<<< HEAD
+        if (this.getFunds() - amount < 0) {
+            System.out.println("Insufficient Funds");
+=======
         if ((this.getFunds() - amount) < 0) {
             System.out.println("Insufficient funds");
+>>>>>>> 5fc38b331865b1d762a42803eb987c7da88101c4
             return false;
         }
 
@@ -53,6 +58,9 @@ public class ATM {
     }
 
     private boolean isBankAccountNumberValid(String bankAccountNumber) {
+<<<<<<< HEAD
+        return getBankAccountNumber().matches("[0-9]+$");
+=======
         // Check if the string is not null or empty
         if (bankAccountNumber == null || bankAccountNumber.isEmpty()) {
             return false;
@@ -81,5 +89,6 @@ public class ATM {
 
         // All checks passed
         return true;
+>>>>>>> 5fc38b331865b1d762a42803eb987c7da88101c4
     }
 }
