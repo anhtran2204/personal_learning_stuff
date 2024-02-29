@@ -1,21 +1,35 @@
 module Main where
 
-prompt :: IO ()
-prompt = putStrLn "Please enter the expression: "
+    import Data.Char ( isDigit )
 
-error :: IO ()
-error = putStrLn "Invalid Expression"
+    prompt :: IO ()
+    prompt = putStrLn "Please enter the expression: "
 
-parseExpr :: [Char] -> [Char]
-parseExpr [] = []
-parseExpr [x] = [x]
-parseExpr (x:y:xs) 
-    | x == '$' = y : parseExpr xs
-    | otherwise = x : parseExpr (y:xs)
 
-main :: IO ()
-main = do
-    prompt
-    expression <- getLine
-    putStrLn ("Expression: " ++ expression)
-    print (parseExpr expression)
+    prefixCalc :: [Char] -> IO ()
+    prefixCalc [] = putStrLn "End of expression"
+    prefixCalc (x:xs)
+        | x == '+' =  do
+            putStrLn "Addition"
+            prefixCalc xs
+        | x == '-' = do
+            putStrLn "Subtraction"
+            prefixCalc xs
+        | x == '*' = do
+            putStrLn "Multiplication"
+            prefixCalc xs
+        | x == '/' = do
+            putStrLn "Division"
+        | otherwise = do
+            putChar x
+            putChar '\n'
+            prefixCalc xs
+
+        
+
+    main :: IO ()
+    main = do
+        prompt
+        expression <- getLine
+        putStrLn ("Expression: " ++ expression)
+        prefixCalc expression
