@@ -25,7 +25,14 @@ module Main where
             putChar '\n'
             prefixCalc xs
 
-        
+    add :: Num a => a -> a -> a
+    add a b = a + b
+
+    mult :: Num a => a -> a -> a
+    mult a b = a * b
+
+    div :: (RealFrac a, Integral b) => a -> a -> b
+    div a b = floor (a / b)
 
     main :: IO ()
     main = do
