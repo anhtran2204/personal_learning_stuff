@@ -3,6 +3,7 @@
 module Main where
     import Data.List ( isPrefixOf )
     import Debug.Trace ( trace )
+    import Data.Char ( digitToInt )
 
     history :: [Int]
     history = []
@@ -34,10 +35,10 @@ module Main where
             (val1, tokens1) <- parse_expression tokens
             return (-val1, tokens1)
         | "$" `isPrefixOf` (token:tokens) = do
-            let n = read (read $ show (head tokens) :: String) :: Int 
+            let n = digitToInt (head tokens)
             return (get_from_history n, tokens) 
         | otherwise = do
-            let val = read $ show token :: Int 
+            let val = digitToInt token
             return (val, tokens)
 
     eval_expression :: String -> Either String String
@@ -51,16 +52,16 @@ module Main where
     main_loop = do
         putStrLn "Enter expression (or type 'exit' to quit): "
         expr <- getLine
-        if expr == "exit"
-            then return ()
-            else do
-                case eval_expression expr of
-                    Right result -> do
-                        putStrLn result
-                        main_loop
-                    Left error -> do
-                        putStrLn error
-                        main_loop
+        if expr == "exit" 
+        then return ()
+        else do
+            case eval_expression expr of
+                Right result -> do
+                    putStrLn result
+                    main_loop
+                Left error -> do
+                    putStrLn error
+                    main_loop
 
     main :: IO ()
     main = main_loop
