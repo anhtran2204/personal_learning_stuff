@@ -33,11 +33,11 @@ module Main where
         | token == '-' = do
             (val1, tokens1) <- parse_expression tokens
             return (-val1, tokens1)
-        | token == ' ' = 
+        | token == ' ' =
             parse_expression tokens
         | "$" `isPrefixOf` (token:tokens) = do
             let n = digitToInt (head tokens)
-            return (get_from_history n, tokens) 
+            return (get_from_history n, tokens)
         | otherwise  = do
             let val = digitToInt token
             return (val, tokens)
