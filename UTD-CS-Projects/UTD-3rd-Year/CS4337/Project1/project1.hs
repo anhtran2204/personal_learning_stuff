@@ -13,38 +13,38 @@ module Main where
     get_from_history :: Int -> Int
     get_from_history n = history !! (n - 1)
 
-    parse_expression :: String -> Either String (Int, String)
-    parse_expression [] = Left "Empty expression"
-    parse_expression (token:tokens)
+    parse_expression :: [Char] -> Int -> Either String (Int, [Char], Int)
+    parse_expression [] _ = Left "Empty expression"
+    parse_expression (token:tokens) id
         | token == '+' = do
-            (val1, tokens1) <- parse_expression tokens 
-            (val2, tokens2) <- parse_expression tokens1
-            return (val1 + val2, tokens2)
+            (val1, tokens1, new_id) <- parse_expression tokens id
+            (val2, tokens2, new_id) <- parse_expression tokens1 id
+            return (val1 + val2, tokens2, new_id + 1)
         | token == '*' = do
-            (val1, tokens1) <- parse_expression tokens
-            (val2, tokens2) <- parse_expression tokens1
-            return (val1 * val2, tokens2)
+            (val1, tokens1, new_id) <- parse_expression tokens id
+            (val2, tokens2, new_id) <- parse_expression tokens1 id
+            return (val1 * val2, tokens2, new_id  + 1)
         | token == '/' = do
-            (val1, tokens1) <- parse_expression tokens
-            (val2, tokens2) <- parse_expression tokens1
+            (val1, tokens1, new_id) <- parse_expression tokens id
+            (val2, tokens2, new_id) <- parse_expression tokens1 id
             if val2 == 0
             then Left "Division by zero"
-            else return (val1 `div` val2, tokens2)
+            else return (val1 `div` val2, tokens2, new_id + 1)
         | token == '-' = do
-            (val1, tokens1) <- parse_expression tokens
-            return (-val1, tokens1)
+            (val1, tokens1, new_id) <- parse_expression tokens id
+            return (-val1, tokens1, new_id + 1)
         | token == ' ' =
-            parse_expression tokens
+            parse_expression tokens id
         | "$" `isPrefixOf` (token:tokens) = do
             let n = digitToInt (head tokens)
-            return (get_from_history n, tokens)
+            return (get_from_history n, tokens, id + 1)
         | otherwise  = do
             let val = digitToInt token
-            return (val, tokens)
+            return (val, tokens, id + 1)
 
     eval_expression :: String -> Either String Int
     eval_expression expr = do
-        (result, remaining) <- parse_expression expr
+        (result, remaining, total) <- parse_expression expr 0
         if null remaining
         then Right result
         else Left "Extraneous expression"
