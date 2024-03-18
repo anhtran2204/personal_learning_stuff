@@ -8,105 +8,68 @@ module Main where
     history = []
 
     add_to_history :: Int -> [Int]
-    add_to_history value = history ++ [value]
+    add_to_history value = value : history
 
-    get_from_history :: Int -> Int
-    get_from_history n = history !! (n - 1)
+    get_from_history :: Int -> [Int] -> Int
+    get_from_history n list = list !! (n - 1)
 
-    parse_expression :: [Char] -> Int -> Either String (Int, [Char], Int)
+    parse_expression :: [Char] -> [Int] -> Either String (Int, [Char])
     parse_expression [] _ = Left "Empty expression"
-    parse_expression (token:tokens) id
+    parse_expression (token:tokens) list
         | token == '+' = do
-            (val1, tokens1, new_id) <- parse_expression tokens id
-            (val2, tokens2, new_id) <- parse_expression tokens1 id
-            return (val1 + val2, tokens2, new_id + 1)
+            (val1, tokens1) <- parse_expression tokens list
+            (val2, tokens2) <- parse_expression tokens1 list
+            return (val1 + val2, tokens2)
         | token == '*' = do
-            (val1, tokens1, new_id) <- parse_expression tokens id
-            (val2, tokens2, new_id) <- parse_expression tokens1 id
-            return (val1 * val2, tokens2, new_id  + 1)
-        | token == '/' = do
-            (val1, tokens1, new_id) <- parse_expression tokens id
-            (val2, tokens2, new_id) <- parse_expression tokens1 id
-            if val2 == 0
-            then Left "Division by zero"
-            else return (val1 `div` val2, tokens2, new_id + 1)
+            (val1, tokens1) <- parse_expression tokens list
+            (val2, tokens2) <- parse_expression tokens1 list
+            return (val1 * val2, tokens2)
         | token == '-' = do
-            (val1, tokens1, new_id) <- parse_expression tokens id
-            return (-val1, tokens1, new_id + 1)
+            (val1, tokens1) <- parse_expression tokens list
+            return (-val1, tokens1)
         | token == ' ' =
-            parse_expression tokens id
-        | "$" `isPrefixOf` (token:tokens) = do
+            parse_expression tokens list
+        | token == '$' = do
             let n = digitToInt (head tokens)
-            return (get_from_history n, tokens, id + 1)
+            return (get_from_history n list, drop 1 tokens)
         | otherwise  = do
             let val = digitToInt token
-            return (val, tokens, id + 1)
+            return (val, tokens)
 
-    eval_expression :: String -> Either String Int
-    eval_expression expr = do
-        (result, remaining, total) <- parse_expression expr 0
+    eval_expression :: String -> [Int] -> Either String [Int]
+    eval_expression expr list = do
+        (result, remaining) <- parse_expression expr list
         if null remaining
-        then Right result
+        then Right (add_to_history result)
         else Left "Extraneous expression"
 
-    main_loop :: IO ()
-    main_loop = do
+    printHistory :: [Int] -> Int -> IO ()
+    printHistory [] _ = putStr ""
+    printHistory (x:xs) id = do
+        putStr "Id: "
+        print id
+        putStr "- "
+        print x
+        printHistory xs (id+1)
+
+    main_loop :: [Int] -> IO ()
+    main_loop list = do
         putStrLn "Enter expression (or type 'exit' to quit): "
         expr <- getLine
         if expr == "exit"
         then return ()
         else do
-            case eval_expression expr of
+            case eval_expression expr list of
                 Right result -> do
                     putStr "= "
                     print result
-                    putStrLn ""
-                    main_loop
+                    let new_history = list ++ result
+                    printHistory new_history 1
+                    main_loop new_history
                 Left error -> do
                     putStrLn error
                     putStrLn ""
-                    main_loop
+                    main_loop []
 
     main :: IO ()
-    main = main_loop
-
-    -- import Data.Maybe (fromJust)
-
-    -- -- Function to check if a character is an operator
-    -- isOperator :: Char -> Bool
-    -- isOperator c = c `elem` "+-/*"
-
-    -- -- Function to perform the actual calculation
-    -- calculate :: Char -> Int -> Int -> Int
-    -- calculate op a b = case op of
-    --     '+' -> a + b
-    --     '*' -> a * b
-    --     '/' -> a `div` b
-    --     _   -> error "Unsupported operator"
-
-    -- -- Unary operation for negation
-    -- negateValue :: Int -> Int
-    -- negateValue = negate
-
-    -- -- Function to evaluate a prefix expression with unary negation
-    -- evalPrefix :: String -> Int
-    -- evalPrefix = head . foldr process []
-    --     where
-    --         process :: Char -> [Int] -> [Int]
-    --         process c stack
-    --             | c == '-' && length stack == 1 = 
-    --                 let a = head stack in negateValue a : tail stack
-    --             | isOperator c = let (a:b:rest) = stack in calculate c a b : rest
-    --             | otherwise = digitToInt c : stack
-
-    --         digitToInt :: Char -> Int
-    --         digitToInt c
-    --             | c `elem` ['0'..'9'] = fromEnum c - fromEnum '0'
-    --             | otherwise = error "Invalid digit"
-
-    -- -- Main function to output the calculation result
-    -- main :: IO ()
-    -- main = do
-    --     putStrLn "Enter expression: "
-    --     preExp <- getLine
-    --     putStrLn $ "Result: " ++ show (evalPrefix preExp)
+    main = main_loop []
