@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/anhtran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS4348/Project2/build",
+  "command": "/usr/bin/g++   -g -std=gnu++23 -o CMakeFiles/Project2.dir/project2.cpp.o -c /home/anhtran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS4348/Project2/project2.cpp",
+  "file": "/home/anhtran2048/personal_learning_stuff/UTD-CS-Projects/UTD-3rd-Year/CS4348/Project2/project2.cpp",
+  "output": "CMakeFiles/Project2.dir/project2.cpp.o"
+}
+]
