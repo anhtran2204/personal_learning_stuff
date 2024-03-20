@@ -30,6 +30,8 @@ sem_t nurseSem;
 sem_t receptionistSem;
 sem_t patientSem;
 
+sem_t exited;
+
 void init_sem()
 {
     if (sem_init(&demoSem, 0, 1) == -1) {
@@ -47,6 +49,9 @@ void init_sem()
     if (sem_init(&patientSem, 0, 1) == -1) {
         cerr << "Error: semaphore" << endl;
     }
+    if (sem_init(&exited, 0, 0) == -1) {
+        cerr << "Error: semaphore" << endl;
+    }
 }
 
 void *run(void *id)
@@ -62,6 +67,8 @@ void *doctor(void *arg) {
     printf("doctor %ld checking...\n", (long) arg);
     sleep(TIMER);
     sem_post(&nurseSem);
+    sem_post(&exited);
+    sleep(TIMER);
 }
 
 void *nurse(void *arg) {
@@ -83,6 +90,9 @@ void *patient(void *arg) {
     printf("patient %ld entering...\n", (long) arg);
     sleep(TIMER);
     sem_post(&patientSem);
+    sem_wait(&exited);
+    printf("patient %ld leaving...\n", (long) arg);
+    sleep(TIMER);
 }
 
 int main(int argc, char const *argv[])
@@ -98,11 +108,6 @@ int main(int argc, char const *argv[])
     int rc;
 
     pthread_t receptionistThread;
-    if (rc = pthread_create(&receptionistThread, NULL, receptionist, NULL))
-    {
-        printf("Error: pthread_create() failed\n");
-        exit(EXIT_FAILURE);
-    }
     sleep(TIMER);
     for (long i = 0; i < 3; i++)
     {
@@ -115,6 +120,12 @@ int main(int argc, char const *argv[])
         //     printf("Error: pthread_create() failed\n");
         //     exit(EXIT_FAILURE);
         // }
+        if (rc = pthread_create(&receptionistThread, NULL, receptionist, NULL))
+        {
+            printf("Error: pthread_create() failed\n");
+            exit(EXIT_FAILURE);
+        }
+        pthread_join(receptionistThread, NULL);
         if (rc = pthread_create(&patientThread, NULL, patient, (void *) (i+1)))
         {
             printf("Error: pthread_create() failed\n");
