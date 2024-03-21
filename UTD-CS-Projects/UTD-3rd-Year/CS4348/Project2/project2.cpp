@@ -43,13 +43,13 @@ void init_sem()
     if (sem_init(&nurseSem, 0, 1)  == -1) {
         cerr << "Error: semaphore" << endl;
     }
-    if (sem_init(&receptionistSem, 0, 1) == -1) {
+    if (sem_init(&receptionistSem, 0, 0) == -1) {
         cerr << "Error: semaphore" << endl;
     }
     if (sem_init(&patientSem, 0, 1) == -1) {
         cerr << "Error: semaphore" << endl;
     }
-    if (sem_init(&exited, 0, 0) == -1) {
+    if (sem_init(&exited, 0, 1) == -1) {
         cerr << "Error: semaphore" << endl;
     }
 }
@@ -67,8 +67,8 @@ void *doctor(void *arg) {
     printf("doctor %ld checking...\n", (long) arg);
     sleep(TIMER);
     sem_post(&nurseSem);
-    sem_post(&exited);
     sleep(TIMER);
+    sem_post(&exited);
 }
 
 void *nurse(void *arg) {
@@ -82,24 +82,25 @@ void *receptionist(void *arg) {
     sem_wait(&receptionistSem);
     printf("receptionist registering...\n");
     sleep(TIMER);
-    sem_post(&receptionistSem);
+    sem_post(&patientSem);
 }
 
 void *patient(void *arg) {
     sem_wait(&patientSem);
     printf("patient %ld entering...\n", (long) arg);
     sleep(TIMER);
-    sem_post(&patientSem);
+    sem_post(&receptionistSem);
     sem_wait(&exited);
     printf("patient %ld leaving...\n", (long) arg);
     sleep(TIMER);
+    sem_post(&exited);
 }
 
 int main(int argc, char const *argv[])
 {
     if (argc != 3)
     {
-        printf("Usage: %s  <number_of_doctors> <number_of_patients>", argv[0]);
+        printf("Usage: %s <number_of_doctors> <number_of_patients>", argv[0]);
         return -1;
     }
 
@@ -107,26 +108,27 @@ int main(int argc, char const *argv[])
     init_sem();
     int rc;
 
+    /* Todo:
+        -   add an inifinite loop for recptionist() to make it 
+            continuously doing work for the patient thread
+        -   probably add (??) loops also for doctor() and nurse()
+        -   change the main loop to only create patient thread (??)
+     */
+
     pthread_t receptionistThread;
     sleep(TIMER);
     for (long i = 0; i < 3; i++)
     {
-        // pthread_t thread;
         pthread_t doctorThread;
         pthread_t nurseThread;
         pthread_t patientThread;
-        // if (rc = pthread_create(&thread, NULL, run, (void *)i))
-        // {
-        //     printf("Error: pthread_create() failed\n");
-        //     exit(EXIT_FAILURE);
-        // }
-        if (rc = pthread_create(&receptionistThread, NULL, receptionist, NULL))
+        if (rc = pthread_create(&patientThread, NULL, patient, (void *) (i+1)))
         {
             printf("Error: pthread_create() failed\n");
             exit(EXIT_FAILURE);
         }
-        pthread_join(receptionistThread, NULL);
-        if (rc = pthread_create(&patientThread, NULL, patient, (void *) (i+1)))
+        sleep(TIMER);
+        if (rc = pthread_create(&receptionistThread, NULL, receptionist, NULL))
         {
             printf("Error: pthread_create() failed\n");
             exit(EXIT_FAILURE);
@@ -148,6 +150,7 @@ int main(int argc, char const *argv[])
         doctors.push_back(doctorThread);
         nurses.push_back(nurseThread);
         patients.push_back(patientThread);
+        pthread_join(receptionistThread, NULL);
     }
 
     for (int i = 0; i < doctors.size(); i++)
